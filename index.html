@@ -5,29 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizaa</title>
     <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="stylesheet" href="./CSS/desktop.css">
-    <script src="./Scripts/main.js"></script>
-    <script src="./Scripts/registration.js"></script>
-    <script src="./Scripts/login.js"></script>
-    <script defer src="./Scripts/GameLogic.js"></script>
-    <script defer src="./Scripts/bots.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/desktop.css">
+    <script defer src="./Scripts/main.js"></script>
+    <script defer src="./Scripts/registration.js"></script>
+    <script defer src="./Scripts/login.js"></script>
   </head>
   <body>
-      <div class="gameContainer flex">
-      <div class="userBox">
-        <h2 id="presentText">Guess a number</h2>
-        <h3 id="timer"><!-- code injected with js --></h3>
-          <button id="start">start</button>
-          <input class="hide" id="guess"></input>
-          <button class="hide" id="submitGuess">Submit</button>
+    <header class="header">QUIZAA</header>
+    <main class="main">
+      <div class="chat-bubble-wrapper">
+        <div class="chat-bubble">
+          <span>Are you ready?</span>
+        </div>
       </div>
-      <div class="sillyBotBox">
-        <h2>silly bot</h2>
-        <h2 id="presentBotText"></h2>
-        <ul id="sillyBotUl">
-          <p>silly bot guesses</p>
-        </ul>
-      </div>
+
     </div>
     <form
       id="registerForm"
@@ -59,6 +56,16 @@
       <input type="password" name="loginDetails" id="passwordLogin" />
       <input type="button" id="submitLogin" value="Login" />
     </form>
+
+      <div class="welcome"><h1>Welcome to Quizaa!</h1></div>
+      <div class="log-in">
+        <button>Log in here</button>
+      </div>
+      <div class="register">
+        <a href=""> Or register here! </a>
+      </div>
+    </main>
+
   </body>
 </html>
 
