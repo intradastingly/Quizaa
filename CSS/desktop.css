@@ -1,0 +1,31 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.gameContainer {
+  
+}
+
+.userBox {
+    margin: 1rem;
+}
+
+.sillyBotBox {
+    margin: 1rem;
+}
+
+
+
+/* Reusable classes */
+.hide {
+    display: none;
+}
+
+.show {
+    display: unset;
+}
+
+.flex {
+    display: flex;
+}
