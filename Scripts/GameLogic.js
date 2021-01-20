@@ -38,7 +38,7 @@ function playGame() {
         presentText.innerHTML = "You Win"
         randomNumber = Math.floor(Math.random() * 10);
     }
-    sillybot(randomNumber);
+    sillyBotsTurn(randomNumber, inputNumber);
 }
 // timer countDown, also displays submit button
 function startTimer() {
