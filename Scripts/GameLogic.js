@@ -6,24 +6,21 @@ function start() {
 
 // global variables
 let randomNumber = Math.floor(Math.random() * 10);
-let timer = 6;
+console.log(randomNumber);
+let timer = 100;
 let playerGuesses = 0;
-
-
+let win = false;
 
 
 //start and submit buttons.
 function eventListeners(){ 
     const submit = document.getElementById('submitGuess');
     submit.addEventListener('click', playGame);
-    submit.addEventListener('click', startTimer);
+    //submit.addEventListener('click', startTimer);
 
     const start = document.getElementById('start');
     start.addEventListener('click', startTimer);
     start.addEventListener('click', displayInputAndSubmitButton);
-
-    const restart = document.getElementById('restart');
-    
 }
 
 //returns input from user.
@@ -33,8 +30,6 @@ function takeInput() {
 }
 
 function playGame(timer) {
-    console.log(timer + ' timer')
-    console.log(playerGuesses + ' guesses')
     
     let inputNumber = Number(takeInput());
 
@@ -48,29 +43,36 @@ function playGame(timer) {
         playerGuesses += 1;
     } if(inputNumber === randomNumber){
         presentText.innerHTML = "You Win"
-        randomNumber = Math.floor(Math.random() * 10);
-    } if (timer === 6){
+        win = true;
+        startTimer(win)
+        //stop the timer when you win
+        //randomNumber = Math.floor(Math.random() * 10);
+    } if (timer === 1){
         presentText.innerHTML = "Time ran out!";
     }
-    console.log(inputNumber + " input Number ");
     displayGuesses(playerGuesses);
     // sillybot();
 }
-// timer countDown, also displays submit button
-function startTimer() {
-    let time = setInterval(countDown, 1000);
 
+// timer countDown, also displays submit button
+function startTimer(win) {
+    let time = setInterval(countDown, 1000);
+    
     function countDown(){
         timer--;
         if(timer <= 0){
             timer = 6;//figure out how to get this number to work correclty 
             clearInterval(time)
-            
+        } if (win === true) {
+            clearInterval(time) //why so buggy?
         }
         let countDown = document.getElementById('timer');
         countDown.innerHTML = timer; 
-        playGame(timer)
+        if(timer === 6) {
+            countDown.innerHTML = "";
+        }
     } 
+    playGame(timer)
 }
 
 function displayInputAndSubmitButton() {
@@ -85,5 +87,6 @@ function displayGuesses(playerGuesses) {
     //console.log(playerGuesses);
 }
 
-//display next player!; 
-//restart timer.  
+
+//timer resetting on every submit. 
+
