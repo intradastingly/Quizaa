@@ -38,9 +38,11 @@ function playGame(timer) {
     if(inputNumber > randomNumber){
         presentText.innerHTML = "Lower"
         playerGuesses += 1;
+        sillyBotsTurn(randomNumber);
     } if(inputNumber !== 0 && inputNumber < randomNumber){
         presentText.innerHTML = "higher";
         playerGuesses += 1;
+        sillyBotsTurn(randomNumber);
     } if(inputNumber === randomNumber){
         presentText.innerHTML = "You Win"
         win = true;
