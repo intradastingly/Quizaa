@@ -1,4 +1,5 @@
 let sillyBotArray = [];
+let ul = document.getElementById("sillyBotUl");
 
 // runs after player have pressed submit so the turn passes over to silly bot
 function sillyBotsTurn(randomNumber){
@@ -6,13 +7,12 @@ function sillyBotsTurn(randomNumber){
     let sillyBotAnswer = Math.floor(Math.random() * 10);
     sillyBotArray.push(sillyBotAnswer);
     
-    let ul = document.getElementById("sillyBotUl");
     
-    setTimeout(presentBotGuess, 1000, ul);
-    setTimeout(checkIfBotWinOrLoose, 1000, sillyBotAnswer, ul, randomNumber);
+    setTimeout(presentBotGuess, 1000);
+    setTimeout(checkIfBotWinOrLoose, 1000, sillyBotAnswer, randomNumber);
 }
 
-function checkIfBotWinOrLoose(sillyBotAnswer, ul, randomNumber){
+function checkIfBotWinOrLoose(sillyBotAnswer, randomNumber){
     let presentBotText = document.getElementById("presentBotText");
     if(sillyBotAnswer > randomNumber) {
         presentBotText.innerHTML = "Lower"
@@ -20,12 +20,13 @@ function checkIfBotWinOrLoose(sillyBotAnswer, ul, randomNumber){
         presentBotText.innerHTML = "higher";
     }if(sillyBotAnswer === randomNumber){
         presentBotText.innerHTML = "Sillybot Wins"
+        console.log("bot won")
         ul.innerText = "";
     }
     
 }
 //presents list item of sillybot guess
-function presentBotGuess(ul){
+function presentBotGuess(){
     for (let i=0; i < sillyBotArray.length; i++){
         // create list item
         let li = document.createElement("li");
