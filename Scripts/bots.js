@@ -1,3 +1,4 @@
+
 let sillyBotArray = [];
 let ul = document.getElementById("sillyBotUl");
 
@@ -38,5 +39,3 @@ function presentBotGuess(){
         sillyBotArray.pop();
     }
 
-
-}
