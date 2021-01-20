@@ -5,42 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizaa</title>
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/desktop.css">
     <script defer src="./Scripts/main.js"></script>
     <script defer src="./Scripts/registration.js"></script>
     <script defer src="./Scripts/login.js"></script>
   </head>
   <body>
-    <form
-      id="registerForm"
-      class="flex vertical registerForm"
-      style="margin: 1rem"
-    >
-      <label for="userName">Username</label>
-      <input type="text" name="loginDetails" id="userNameReg" />
-      <label for="email">Email</label>
-      <input type="text" name="loginDetails" id="emailReg" />
-      <label for="password">Password</label>
-      <input type="password" name="loginDetails" id="passwordReg" />
-      <label for="confirmPassword">Confirm password</label>
-      <input type="password" name="loginDetails" id="confirmPasswordReg" />
-      <input
-        type="button"
-        id="submitRegistration"
-        value="Submit registration"
-      />
-    </form>
-    <form
-      id="loginForm"
-      class="flex vertical registerForm"
-      style="margin: 1rem"
-    >
-      <label for="userName">Username</label>
-      <input type="text" name=" loginDetails" id="userNameLogin" />
-      <label for="password">Password</label>
-      <input type="password" name="loginDetails" id="passwordLogin" />
-      <input type="button" id="submitLogin" value="Login" />
-    </form>
+    <header class="header">QUIZAA</header>
+    <main class="main">
+      <div class="chat-bubble-wrapper">
+        <div class="chat-bubble">
+          <span>Are you ready?</span>
+        </div>
+      </div>
+      <div class="welcome"><h1>Welcome to Quizaa!</h1></div>
+      <div class="log-in">
+        <button>Log in here</button>
+      </div>
+      <div class="register">
+        <a href=""> Or register here! </a>
+      </div>
+    </main>
   </body>
 </html>
 
