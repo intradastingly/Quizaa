@@ -4,6 +4,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: #242254;
+  color: #fdf9de;
   height: 100vh;
 }
 
@@ -24,6 +25,43 @@ body {
 
 /* END REUSABLE CLASSES */
 
+/* BUTTONS */
+
+.primary-button-lg {
+  padding: 0.8rem 0;
+  width: 50%;
+  background-color: #fd7cc5;
+  color: inherit;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.primary-button-sm {
+  padding: 0.8rem 0;
+  width: 35%;
+  background-color: #fd7cc5;
+  color: inherit;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.secondary-button-lg {
+  padding: 0.8rem 0;
+  width: 50%;
+  background-color: transparent;
+  color: #fd7cc5;
+  border: 0.2rem #fd7cc5 solid;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+/* END BUTTONS */
+
 /* HEADER */
 
 .header {
@@ -32,21 +70,26 @@ body {
 
   display: flex;
   align-items: center;
-  padding-left: 5rem;
+  padding: 0rem 5rem;
 }
 
 /* END HEADER */
 
 /* MAIN */
 
+.title {
+  font-size: 2.5rem;
+  margin: 0 0 2rem 0;
+}
+
 .main {
+  padding: 3rem 8rem;
   display: flex;
   flex-direction: column;
 }
 
 .chat-bubble-wrapper {
   width: 100%;
-  margin-top: 5rem;
 
   display: flex;
   justify-content: flex-end;
@@ -57,7 +100,7 @@ body {
   height: 5rem;
   margin-right: 30rem;
   position: relative;
-  background: #00aabb;
+  background: #00E6B3;
   border-radius: 0.4em;
 
   display: flex;
@@ -77,7 +120,7 @@ body {
   width: 0;
   height: 0;
   border: 40px solid transparent;
-  border-top-color: #00aabb;
+  border-top-color: #00E6B3;
   border-bottom: 0;
   border-left: 0;
   margin-left: -30px;
@@ -86,7 +129,6 @@ body {
 
 .welcome {
   font-weight: bold;
-  color: #fdf9de;
   font-size: 2.5rem;
   height: 18rem;
   line-height: 6rem;
@@ -101,31 +143,13 @@ body {
 }
 
 .log-in {
-  height: 5rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.log-in > button {
-  height: 3rem;
-  width: 20rem;
-
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-
-  background-color: #fd7cc5;
-  color: #fdf9de;
-  border-radius: 12px;
-  border: none;
-  outline: none;
+  margin-bottom: 1rem;
 }
 
 .log-in > button:hover {
-  opacity: 0.8;
-  cursor: pointer;
 }
 
 .register {
@@ -135,7 +159,7 @@ body {
 
 .register > a {
   color: #fdf9de;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 /* END MAIN */ ;

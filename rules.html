@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizaa</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/rules.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/desktop.css">
+    <script src="./Scripts/main.js"></script>
+    <script src="./Scripts/registration.js"></script>
+    <script src="./Scripts/login.js"></script>
+    <script defer src="./Scripts/GameLogic.js"></script>
+    <script defer src="./Scripts/bots.js"></script>
+  </head>
+  <body>
+    <header class="header">QUIZAA</header>
+    <main class="main">
+        <h1 class="title">Rules</h1>
+        
+        <div class="rules-container flex row">
+            <div class="rules-txt">
+                <p>
+                    <b>
+                        Quizaa is a game of "Higher" or "Lower" where you can play against one or more bots.
+                        The game is based on the quality of your memory, and a bit of luck.
+                    </b>
+                </p>
+                <p>
+                    The Quizaa game leader has choosen a number, and it is up to you to try and guess the correct number before your opponent/s do.
+                    If your guess is wrong, the game leader will tell you weather the correct number is "Higher!" or "Lower!".
+                    The same goes for the bots, so if they don't get it right either you can use their answers to your advantage.
+                    The bots have different internal logic for choosing a number, and can be more or less difficult to go up against.
+                    
+                </p>
+            </div>
+            <div class="rules-list">
+
+                <div class="list-item flex row">
+                    <div class="circle flex">
+                        <p class="list-number">1</p>
+                    </div>
+                    <p>
+                        Click "Start Quizaa" and choose one or more bots to play against.
+                    </p>
+                </div>
+                
+                <div class="list-item flex row">
+                    <div class="circle flex">
+                        <p class="list-number">2</p>
+                    </div>
+                    <p>
+                        You will then be promted to write a number.
+                        Make sure you write a valid number within the range that is visible on screen.
+                    </p>
+                </div>
+
+                <div class="list-item flex row">
+                    <div class="circle flex">
+                        <p class="list-number">3</p>
+                    </div>
+                    <p>
+                        Make sure to answer quickly, you have five seconds.
+                        If you do not answer in time, you will not be able to guess during this round.
+                    </p>
+                </div>
+
+                <div class="list-item flex row">
+                    <div class="circle flex">
+                        <p class="list-number">4</p>
+                    </div>
+                    <p>
+                        Then it is the bots turn to guess. 
+                        If one or more of them guesses the correct number, you lose.
+                        If they guess the wrong number, you get to try and guess again.
+                    </p>
+                </div>
+
+                <div class="list-item flex row">
+                    <div class="circle flex">
+                        <p class="list-number">5</p>
+                    </div>
+                    <p>
+                        Once you or the bots answer the correct number, the game is over.
+                        You can then choose to either play another game, or go back to the main menu.                        
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="primary-button-lg">Got it!</button>
+    </main>
+  </body>
+</html>
