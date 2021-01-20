@@ -51,9 +51,9 @@ function playGame(timer) {
         presentText.innerHTML = "Time ran out!";
     }
 
-    sillyBotsTurn(randomNumber, inputNumber);
-
+    
     displayGuesses(playerGuesses);
+    sillyBotsTurn(randomNumber);
 
 }
 

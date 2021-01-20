@@ -1,7 +1,7 @@
 let sillyBotArray = [];
 
 // runs after player have pressed submit so the turn passes over to silly bot
-function sillyBotsTurn(randomNumber,inputNumber){
+function sillyBotsTurn(randomNumber){
     
     let sillyBotAnswer = Math.floor(Math.random() * 10);
     sillyBotArray.push(sillyBotAnswer);
@@ -9,13 +9,10 @@ function sillyBotsTurn(randomNumber,inputNumber){
     let ul = document.getElementById("sillyBotUl");
     
     setTimeout(presentBotGuess, 1000, ul);
-    setTimeout(checkIfBotWinOrLoose, 1000, sillyBotAnswer, ul);
-    // console.log(inputNumber + " = inputnumber")
-    // console.log(randomNumber + " = randomNumber")
-    // console.log(sillyBotAnswer + " = Silly Bots Guess");
+    setTimeout(checkIfBotWinOrLoose, 1000, sillyBotAnswer, ul, randomNumber);
 }
 
-function checkIfBotWinOrLoose(sillyBotAnswer, ul){
+function checkIfBotWinOrLoose(sillyBotAnswer, ul, randomNumber){
     let presentBotText = document.getElementById("presentBotText");
     if(sillyBotAnswer > randomNumber) {
         presentBotText.innerHTML = "Lower"
