@@ -4,7 +4,6 @@ console.log(randomNumber);
 let timer = 100;
 let playerGuesses = 0;
 let win = false;
-let isSillySelected = true;
 
 //start and submit buttons.
 function gameLogicEventListeners() {
