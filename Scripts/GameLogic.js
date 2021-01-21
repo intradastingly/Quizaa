@@ -1,18 +1,23 @@
+window.addEventListener("load", start);
+
+function start() {
+  gameLogicEventListeners();
+}
+
 // global variables
-let randomNumber = Math.floor(Math.random() * 10);
-console.log(randomNumber);
-let timer = 100;
+let randomNumber = Math.floor(Math.random(1) * 10);
 let playerGuesses = 0;
+let stopTimer = false;
 let win = false;
 
 //start and submit buttons.
 function gameLogicEventListeners() {
   const submit = document.getElementById("submitGuess");
   submit.addEventListener("click", playGame);
-  //submit.addEventListener('click', startTimer);
+  setTimeout(submit.addEventListener('click', startTimer), 1000);
 
   const start = document.getElementById("start");
-  // start.addEventListener("click", startTimer);
+  start.addEventListener("click", startTimer);
   start.addEventListener("click", displayInputAndSubmitButton);
 }
 
@@ -31,52 +36,62 @@ function playGame(timer) {
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Lower";
     playerGuesses += 1;
+    stopTimer = true;
     if(isSillySelected){
       sillyBotsTurn(randomNumber,inputNumber);
     }
+
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
     presentText.innerHTML = "higher";
     playerGuesses += 1;
+    stopTimer = true;
     if(isSillySelected){
       sillyBotsTurn(randomNumber,inputNumber);
     }
   }
   if (inputNumber === randomNumber) {
     presentText.innerHTML = "You Win";
+    stopTimer = true;
     win = true;
-    // startTimer(win);
-    //stop the timer when you win
-    //randomNumber = Math.floor(Math.random() * 10);
   }
-  if (timer === 1) {
+  if (timer === 0) {
     presentText.innerHTML = "Time ran out!";
   }
   displayGuesses(playerGuesses);
-  // sillybot();
 }
 
-// timer countDown, also displays submit button
-function startTimer(win) {
-  let time = setInterval(countDown, 1000);
 
-  function countDown() {
-    timer--;
-    if (timer <= 0) {
-      timer = 6; //figure out how to get this number to work correclty
-      clearInterval(time);
+
+// timer countDown. 
+function startTimer() {
+    let timer = 6;
+    let time = setInterval(countDown, 1000);
+    let DOMtimer = document.getElementById("timer");
+    function countDown() {
+        timer--;
+        if (timer <= 0) {
+            timer = 6; 
+            clearInterval(time);
+        } 
+        if (stopTimer){
+            clearInterval(time);
+            timer = 5;
+            stopTimer = false;
+        }
+        if (win) {
+            clearInterval(time);
+            timer = '';
+        }
+        DOMtimer.innerHTML = timer;
+        if (timer === 6) {
+            DOMtimer.innerHTML = "";
+        }
     }
-    if (win === true) {
-      clearInterval(time); //why so buggy?
-    }
-    let countDown = document.getElementById("timer");
-    countDown.innerHTML = timer;
-    if (timer === 6) {
-      countDown.innerHTML = "";
-    }
-  }
   playGame(timer);
 }
+
+
 
 function displayInputAndSubmitButton() {
   // displays bots wich are selected to play against
@@ -93,4 +108,5 @@ function displayGuesses(playerGuesses) {
   //console.log(playerGuesses);
 }
 
-//timer resetting on every submit.
+//get timer to restart on start click
+
