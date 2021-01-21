@@ -12,7 +12,7 @@ function gameLogicEventListeners() {
   //submit.addEventListener('click', startTimer);
 
   const start = document.getElementById("start");
-  start.addEventListener("click", startTimer);
+  // start.addEventListener("click", startTimer);
   start.addEventListener("click", displayInputAndSubmitButton);
 }
 
@@ -40,7 +40,7 @@ function playGame(timer) {
   if (inputNumber === randomNumber) {
     presentText.innerHTML = "You Win";
     win = true;
-    startTimer(win);
+    // startTimer(win);
     //stop the timer when you win
     //randomNumber = Math.floor(Math.random() * 10);
   }
