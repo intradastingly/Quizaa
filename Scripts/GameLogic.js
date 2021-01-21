@@ -6,7 +6,6 @@ function start() {
 
 // global variables
 let randomNumber = Math.floor(Math.random(1) * 10);
-console.log(randomNumber);
 let playerGuesses = 0;
 let stopTimer = false;
 let win = false;
