@@ -4,6 +4,7 @@ console.log(randomNumber);
 let timer = 100;
 let playerGuesses = 0;
 let win = false;
+let isSillySelected = true;
 
 //start and submit buttons.
 function gameLogicEventListeners() {
@@ -24,18 +25,23 @@ function takeInput() {
 
 function playGame(timer) {
   let inputNumber = Number(takeInput());
+  
 
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Lower";
     playerGuesses += 1;
-    sillyBotsTurn(randomNumber);
+    if(isSillySelected){
+      sillyBotsTurn(randomNumber,inputNumber);
+    }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
     presentText.innerHTML = "higher";
     playerGuesses += 1;
-    sillyBotsTurn(randomNumber);
+    if(isSillySelected){
+      sillyBotsTurn(randomNumber,inputNumber);
+    }
   }
   if (inputNumber === randomNumber) {
     presentText.innerHTML = "You Win";
@@ -74,6 +80,9 @@ function startTimer(win) {
 }
 
 function displayInputAndSubmitButton() {
+  // displays bots wich are selected to play against
+  botSelected();
+
   // shows input and sumbit when start is pressed
   const submit = document.getElementById("submitGuess");
   const guess = document.getElementById("guess");

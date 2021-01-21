@@ -2,6 +2,7 @@
 let sillyBotArray = [];
 let ul = document.getElementById("sillyBotUl");
 
+
 // runs after player have pressed submit so the turn passes over to silly bot
 function sillyBotsTurn(randomNumber){
     
@@ -13,13 +14,16 @@ function sillyBotsTurn(randomNumber){
     setTimeout(checkIfBotWinOrLoose, 1000, sillyBotAnswer, randomNumber);
 }
 
-function checkIfBotWinOrLoose(sillyBotAnswer, randomNumber){
+function checkIfBotWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
     let presentBotText = document.getElementById("presentBotText");
-    if(sillyBotAnswer > randomNumber) {
+    if(inputNumber === randomNumber){
+        presentBotText.innerHTML = "Silly Lost"
+        ul.innerText = "";
+    } if(sillyBotAnswer > randomNumber) {
         presentBotText.innerHTML = "Lower"
     } if(sillyBotAnswer < randomNumber){
         presentBotText.innerHTML = "higher";
-    }if(sillyBotAnswer === randomNumber){
+    } if(sillyBotAnswer === randomNumber){
         presentBotText.innerHTML = "Sillybot Wins"
         console.log("bot won")
         ul.innerText = "";
@@ -37,6 +41,17 @@ function presentBotGuess(){
         // adds it to the  list
         ul.appendChild(li);
         sillyBotArray.pop();
+    }
+
+}
+
+function botSelected(){
+    let sillyBot = document.getElementById("sillyBot");
+    if(!isSillySelected){
+        sillyBot.classList.add("hide");
+        console.log("hej")
+    } if(isSillySelected){
+        sillyBot.classList.add("show");
     }
 
 }
