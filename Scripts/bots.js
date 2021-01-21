@@ -78,7 +78,6 @@ function botSelected(){
     let sillyBot = document.getElementById("sillyBot");
     if(!isSillySelected){
         sillyBot.classList.add("hide");
-        console.log("hej")
     } if(isSillySelected){
         sillyBot.classList.add("show");
     }
