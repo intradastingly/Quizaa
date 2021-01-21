@@ -12,7 +12,7 @@ function gameLogicEventListeners() {
   //submit.addEventListener('click', startTimer);
 
   const start = document.getElementById("start");
-  start.addEventListener("click", startTimer);
+  // start.addEventListener("click", startTimer);
   start.addEventListener("click", displayInputAndSubmitButton);
 }
 
@@ -24,23 +24,28 @@ function takeInput() {
 
 function playGame(timer) {
   let inputNumber = Number(takeInput());
+  
 
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Lower";
     playerGuesses += 1;
-    sillyBotsTurn(randomNumber);
+    if(isSillySelected){
+      sillyBotsTurn(randomNumber,inputNumber);
+    }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
     presentText.innerHTML = "higher";
     playerGuesses += 1;
-    sillyBotsTurn(randomNumber);
+    if(isSillySelected){
+      sillyBotsTurn(randomNumber,inputNumber);
+    }
   }
   if (inputNumber === randomNumber) {
     presentText.innerHTML = "You Win";
     win = true;
-    startTimer(win);
+    // startTimer(win);
     //stop the timer when you win
     //randomNumber = Math.floor(Math.random() * 10);
   }
@@ -74,6 +79,9 @@ function startTimer(win) {
 }
 
 function displayInputAndSubmitButton() {
+  // displays bots wich are selected to play against
+  botSelected();
+
   // shows input and sumbit when start is pressed
   const submit = document.getElementById("submitGuess");
   const guess = document.getElementById("guess");
