@@ -1,5 +1,11 @@
+window.addEventListener("load", start);
+
+function start() {
+  gameLogicEventListeners();
+}
+
 // global variables
-let randomNumber = Math.floor(Math.random() * 10);
+let randomNumber = Math.floor(Math.random(1) * 10);
 console.log(randomNumber);
 let timer = 100;
 let playerGuesses = 0;
@@ -40,29 +46,27 @@ function playGame(timer) {
   if (inputNumber === randomNumber) {
     presentText.innerHTML = "You Win";
     win = true;
-    startTimer(win);
-    //stop the timer when you win
-    //randomNumber = Math.floor(Math.random() * 10);
   }
-  if (timer === 1) {
+  if (timer === 0) {
     presentText.innerHTML = "Time ran out!";
   }
   displayGuesses(playerGuesses);
   // sillybot();
 }
 
-// timer countDown, also displays submit button
-function startTimer(win) {
-  let time = setInterval(countDown, 1000);
 
+
+// timer countDown, also displays submit button
+function startTimer() {
+  let time = setInterval(countDown, 1000);
   function countDown() {
     timer--;
     if (timer <= 0) {
       timer = 6; //figure out how to get this number to work correclty
       clearInterval(time);
-    }
-    if (win === true) {
-      clearInterval(time); //why so buggy?
+    } if (win){
+        clearInterval(time);
+        timer = 0;
     }
     let countDown = document.getElementById("timer");
     countDown.innerHTML = timer;
@@ -72,6 +76,8 @@ function startTimer(win) {
   }
   playGame(timer);
 }
+
+
 
 function displayInputAndSubmitButton() {
   // shows input and sumbit when start is pressed
