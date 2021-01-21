@@ -5,7 +5,8 @@ function start() {
 }
 
 // global variables
-let randomNumber = Math.floor(Math.random(1) * 10);
+let randomNumber = Math.floor(1 + Math.random(1) * 10);
+console.log(randomNumber)
 let playerGuesses = 0;
 let stopTimer = false;
 let win = false;
@@ -30,7 +31,6 @@ function takeInput() {
 function playGame(timer) {
   let inputNumber = Number(takeInput());
   
-
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
@@ -40,7 +40,6 @@ function playGame(timer) {
     if(isSillySelected){
       sillyBotsTurn(randomNumber,inputNumber);
     }
-
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
     presentText.innerHTML = "higher";
@@ -60,8 +59,6 @@ function playGame(timer) {
   }
   displayGuesses(playerGuesses);
 }
-
-
 
 // timer countDown. 
 function startTimer() {
@@ -83,15 +80,17 @@ function startTimer() {
             clearInterval(time);
             timer = '';
         }
+        if(botWin) {
+          clearInterval(time);
+          timer = '';
+        }
         DOMtimer.innerHTML = timer;
         if (timer === 6) {
             DOMtimer.innerHTML = "";
         }
     }
-  playGame(timer);
+  //playGame(timer);
 }
-
-
 
 function displayInputAndSubmitButton() {
   // displays bots wich are selected to play against
