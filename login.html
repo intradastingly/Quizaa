@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizaa</title>
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/login.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
@@ -17,22 +18,20 @@
   <body>
     <header class="header">QUIZAA</header>
     <main class="main">
-      <div class="container">
+      <div class="login-container">
         <form class="flex vertical" action="/" method="GET">
-          <h2>Log in</h2>
+          <h2 class="title">Log in</h2>
 
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <label class="login-label" for="email">Email</label>
+          <input class="login-input" type="email" name="email" id="email" />
 
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" />
-          <a href="main-menu.html">
-            <button class="button-primary-big">Log in</button>
+          <label class="login-label" for="password">Password</label>
+          <input class="login-input" type="password" name="password" id="password" />
+          <a href="">
+            <button class="primary-button-lg">Log in</button>
           </a>
+            <a class="link-button" href="registration.html"> Or register here! </a>
         </form>
-      </div>
-      <div class="register">
-        <a href="registration.html"> Or register here! </a>
       </div>
     </main>
   </body>

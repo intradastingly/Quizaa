@@ -1,0 +1,12 @@
+.gameContainer {
+  
+}
+
+.userBox {
+    margin: 1rem;
+}
+
+.sillyBotBox {
+    margin: 1rem;
+    display: none;
+}
