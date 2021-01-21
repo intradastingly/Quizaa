@@ -1,5 +1,14 @@
+
+body {
+    height: 100%;
+    width: 100%;
+    margin-top: 30%
+}
+
 .gameContainer {
-  
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
 }
 
 .userBox {
@@ -8,5 +17,99 @@
 
 .sillyBotBox {
     margin: 1rem;
+    display:  flex;
+    flex-direction: column;
+}
+
+.user-item {
+    margin: 1rem;
+}
+
+.start {
+    display: flex;
+    align-self: start;
+}
+
+#submitGuess {
+    padding: 0.5rem;
+    background-color: #FD7CC5;
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+#presentText {
+    font-size: 3rem;
+    width: 30rem;
+}
+
+#timer {
+    width: 4rem;
+    border-radius: 50%;
+    background-color: #514E7C;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Silly bot below */
+.sillyBotBox {
     display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.presentSilly {
+    background-color: #514E7C;
+    width: 50%;
+    padding: .5rem;
+    border-radius: 10rem;
+}
+
+.sillyBotBox h2 {
+    /* padding: 1rem; */
+    font-size: 1.2rem;
+}
+
+.sillyBotBox li{
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sillyBotBox ul{
+    margin: 0;
+    padding: 0;
+}
+
+.sillyBotBox img{
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
+}
+
+
+/* Reusable classes */
+.hide {
+    display: none;
+}
+
+.show {
+    display: unset;
+}
+
+.flex {
+    display: flex;
+}
+
+
+@media (max-width: 750px){
+    .gameContainer {
+        flex-direction: column-reverse;
+    }
 }

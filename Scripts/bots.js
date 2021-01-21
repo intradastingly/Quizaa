@@ -1,14 +1,7 @@
-// lil buggy with same main when changing html files
-// so added one here for now
-window.addEventListener("load", start);
-
-function start() {
-  gameLogicEventListeners();
-}
-
 // global variables
 let sillyBotArray = [];
 let ul = document.getElementById("sillyBotUl");
+let botWin = false;
 
 // boolean to change in menu when how many bots u want to
 // turn to true if u want to play agains Silly
@@ -19,9 +12,8 @@ let isSillySelected = true;
 // runs after player have pressed submit so the turn passes over to silly bot
 function sillyBotsTurn(randomNumber, inputNumber){
     
-    let sillyBotAnswer = Math.floor(Math.random() * 10);
+    let sillyBotAnswer = Math.floor(1 + Math.random() * 10);
     sillyBotArray.push(sillyBotAnswer);
-    
     
     setTimeout(presentSillyGuess, 1000);
     setTimeout(checkIfSillyWinOrLoose, 1000, sillyBotAnswer, randomNumber, inputNumber);
@@ -46,6 +38,7 @@ function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
         presentBotText.innerHTML = "Sillybot Wins"
         console.log("bot won!! Silly guessed " + randomNumber)
         ul.innerText = "";
+        botWin = true;
     }
     
 }
