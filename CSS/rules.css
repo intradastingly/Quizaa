@@ -1,0 +1,54 @@
+.rules-container {
+    margin-bottom: 2rem;
+    flex-direction: row;
+}
+
+.rules-txt {
+    width: 50%;
+    margin-right: 15%;
+    margin-bottom: 2rem;
+}
+
+.rules-txt p {
+    margin-bottom: 1rem;
+}
+
+.rules-list {
+    width: 35%;
+}
+
+.list-item {
+    position: relative;
+    width: auto;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.circle {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    left: -4rem;
+    background-color: #00E6B3;
+    margin-right: 1rem;
+}
+
+/*--------- TABLET LARGE ---------*/
+@media (max-width: 1024px) {
+
+    .rules-container {
+        flex-direction: column;
+    }
+
+    .rules-list {
+        width: calc(100% - 4rem);
+        margin-left: 4rem;
+    }
+
+    .rules-txt {
+        width: 100%;
+    }
+}
