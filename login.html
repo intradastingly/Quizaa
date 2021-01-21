@@ -18,18 +18,25 @@
   <body>
     <header class="header">QUIZAA</header>
     <main class="main">
-      <div class="chat-bubble-wrapper">
-        <div class="chat-bubble">
-          <span>Are you ready?</span>
-        </div>
+      <div class="container">
+        <form class="flex vertical" action="/" method="GET">
+            <h2>Log in</h2>
+            
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <a href="main-menu.html">
+              <button class="button-primary-big">Log in</button>
+            </a>
+        </form>
+
       </div>
-      <div class="welcome"><h1>Welcome to Quizaa!</h1></div>
-      <div class="log-in">
-        <button class="primary-button-sm">Log in here</button>
-      </div>
-      <div class="register">
-        <a href=""> Or register here! </a>
-      </div>
+            <div class="register">
+                <a href="registration.html"> Or register here! </a>
+            </div>
     </main>
   </body>
 </html>
+

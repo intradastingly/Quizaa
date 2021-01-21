@@ -162,6 +162,58 @@ body {
   font-size: 1rem;
 }
 
+.register > a:hover {
+  color: #FC42AB;
+}
+
+.container {
+  font-weight: bold;
+  color: #fdf9de;
+  font-size: 2.5rem;
+  line-height: 6rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+input {
+  background-color: #514E7C;
+  border-radius: .5rem;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #fdf9de;
+  width: 28rem;
+  height: 1rem;
+}
+
+.button-primary-big {
+  height: 3rem;
+  width: 30rem;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+
+  background-color: #fd7cc5;
+  color: #fdf9de;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.button-primary-big:hover {
+  background-color: #FC42AB;
+}
+
 /* END MAIN */
 
 /* MEDIA QUERIES */
