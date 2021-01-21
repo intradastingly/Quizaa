@@ -12,7 +12,7 @@ let ul = document.getElementById("sillyBotUl");
 
 // boolean to change in menu when how many bots u want to
 // turn to true if u want to play agains Silly
-let isSillySelected = false;
+let isSillySelected = true;
 
 // SILLY BOT CODE BELOW /  / / / / / / / / /
 
@@ -30,17 +30,21 @@ function sillyBotsTurn(randomNumber, inputNumber){
 // function that checks bots answer and clears the list if bot win
 function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
     let presentBotText = document.getElementById("presentBotText");
+
     if(randomNumber === inputNumber){
+        // this doesnt work sadly....
         console.log("heh")
         presentBotText.innerHTML = "Silly Lost"
         ul.innerText = "";
     } if(sillyBotAnswer > randomNumber) {
-        presentBotText.innerHTML = "Lower"
+        presentBotText.innerHTML = "Lower";
+
     } if(sillyBotAnswer < randomNumber){
         presentBotText.innerHTML = "higher";
+
     } if(sillyBotAnswer === randomNumber){
         presentBotText.innerHTML = "Sillybot Wins"
-        console.log("bot won")
+        console.log("bot won!! Silly guessed " + randomNumber)
         ul.innerText = "";
     }
     
@@ -57,6 +61,7 @@ function presentSillyGuess(){
         ul.appendChild(li);
         sillyBotArray.pop();
     }
+
 
 }
 
