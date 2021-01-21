@@ -29,6 +29,7 @@ function takeInput() {
 
 function playGame(timer) {
   let inputNumber = Number(takeInput());
+  
 
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
@@ -36,13 +37,18 @@ function playGame(timer) {
     presentText.innerHTML = "Lower";
     playerGuesses += 1;
     stopTimer = true;
-    sillyBotsTurn(randomNumber);
+    if(isSillySelected){
+      sillyBotsTurn(randomNumber,inputNumber);
+    }
+
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
     presentText.innerHTML = "higher";
     playerGuesses += 1;
     stopTimer = true;
-    sillyBotsTurn(randomNumber);
+    if(isSillySelected){
+      sillyBotsTurn(randomNumber,inputNumber);
+    }
   }
   if (inputNumber === randomNumber) {
     presentText.innerHTML = "You Win";
@@ -53,7 +59,6 @@ function playGame(timer) {
     presentText.innerHTML = "Time ran out!";
   }
   displayGuesses(playerGuesses);
-  // sillybot();
 }
 
 
@@ -89,6 +94,9 @@ function startTimer() {
 
 
 function displayInputAndSubmitButton() {
+  // displays bots wich are selected to play against
+  botSelected();
+
   // shows input and sumbit when start is pressed
   const submit = document.getElementById("submitGuess");
   const guess = document.getElementById("guess");
