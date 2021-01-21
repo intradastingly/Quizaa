@@ -1,0 +1,31 @@
+.login-container {
+    font-weight: bold;
+    color: #fdf9de;
+    font-size: 2.5rem;
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-container .link-button {
+      padding-top: 1.2rem;
+  }
+  
+  .login-label {
+    font-size: 1.5rem;
+    padding: 2.5rem 0 1.5rem 0;
+  }
+  
+  .login-input {
+    background-color: #514E7C;
+    border-radius: .5rem;
+    border: none;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #fdf9de;
+    width: 28rem;
+    height: 1rem;
+  }

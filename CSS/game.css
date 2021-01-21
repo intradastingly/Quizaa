@@ -1,6 +1,3 @@
-#presentText {
-    
-}
 
 body {
     height: 100%;
@@ -15,6 +12,10 @@ body {
 }
 
 .userBox {
+    margin: 1rem;
+}
+
+.sillyBotBox {
     margin: 1rem;
     display:  flex;
     flex-direction: column;
