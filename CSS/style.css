@@ -173,6 +173,10 @@ body {
     padding: 3rem 5rem;
   }
 
+  .primary-button-sm {
+    width: 50%;
+  }
+
 }
 
 /*--------- MOBILE ---------*/
@@ -186,7 +190,7 @@ body {
     padding: 3rem 1.5rem;
   }
 
-  .primary-button-lg, .secondary-button-lg {
+  .primary-button-lg, .secondary-button-lg, .primary-button-sm {
     width: 100%;
   }
 
