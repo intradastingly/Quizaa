@@ -15,7 +15,6 @@ function sillyBotsTurn(randomNumber, inputNumber){
     let sillyBotAnswer = Math.floor(1 + Math.random() * 10);
     sillyBotArray.push(sillyBotAnswer);
     
-    
     setTimeout(presentSillyGuess, 1000);
     setTimeout(checkIfSillyWinOrLoose, 1000, sillyBotAnswer, randomNumber, inputNumber);
 }
