@@ -13,12 +13,7 @@ body {
 
 .userBox {
     margin: 1rem;
-}
-
-.sillyBotBox {
-    margin: 1rem;
-    display:  flex;
-    flex-direction: column;
+    display: none;
 }
 
 .user-item {
@@ -54,13 +49,17 @@ body {
 }
 
 /* Silly bot below */
+/* Silly bot */
 .sillyBotBox {
-    display: none;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.hideSilly {
+    display: none;
 }
 
 .presentSilly {
@@ -68,6 +67,8 @@ body {
     width: 50%;
     padding: .5rem;
     border-radius: 10rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sillyBotBox h2 {

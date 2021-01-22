@@ -99,6 +99,8 @@ function displayInputAndSubmitButton() {
   // shows input and sumbit when start is pressed
   const submit = document.getElementById("submitGuess");
   const guess = document.getElementById("guess");
+  const userBox = document.getElementById("userInput");
+  userBox.classList.add("show");
   submit.classList.add("show");
   guess.classList.add("show");
 }
