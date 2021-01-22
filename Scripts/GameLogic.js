@@ -69,33 +69,6 @@ function playGame() {
 
 // timer countDown.
 function startTimer() {
-  let timer = 6;
-  let time = setInterval(countDown, 1000);
-  let DOMtimer = document.getElementById("timer");
-  function countDown() {
-    timer--;
-    if (timer <= 0) {
-      timer = 6;
-      clearInterval(time);
-    }
-    if (stopTimer) {
-      clearInterval(time);
-      timer = 5;
-      stopTimer = false;
-    }
-    if (win) {
-      clearInterval(time);
-      timer = "";
-    }
-    if (botWin) {
-      clearInterval(time);
-      timer = "";
-    }
-    DOMtimer.innerHTML = timer;
-    if (timer === 6) {
-      DOMtimer.innerHTML = "";
-    }
-  }
   //playGame(timer);
     let timer = 10;
     let time = setInterval(countDown, 1000);
