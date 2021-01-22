@@ -11,9 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script defer src="./Scripts/main.js"></script>
-    <script defer src="./Scripts/registration.js"></script>
-    <script defer src="./Scripts/login.js"></script>
+    <script src="./Scripts/login.js"></script>
   </head>
   <body>
     <header class="header">QUIZAA</header>
@@ -22,15 +20,32 @@
         <form class="flex vertical" action="/" method="GET">
           <h2 class="title">Log in</h2>
 
-          <label class="login-label" for="email">Email</label>
-          <input class="login-input" type="email" name="email" id="email" />
+          <label class="login-label" for="userName">User name</label>
+          <input
+            class="login-input"
+            type="text"
+            name=" loginDetails"
+            id="userNameLogin"
+          />
 
           <label class="login-label" for="password">Password</label>
-          <input class="login-input" type="password" name="password" id="password" />
-          <a href="">
-            <button class="primary-button-lg">Log in</button>
+          <input
+            class="login-input"
+            type="password"
+            name="loginDetails"
+            id="passwordLogin"
+          />
+          <button
+            class="primary-button-lg"
+            type="button"
+            id="submitLogin"
+            value="Login"
+          >
+            Log in
+          </button>
+          <a class="link-button" href="./registration.html">
+            Or register here!
           </a>
-            <a class="link-button" href="registration.html"> Or register here! </a>
         </form>
       </div>
     </main>

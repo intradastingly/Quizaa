@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizaa</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/registration.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./Scripts/registration.js"></script>
+  </head>
+  <body>
+    <header class="header">QUIZAA</header>
+    <main class="main flex vertical">
+      <h2 class="title">Register</h2>
+      <div class="flex register-form">
+        <div class="flex vertical">
+          <label class="register-label" for="userName">User name</label>
+          <input
+            class="register-input"
+            name="loginDetails"
+            type="text"
+            id="userNameReg"
+          />
+          <label class="register-label" for="password">Password</label>
+          <input
+            class="register-input"
+            type="password"
+            name="loginDetails"
+            id="passwordReg"
+          />
+        </div>
+        <div class="flex vertical">
+          <label class="register-label" for="email">Email</label>
+          <input
+            class="register-input"
+            id="emailReg"
+            name="loginDetails"
+            type="text"
+          />
+          <label class="register-label" for="confirmPassword"
+            >Confirm password</label
+          >
+          <input
+            class="register-input"
+            type="password"
+            name="loginDetails"
+            id="confirmPasswordReg"
+          />
+        </div>
+      </div>
+      <button class="register-button primary-button-sm" id="submitRegistration">
+        Register
+      </button>
+      <a class="link-button register-link" href="./login.html">
+        Or log in here!
+      </a>
+    </main>
+  </body>
+</html>

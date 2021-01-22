@@ -1,0 +1,30 @@
+.register-form {
+  justify-content: space-around;
+}
+
+.register-label {
+  font-size: 1.5rem;
+  padding: 2.5rem 0 1.5rem 0;
+}
+
+.register-input {
+  background-color: #514e7c;
+  border-radius: 0.5rem;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #fdf9de;
+  width: 28rem;
+  height: 1rem;
+}
+
+.register-button {
+  margin-top: 5rem;
+  margin-left: 7rem;
+}
+
+.register-link {
+  margin-top: 1rem;
+  margin-left: 7rem;
+}

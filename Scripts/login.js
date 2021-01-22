@@ -1,6 +1,8 @@
+window.addEventListener("load", loginEventListeners);
+
 function loginEventListeners() {
   const loginButton = document.getElementById("submitLogin");
-  loginButton.addEventListener("click", () => {
+  loginButton.addEventListener("click", function () {
     loginForm();
   });
 }
@@ -14,7 +16,7 @@ function loginForm() {
     userNameInput === atob(registeredUser.username) &&
     passwordInput === atob(registeredUser.password)
   ) {
-    console.log("success");
+    location.href = "./menu.html";
   } else {
     console.log("wrong username or password");
   }
