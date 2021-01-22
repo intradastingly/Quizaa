@@ -2,6 +2,7 @@ window.addEventListener("load", start);
 
 function start() {
   gameLogicEventListeners();
+  enterSubmit()
 }
 
 // global variables
@@ -10,6 +11,7 @@ console.log(randomNumber)
 let playerGuesses = 0;
 let stopTimer = false;
 let win = false;
+let countDownActive = false;
 
 //start and submit buttons.
 function gameLogicEventListeners() {
@@ -28,9 +30,9 @@ function takeInput() {
   return guess;
 }
 
-function playGame(timer) {
+function playGame() {
   let inputNumber = Number(takeInput());
-  
+  console.log(inputNumber)
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
@@ -54,42 +56,43 @@ function playGame(timer) {
     stopTimer = true;
     win = true;
   }
-  if (timer === 0) {
-    presentText.innerHTML = "Time ran out!";
+  if(inputNumber === 0){
+    presentText.innerHTML = "please input a number";
   }
+ 
   displayGuesses(playerGuesses);
 }
 
 // timer countDown. 
 function startTimer() {
-    let timer = 6;
+    countDownActive = true;
+    let timer = 10;
     let time = setInterval(countDown, 1000);
     let DOMtimer = document.getElementById("timer");
+    DOMtimer.style.visibility = "visible";
     function countDown() {
         timer--;
-        if (timer <= 0) {
-            timer = 6; 
+        if (timer < 1) {
+            timer = 10; 
             clearInterval(time);
+            countDownActive = false;
+            DOMtimer.style.visibility = "hidden";
         } 
         if (stopTimer){
             clearInterval(time);
-            timer = 5;
+            timer = 10;
             stopTimer = false;
         }
-        if (win) {
+        if (win || botWin) {
             clearInterval(time);
             timer = '';
         }
-        if(botWin) {
-          clearInterval(time);
-          timer = '';
+        if (timer > 10){
+          DOMtimer.style.visibility = "hidden";
         }
         DOMtimer.innerHTML = timer;
-        if (timer === 6) {
-            DOMtimer.innerHTML = "";
-        }
+        console.log(countDownActive)
     }
-  //playGame(timer);
 }
 
 function displayInputAndSubmitButton() {
@@ -107,5 +110,17 @@ function displayGuesses(playerGuesses) {
   //console.log(playerGuesses);
 }
 
-//get timer to restart on start click
+//listens for Enter key press.
+function enterSubmit() {
+    document.addEventListener('keypress', submit);
+    function submit(event) {
+      if(event.code === "Enter" /* && !countDownActive */){
+        playGame();
+        setTimeout(startTimer, 1000)
+    }
+  }
+}
+
+//go button should not be reclickable. tie it to true false state on click. 
+//press true state??
 

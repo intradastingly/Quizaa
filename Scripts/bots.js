@@ -22,7 +22,7 @@ function sillyBotsTurn(randomNumber, inputNumber){
 // function that checks bots answer and clears the list if bot win
 function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
     let presentBotText = document.getElementById("presentBotText");
-
+    
     if(randomNumber === inputNumber){
         // this doesnt work sadly....
         console.log("heh")
