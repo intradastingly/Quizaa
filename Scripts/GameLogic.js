@@ -11,7 +11,6 @@ console.log(randomNumber)
 let playerGuesses = 0;
 let stopTimer = false;
 let win = false;
-let countDownActive = false;
 
 //start and submit buttons.
 function gameLogicEventListeners() {
@@ -57,6 +56,7 @@ function playGame() {
     win = true;
   }
   if(inputNumber === 0){
+    stopTimer = true;
     presentText.innerHTML = "please input a number";
   }
  
@@ -65,7 +65,6 @@ function playGame() {
 
 // timer countDown. 
 function startTimer() {
-    countDownActive = true;
     let timer = 10;
     let time = setInterval(countDown, 1000);
     let DOMtimer = document.getElementById("timer");
@@ -85,13 +84,12 @@ function startTimer() {
         }
         if (win || botWin) {
             clearInterval(time);
-            timer = '';
+            DOMtimer.style.visibility = "hidden";
         }
-        if (timer > 10){
+        if (timer === 10){
           DOMtimer.style.visibility = "hidden";
         }
         DOMtimer.innerHTML = timer;
-        console.log(countDownActive)
     }
 }
 
@@ -114,13 +112,23 @@ function displayGuesses(playerGuesses) {
 function enterSubmit() {
     document.addEventListener('keypress', submit);
     function submit(event) {
-      if(event.code === "Enter" /* && !countDownActive */){
+      if(event.code === "Enter"){
         playGame();
         setTimeout(startTimer, 1000)
     }
   }
 }
 
-//go button should not be reclickable. tie it to true false state on click. 
-//press true state??
+//buttons will be hidden on guess so no need to add repress logic
 
+function displayWin(){
+
+}
+
+function displayLose(){
+
+}
+
+function guessAgain(){
+
+}
