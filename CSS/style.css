@@ -27,14 +27,6 @@ a {
   align-items: center;
 }
 
-.hide {
-  display: none;
-}
-
-.show {
-  display: unset;
-}
-
 /* END REUSABLE CLASSES */
 
 /* BUTTONS */
