@@ -2,6 +2,8 @@ window.addEventListener("load", start);
 
 function start() {
   gameLogicEventListeners();
+  enterSubmit()
+  displayLose()
 }
 
 // global variables
@@ -28,9 +30,9 @@ function takeInput() {
   return guess;
 }
 
-function playGame(timer) {
+function playGame() {
   let inputNumber = Number(takeInput());
-  
+  console.log(inputNumber)
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
@@ -53,59 +55,74 @@ function playGame(timer) {
     presentText.innerHTML = "You Win";
     stopTimer = true;
     win = true;
+    displayWin()
   }
-  if (timer === 0) {
-    presentText.innerHTML = "Time ran out!";
+  if(inputNumber === 0){
+    stopTimer = true;
+    presentText.innerHTML = "please input a number";
   }
+ 
   displayGuesses(playerGuesses);
 }
 
 // timer countDown. 
 function startTimer() {
-    let timer = 6;
+    let timer = 10;
     let time = setInterval(countDown, 1000);
     let DOMtimer = document.getElementById("timer");
+    DOMtimer.style.visibility = "visible";
     function countDown() {
         timer--;
-        if (timer <= 0) {
-            timer = 6; 
+        if (timer < 1) {
+            timer = 10; 
             clearInterval(time);
         } 
         if (stopTimer){
             clearInterval(time);
-            timer = 5;
+            timer = 10;
             stopTimer = false;
         }
-        if (win) {
+        if (win || botWin) {
             clearInterval(time);
-            timer = '';
+            DOMtimer.style.visibility = "hidden";
         }
-        if(botWin) {
-          clearInterval(time);
-          timer = '';
-        }
+        /* if (timer === 10){
+          DOMtimer.style.visibility = "hidden";
+        } */
         DOMtimer.innerHTML = timer;
-        if (timer === 6) {
-            DOMtimer.innerHTML = "";
-        }
     }
-  //playGame(timer);
 }
 
 function displayInputAndSubmitButton() {
   // displays bots wich are selected to play against
   botSelected();
-
-  // shows input and sumbit when start is pressed
-  const submit = document.getElementById("submitGuess");
-  const guess = document.getElementById("guess");
-  submit.classList.add("show");
-  guess.classList.add("show");
 }
 
 function displayGuesses(playerGuesses) {
   //console.log(playerGuesses);
 }
 
-//get timer to restart on start click
+//listens for Enter key press.
+function enterSubmit() {
+    document.addEventListener('keypress', submit);
+    function submit(event) {
+      if(event.code === "Enter"){
+        playGame();
+        setTimeout(startTimer, 1000)
+    }
+  }
+}
 
+//buttons will be hidden on guess so no need to add repress logic
+
+function displayWin(){
+  console.log('test')
+}
+
+function displayLose(){
+    console.log('test')
+}
+
+function guessAgain(){
+
+}
