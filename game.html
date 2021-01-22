@@ -9,27 +9,30 @@
     <script defer src="./Scripts/GameLogic.js"></script>
     <script defer src="./Scripts/bots.js"></script>
   </head>
-  <body class="gamebody">
-      <div class="gameContainer flex">
-        <div id="userInput" class="userBox">
-            <h3 class="user-item" id="timer" ><!-- code injected with js --></h3>
-            <h2 class="user-item" id="presentText" >Choose a number between 1-10</h2>
-            <input class=" user-item" id="guess"></input>
-            <button class=" user-item" id="submitGuess">Go</button>
-        </div>
-      <div class="sillyBotBox">
-        <div class="hideSilly" id="sillyBot">
-          <div class="presentSilly">I'm Silly</div>
-          <img id="sillySelfie" src="./Assets/cyborg-robot-2.png" alt="picture of sillybot"> 
-          <h2 id="presentBotText">higher or lower</h2>
-          <ul id="sillyBotUl">
+  <body>
+    <header class="header">QUIZAA</header>
+    <main class = "main">
+        <div class="gameContainer flex padding">
+          <div id="userInput" class="userBox">
+              <h3 class="user-item" id="timer" ><!-- code injected with js --></h3>
+              <h2 class="user-item" id="presentText">Choose a number between 1-10</h2>
+              <input onfocus=this.value='' class=" user-item" id="guess"></input>
+              <button class="primary-button-lg user-item" id="submitGuess">Go</button>
+              <div class="start">
+                <button id="start">start</button>
+              </div>
+          </div>
+        <div class="sillyBotBox">
+          <div class="hideSilly" id="sillyBot">
+            <div class="presentSilly">I'm Silly</div>
+            <img id="sillySelfie" src="./Assets/cyborg-robot-2.png" alt="picture of sillybot"> 
+            <h2 id="presentBotText">higher or lower</h2>
+            <ul id="sillyBotUl">
             <h2>Guesses:</h2>
               </ul>
+          </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="start">
-      <button id="start">start</button>
-    </div>
+    </main>
   </body>
 </html>

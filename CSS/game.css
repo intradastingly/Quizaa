@@ -1,12 +1,27 @@
+#guess {
+    background-color: #514E7C;
+    border-radius: .5rem;
+    border: none;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #fdf9de;
+    width: 28rem;
+    height: 1rem;
+}
+
+.padding {
+    padding: 0rem 4rem 0rem 4rem;
+}
 
 body {
     height: 100%;
     width: 100%;
-    margin-top: 30%
 }
 
 .gameContainer {
-  justify-content: space-evenly;
+    display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
 }
@@ -25,27 +40,23 @@ body {
     align-self: start;
 }
 
-#submitGuess {
-    padding: 0.5rem;
-    background-color: #FD7CC5;
-    color: white;
-    font-size: 2rem;
-    font-weight: 300;
-    border-radius: 0.5rem;
-    border: none;
-}
-
 #presentText {
     font-size: 3rem;
     width: 30rem;
 }
 
 #timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     background-color: #514E7C;
     text-align: center;
+    vertical-align: center;
     font-size: 2rem;
+    visibility: hidden;
 }
 
 /* Silly bot below */
