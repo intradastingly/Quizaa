@@ -51,7 +51,7 @@ function presentSillyGuess(){
         let botAnswer = document.createTextNode(sillyBotArray[i])
         li.appendChild(botAnswer);
         // adds it to the  list
-        ul.appendChild(li);
+        document.getElementById("sillyBotUl").appendChild(li);
         sillyBotArray.pop();
     }
 
