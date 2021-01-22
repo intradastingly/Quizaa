@@ -1,12 +1,13 @@
-function registrationEventListerners() {
+window.addEventListener("load", registrationEventListeners);
+
+function registrationEventListeners() {
   const registerButton = document.getElementById("submitRegistration");
-  registerButton.addEventListener("click", () => {
+  registerButton.addEventListener("click", function () {
     submitRegistration();
   });
 }
 
 function submitRegistration() {
-  localStorage.clear();
   const userNameInput = document.getElementById("userNameReg").value;
   const emailInput = document.getElementById("emailReg").value;
   const passwordInput = document.getElementById("passwordReg").value;
@@ -22,6 +23,7 @@ function submitRegistration() {
       password: btoa(passwordInput),
     };
     saveLoginToLS(userObject);
+    location.href = "./login.html";
   }
 }
 

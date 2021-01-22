@@ -1,12 +1,8 @@
-window.addEventListener("load", start);
-
-function start() {
-  gameLogicEventListeners();
-}
+window.addEventListener("load", gameLogicEventListeners);
 
 // global variables
 let randomNumber = Math.floor(1 + Math.random(1) * 10);
-console.log(randomNumber)
+console.log(randomNumber);
 let playerGuesses = 0;
 let stopTimer = false;
 let win = false;
@@ -15,7 +11,7 @@ let win = false;
 function gameLogicEventListeners() {
   const submit = document.getElementById("submitGuess");
   submit.addEventListener("click", playGame);
-  setTimeout(submit.addEventListener('click', startTimer), 1000);
+  setTimeout(submit.addEventListener("click", startTimer), 1000);
 
   const start = document.getElementById("start");
   start.addEventListener("click", startTimer);
@@ -30,23 +26,23 @@ function takeInput() {
 
 function playGame(timer) {
   let inputNumber = Number(takeInput());
-  
+
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Lower";
     playerGuesses += 1;
     stopTimer = true;
-    if(isSillySelected){
-      sillyBotsTurn(randomNumber,inputNumber);
+    if (isSillySelected) {
+      sillyBotsTurn(randomNumber, inputNumber);
     }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
     presentText.innerHTML = "higher";
     playerGuesses += 1;
     stopTimer = true;
-    if(isSillySelected){
-      sillyBotsTurn(randomNumber,inputNumber);
+    if (isSillySelected) {
+      sillyBotsTurn(randomNumber, inputNumber);
     }
   }
   if (inputNumber === randomNumber) {
@@ -60,35 +56,35 @@ function playGame(timer) {
   displayGuesses(playerGuesses);
 }
 
-// timer countDown. 
+// timer countDown.
 function startTimer() {
-    let timer = 6;
-    let time = setInterval(countDown, 1000);
-    let DOMtimer = document.getElementById("timer");
-    function countDown() {
-        timer--;
-        if (timer <= 0) {
-            timer = 6; 
-            clearInterval(time);
-        } 
-        if (stopTimer){
-            clearInterval(time);
-            timer = 5;
-            stopTimer = false;
-        }
-        if (win) {
-            clearInterval(time);
-            timer = '';
-        }
-        if(botWin) {
-          clearInterval(time);
-          timer = '';
-        }
-        DOMtimer.innerHTML = timer;
-        if (timer === 6) {
-            DOMtimer.innerHTML = "";
-        }
+  let timer = 6;
+  let time = setInterval(countDown, 1000);
+  let DOMtimer = document.getElementById("timer");
+  function countDown() {
+    timer--;
+    if (timer <= 0) {
+      timer = 6;
+      clearInterval(time);
     }
+    if (stopTimer) {
+      clearInterval(time);
+      timer = 5;
+      stopTimer = false;
+    }
+    if (win) {
+      clearInterval(time);
+      timer = "";
+    }
+    if (botWin) {
+      clearInterval(time);
+      timer = "";
+    }
+    DOMtimer.innerHTML = timer;
+    if (timer === 6) {
+      DOMtimer.innerHTML = "";
+    }
+  }
   //playGame(timer);
 }
 
@@ -108,4 +104,3 @@ function displayGuesses(playerGuesses) {
 }
 
 //get timer to restart on start click
-
