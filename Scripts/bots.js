@@ -39,8 +39,8 @@ function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
         console.log("bot won!! Silly guessed " + randomNumber)
         ul.innerText = "";
         botWin = true;
+        displayLose()
     }
-    
 }
 //presents list item of sillybot guess
 function presentSillyGuess(){

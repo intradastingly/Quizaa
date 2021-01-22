@@ -3,6 +3,7 @@ window.addEventListener("load", start);
 function start() {
   gameLogicEventListeners();
   enterSubmit()
+  displayLose()
 }
 
 // global variables
@@ -54,6 +55,7 @@ function playGame() {
     presentText.innerHTML = "You Win";
     stopTimer = true;
     win = true;
+    displayWin()
   }
   if(inputNumber === 0){
     stopTimer = true;
@@ -74,8 +76,6 @@ function startTimer() {
         if (timer < 1) {
             timer = 10; 
             clearInterval(time);
-            countDownActive = false;
-            DOMtimer.style.visibility = "hidden";
         } 
         if (stopTimer){
             clearInterval(time);
@@ -86,9 +86,9 @@ function startTimer() {
             clearInterval(time);
             DOMtimer.style.visibility = "hidden";
         }
-        if (timer === 10){
+        /* if (timer === 10){
           DOMtimer.style.visibility = "hidden";
-        }
+        } */
         DOMtimer.innerHTML = timer;
     }
 }
@@ -96,12 +96,6 @@ function startTimer() {
 function displayInputAndSubmitButton() {
   // displays bots wich are selected to play against
   botSelected();
-
-  // shows input and sumbit when start is pressed
-  const submit = document.getElementById("submitGuess");
-  const guess = document.getElementById("guess");
-  submit.classList.add("show");
-  guess.classList.add("show");
 }
 
 function displayGuesses(playerGuesses) {
@@ -122,11 +116,11 @@ function enterSubmit() {
 //buttons will be hidden on guess so no need to add repress logic
 
 function displayWin(){
-
+  console.log('test')
 }
 
 function displayLose(){
-
+    console.log('test')
 }
 
 function guessAgain(){
