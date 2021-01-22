@@ -126,15 +126,6 @@ function startTimer() {
 function displayInputAndSubmitButton() {
   // displays bots wich are selected to play against
   botSelected();
-
-
-  // shows input and sumbit when start is pressed
-  const submit = document.getElementById("submitGuess");
-  const guess = document.getElementById("guess");
-  const userBox = document.getElementById("userInput");
-  userBox.classList.add("show");
-  submit.classList.add("show");
-  guess.classList.add("show");
 }
 
 function displayGuesses(playerGuesses) {
