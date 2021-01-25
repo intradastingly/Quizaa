@@ -104,6 +104,51 @@ body {
     padding: 1rem;
 }
 
+/* Silly bot above */
+
+/* Dumb bot below */
+
+.dumbBotBox {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.presentDumb {
+    background-color: #514E7C;
+    width: 50%;
+    padding: .5rem;
+    border-radius: 10rem;
+}
+
+.dumbBotBox h2 {
+    /* padding: 1rem; */
+    font-size: 1.2rem;
+}
+
+.dumbBotBox li{
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dumbBotBox ul{
+    margin: 0;
+    padding: 0;
+}
+
+.dumbBotBox img{
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
+}
+
+/* HardCore bot above */
+
 
 /* Reusable classes */
 .hide {
@@ -111,7 +156,7 @@ body {
 }
 
 .show {
-    display: unset;
+    display: flex;
 }
 
 .flex {
