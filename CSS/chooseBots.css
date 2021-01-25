@@ -1,0 +1,52 @@
+.chooseBotsContainer {
+  font-weight: bold;
+  color: #fdf9de;
+  font-size: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bots-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+.bot-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #514e7c;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.bot-box:hover {
+  opacity: 0.8;
+}
+
+.bot-box-selected {
+  border: 2px solid;
+  border-radius: 7px;
+  outline: none;
+  box-shadow: 0 0 10px #50fa7b;
+}
+
+.bot-img {
+  height: 10rem;
+  transform: scaleX(-1);
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
