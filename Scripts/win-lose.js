@@ -5,9 +5,11 @@ function displayWin(){
     let win= document.getElementById('you-won');
     let again = document.getElementById('againW');
     let backToMain = document.getElementById('boredW');
+    let score = document.getElementById('score');
     hideGame.style.display = "none";
     bot.style.display = "none";
     win.style.display = "flex";
+    score.innerHTML = `Guesses: ${playerGuesses}`;
     again.addEventListener('click', () => {location.reload()} );
     backToMain.addEventListener('click', () => {location.href = "./menu.html";} );
 }
