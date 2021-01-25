@@ -10,24 +10,29 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/desktop.css" />
     <link rel="stylesheet" href="./CSS/menu.css" />
+    <script src="./Scripts/main.js"></script>
     <script src="./Scripts/menu.js"></script>
   </head>
   <body>
     <header class="header">QUIZAA</header>
     <main class="menuContainer">
       <div class="menuLeft">
-        <div class="menuWelcome"><h1>Hi, "player"</h1></div>
+        <div class="menuWelcome"><h1 id="greeting"></h1></div>
         <div class="menuInfo">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <p>
+            Are you ready to start playing? Choose what you want from the menu
+            below.
+          </p>
         </div>
-        <button id="startGame">Start Quizaa</button>
-        <button>Highscore</button>
-        <button>Rules</button>
-        <div class="logOut">
-          <a href="./index.html">Or logout</a>
+        <div>
+          <button id="startGame" class="primary-button-lg">Start Quizaa</button>
+          <button class="secondary-button-lg">Highscore</button>
+          <a href="./rules.html">
+            <button class="secondary-button-lg">Rules</button>
+          </a>
         </div>
+        <a class="link-button" href="./index.html">Or logout</a>
       </div>
       <div class="menuRight">
         <div class="menuChatBubble">
