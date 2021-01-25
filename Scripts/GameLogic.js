@@ -4,7 +4,6 @@ window.addEventListener("load", start);
 function start() {
   gameLogicEventListeners();
   enterSubmit()
-  displayLose()
 }
 
 // global variables
@@ -119,14 +118,6 @@ function enterSubmit() {
 }
 
 //buttons will be hidden on guess so no need to add repress logic
-
-function displayWin(){
-  console.log('test')
-}
-
-function displayLose(){
-    console.log('test')
-}
 
 function guessAgain(){
 
