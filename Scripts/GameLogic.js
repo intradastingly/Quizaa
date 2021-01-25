@@ -41,16 +41,26 @@ function playGame() {
     presentText.innerHTML = "Lower";
     playerGuesses += 1;
     stopTimer = true;
+    // if sillybot is selected present sillys guess
     if (isSillySelected) {
       sillyBotsTurn(randomNumber, inputNumber);
+    }
+    // if hardcorebot is selected present hardcores guess
+    if (isHardCoreSelected) {
+      hardCoreBotsTurn(randomNumber, inputNumber)
     }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
     presentText.innerHTML = "higher";
     playerGuesses += 1;
     stopTimer = true;
+    // if sillybot is selected present sillys guess
     if (isSillySelected) {
       sillyBotsTurn(randomNumber, inputNumber);
+    } 
+    // if hardcorebot is selected present hardcores guess
+    if (isHardCoreSelected) {
+      hardCoreBotsTurn(randomNumber, inputNumber)
     }
   }
   if (inputNumber === randomNumber) {

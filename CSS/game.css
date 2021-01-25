@@ -100,6 +100,51 @@ body {
     padding: 1rem;
 }
 
+/* Silly bot above */
+
+/* HardCore bot below */
+
+.hardCoreBotBox {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.presentHardCore {
+    background-color: #514E7C;
+    width: 50%;
+    padding: .5rem;
+    border-radius: 10rem;
+}
+
+.hardCoreBotBox h2 {
+    /* padding: 1rem; */
+    font-size: 1.2rem;
+}
+
+.hardCoreBotBox li{
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hardCoreBotBox ul{
+    margin: 0;
+    padding: 0;
+}
+
+.hardCoreBotBox img{
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
+}
+
+/* HardCore bot above */
+
 
 /* Reusable classes */
 .hide {
@@ -107,7 +152,7 @@ body {
 }
 
 .show {
-    display: unset;
+    display: flex;
 }
 
 .flex {
