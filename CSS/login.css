@@ -1,31 +1,54 @@
 .login-container {
-    font-weight: bold;
-    color: #fdf9de;
-    font-size: 2.5rem;
-
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .login-container .link-button {
-      padding-top: 1.2rem;
-  }
+  font-weight: bold;
+  font-size: 2.5rem;
+  width: 50%;
+  margin: auto;
   
-  .login-label {
-    font-size: 1.5rem;
-    padding: 2.5rem 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.username-input,
+.password-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.login-label {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.login-input {
+  background-color: #514E7C;
+  border-radius: .5rem;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: #fdf9de;
+  height: 3rem;
+}
+
+/*--------- TABLET LARGE ---------*/
+@media (max-width: 1024px) {
+
+  .login-container {
+    width: 100%;
   }
-  
-  .login-input {
-    background-color: #514E7C;
-    border-radius: .5rem;
-    border: none;
+
+  .username-input,
+  .password-input {
     margin-bottom: 1rem;
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: #fdf9de;
-    width: 28rem;
-    height: 1rem;
   }
+}
+  

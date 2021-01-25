@@ -2,13 +2,17 @@ body {
   font-family: "Poppins", sans-serif;
 
   margin: 0;
-  box-sizing: border-box;
   background-color: #242254;
   color: #fdf9de;
   height: 100vh;
 }
 
+body * {
+  box-sizing: border-box;
+}
+
 a {
+  width: 100%;
   color: inherit;
 }
 
@@ -41,59 +45,64 @@ a {
 
 .primary-button-lg {
   padding: 0.8rem 0;
-  width: 50%;
+  width: 100%;
   background-color: #fd7cc5;
   color: inherit;
   border: none;
   border-radius: 0.5rem;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
-.primary-button-sm {
-  padding: 0.8rem 0;
-  width: 35%;
-  background-color: #fd7cc5;
-  color: inherit;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1.4rem;
-}
-
-.primary-button-lg:hover,
-.primary-button-sm:hover {
+.primary-button-lg:hover {
   background-color: #fc42ab;
   cursor: pointer;
 }
 
 .secondary-button-lg {
   padding: 0.8rem 0;
-  width: 50%;
+  width: 100%;
   background-color: transparent;
   color: #fd7cc5;
   border: 0.2rem #fd7cc5 solid;
   border-radius: 0.5rem;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .secondary-button-lg:hover {
   background-color: #fd7cc5;
   color: #fdf9de;
-  border: none;
   cursor: pointer;
 }
 
 .link-button {
-  color: #fdf9de;
+  display: inline-block;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5rem;
+  margin-top: 1.2rem;
 }
 
 .link-button:hover {
   color: #fc42ab;
+}
+
+.primary-button-lg:first-of-type,
+.secondary-button-lg:first-of-type {
+  margin-bottom: 1rem;
+}
+
+.primary-button-lg:last-of-type,
+.secondary-button-lg:last-of-type {
+  margin-bottom: 0;
+}
+
+.primary-button-lg+.primary-button-lg,
+.primary-button-lg+.secondary-button-lg,
+.secondary-button-lg+.primary-button-lg,
+.secondary-button-lg+.secondary-button-lg {
+  margin-bottom: 1rem;
 }
 
 /* END BUTTONS */
@@ -106,7 +115,7 @@ a {
 
   display: flex;
   align-items: center;
-  padding: 0rem 5rem;
+  padding: 0 5rem;
 }
 
 /* END HEADER */
@@ -114,14 +123,18 @@ a {
 /* MAIN */
 
 .title {
-  font-size: 2.5rem;
-  margin: 0 0 2rem 0;
+  font-size: 2.8rem;
+  margin: 0 0 3rem 0;
   line-height: 1.5rem;
+  align-self: flex-start;
 }
 
 .main {
-  padding: 3rem 8rem;
   display: flex;
+  width: 100%;
+  max-width: 120rem;
+  margin: auto;
+  padding: 3rem 8rem;
   flex-direction: column;
 }
 
@@ -129,14 +142,37 @@ a {
 
 /* MEDIA QUERIES */
 
-/*--------- TABLET SMALL ---------*/
+/*--------- TABLET LARGE ---------*/
 @media (max-width: 768px) {
   .main {
     padding: 3rem 5rem;
   }
 
+  .primary-button-lg,
+  .secondary-button-lg,
   .primary-button-sm {
-    width: 50%;
+    width: 100%;
+  }
+}
+
+/*--------- TABLET SMALL ---------*/
+@media (max-width: 768px) {
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .primary-button-lg,
+  .secondary-button-lg {
+    font-size: 1.4rem;
+  }
+
+  .header {
+    padding: 0 3rem;
+  }
+
+  .main {
+    padding: 3rem 3rem;
   }
 }
 
@@ -147,12 +183,6 @@ a {
   }
 
   .main {
-    padding: 3rem 1.5rem;
-  }
-
-  .primary-button-lg,
-  .secondary-button-lg,
-  .primary-button-sm {
-    width: 100%;
+    padding: 1.5rem 1.5rem;
   }
 }

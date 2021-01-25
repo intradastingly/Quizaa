@@ -15,50 +15,75 @@
   </head>
   <body>
     <header class="header">QUIZAA</header>
-    <main class="main flex vertical">
-      <h2 class="title">Register</h2>
-      <div class="flex register-form">
-        <div class="flex vertical">
-          <label class="register-label" for="userName">User name</label>
-          <input
-            class="register-input"
-            name="loginDetails"
-            type="text"
-            id="userNameReg"
-          />
-          <label class="register-label" for="password">Password</label>
-          <input
-            class="register-input"
-            type="password"
-            name="loginDetails"
-            id="passwordReg"
-          />
-        </div>
-        <div class="flex vertical">
-          <label class="register-label" for="email">Email</label>
-          <input
-            class="register-input"
-            id="emailReg"
-            name="loginDetails"
-            type="text"
-          />
-          <label class="register-label" for="confirmPassword"
-            >Confirm password</label
-          >
-          <input
-            class="register-input"
-            type="password"
-            name="loginDetails"
-            id="confirmPasswordReg"
-          />
-        </div>
+    <main class="main">
+      <div class="registration-container">
+
+        <h1 class="title">Register</h1>
+
+        <form class="register-form" action="/" method="GET">
+          <div class="top-row">
+    
+            <div class="username-input">
+              <label class="register-label" for="userName">Username</label>
+              <input
+                class="register-input"
+                name="loginDetails"
+                type="text"
+                id="userNameReg"
+              />
+            </div>
+    
+            <div class="password-input">
+              <label class="register-label" for="password">Password</label>
+              <input
+                class="register-input"
+                type="password"
+                name="loginDetails"
+                id="passwordReg"
+              />
+            </div>
+    
+          </div>
+    
+          <div class="bottom-row">
+    
+            <div class="email-input">
+              <label class="register-label" for="email">Email</label>
+              <input
+                class="register-input"
+                id="emailReg"
+                name="loginDetails"
+                type="text"
+              />
+            </div>
+            
+            <div class="second-password-input">
+              <label class="register-label" for="confirmPassword"
+                >Confirm password</label
+              >
+              <input
+                class="register-input"
+                type="password"
+                name="loginDetails"
+                id="confirmPasswordReg"
+              />
+            </div>
+    
+          </div>
+          
+          <div class="button-container">
+            <button class="primary-button-lg" id="submitRegistration" type="submit">
+              Register
+            </button>
+      
+            <a class="link-button" href="./login.html">
+              Or log in here!
+            </a>
+          </div>
+    
+        </form>
       </div>
-      <button class="register-button primary-button-sm" id="submitRegistration">
-        Register
-      </button>
-      <a class="link-button register-link" href="./login.html">
-        Or log in here!
-      </a>
+        
     </main>
   </body>
 </html>
