@@ -102,9 +102,9 @@ body {
 
 /* Silly bot above */
 
-/* HardCore bot below */
+/* Dumb bot below */
 
-.hardCoreBotBox {
+.dumbBotBox {
     display: none;
     display: flex;
     flex-direction: column;
@@ -113,31 +113,31 @@ body {
     text-align: center;
 }
 
-.presentHardCore {
+.presentDumb {
     background-color: #514E7C;
     width: 50%;
     padding: .5rem;
     border-radius: 10rem;
 }
 
-.hardCoreBotBox h2 {
+.dumbBotBox h2 {
     /* padding: 1rem; */
     font-size: 1.2rem;
 }
 
-.hardCoreBotBox li{
+.dumbBotBox li{
     text-align: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.hardCoreBotBox ul{
+.dumbBotBox ul{
     margin: 0;
     padding: 0;
 }
 
-.hardCoreBotBox img{
+.dumbBotBox img{
     width: 10rem;
     height: 10rem;
     padding: 1rem;

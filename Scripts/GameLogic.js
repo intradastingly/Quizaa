@@ -46,8 +46,8 @@ function playGame() {
       sillyBotsTurn(randomNumber, inputNumber);
     }
     // if hardcorebot is selected present hardcores guess
-    if (isHardCoreSelected) {
-      hardCoreBotsTurn(randomNumber, inputNumber)
+    if (isDumbSelected) {
+      dumbBotsTurn(randomNumber, inputNumber)
     }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
@@ -59,8 +59,8 @@ function playGame() {
       sillyBotsTurn(randomNumber, inputNumber);
     } 
     // if hardcorebot is selected present hardcores guess
-    if (isHardCoreSelected) {
-      hardCoreBotsTurn(randomNumber, inputNumber)
+    if (isDumbSelected) {
+      dumbBotsTurn(randomNumber, inputNumber)
     }
   }
   if (inputNumber === randomNumber) {
