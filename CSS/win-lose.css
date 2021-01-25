@@ -1,0 +1,37 @@
+
+#you-won {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#you-lose {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#score {
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+#boredL, #boredW {
+    background: none;
+    border: solid 0.1rem;
+    color: #FD7CC5;
+}
+
+#win {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#lose {
+    width: 30rem;
+    font-size: 3rem;
+    text-align: center;
+    padding: 4rem;
+}

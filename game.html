@@ -6,24 +6,37 @@
     <title>Game</title>
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="stylesheet" href="./css/game.css">
+    <link rel="stylesheet" href="./css/win-lose.css">
     <script src="./Scripts/main.js"></script>
-    <script src="./Scripts/GameLogic.js"></script>
-    <script src="./Scripts/bots.js"></script>
+    <script defer src="./Scripts/win-lose.js"></script>
+    <script defer src="./Scripts/GameLogic.js"></script>
+    <script defer src="./Scripts/bots.js"></script>
   </head>
   <body class="gamebody">
     <header class="header">QUIZAA</header>
     <main class = "main">
         <div class="gameContainer flex padding">
-          <div class="userBox">
+          <div class="userBox" id="userBox">
               <h3 class="user-item" id="timer" ><!-- code injected with js --></h3>
-              <h2 class="user-item" id="presentText">Choose a number between 1-10</h2>
-              <input onfocus=this.value='' class=" user-item" id="guess"></input>
+              <h2 class="user-item" id="presentText">Choose a number between 1-10</h2>         
+              <!-- input validation -->
+              <input onfocus=this.value='' class=" user-item" id="guess" autofocus></input>
               <button class="primary-button-lg user-item" id="submitGuess">Go</button>
               <div class="start">
                 <button id="start">start</button>
               </div>
           </div>
-          
+          <div id = "you-won">
+            <h2 class="user-item" id="win">You guessed correctly, congratulations!</h2>
+            <h2 class="user-item" id="score">Score: </h2>
+            <button class="primary-button-lg user-item" id="againW">One more time!</button>
+            <button class="primary-button-lg user-item" id="boredW">I'm bored</button>
+          </div>
+          <div id = "you-lose">
+            <h2 class="user-item" id="lose">the bot ate you alive, Game over!</h2>
+            <button class="primary-button-lg user-item" id="againL">Play again</button>
+            <button class="primary-button-lg user-item" id="boredL">I'm bored</button>
+          </div>
         <div id="sillyBot" class="sillyBotBox padding">
           <div class="presentSilly">I'm Silly</div>
           <img id="sillySelfie" src="./Assets/cyborg-robot-2.png" alt="picture of sillybot"> 

@@ -6,10 +6,13 @@
     padding: 1rem;
     font-size: 1.5rem;
     color: #fdf9de;
-    width: 28rem;
+    width: 23rem;
     height: 1rem;
 }
 
+#submitGuess {
+    width: 25rem;
+}
 .padding {
     padding: 0rem 4rem 0rem 4rem;
 }
@@ -20,7 +23,7 @@ body {
 }
 
 .gameContainer {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -59,6 +62,7 @@ body {
     font-size: 2rem;
     visibility: hidden;
 }
+
 
 /* Silly bot below */
 .sillyBotBox {
