@@ -13,7 +13,7 @@ function loginForm() {
   const registeredUser = JSON.parse(localStorage.getItem("user"));
 
   if (
-    userNameInput === atob(registeredUser.username) &&
+    userNameInput === registeredUser.username &&
     passwordInput === atob(registeredUser.password)
   ) {
     location.href = "./menu.html";

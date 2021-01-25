@@ -18,8 +18,8 @@ function submitRegistration() {
     console.log("your passwords isn't matching");
   } else {
     const userObject = {
-      username: btoa(userNameInput),
-      email: btoa(emailInput),
+      username: userNameInput,
+      email: emailInput,
       password: btoa(passwordInput),
     };
     saveLoginToLS(userObject);
