@@ -17,27 +17,32 @@
     <header class="header">QUIZAA</header>
     <main class="main">
       <div class="login-container">
-        <form class="flex vertical" action="/" method="GET">
-          <h2 class="title">Log in</h2>
+        <h1 class="title">Log in</h1>
+        <form class="login-form" action="/" method="GET">
+          
+          <div class="username-input">
+            <label class="login-label" for="userName">Username</label>
+            <input
+              class="login-input"
+              type="text"
+              name=" loginDetails"
+              id="userNameLogin"
+            />
+          </div>
 
-          <label class="login-label" for="userName">User name</label>
-          <input
-            class="login-input"
-            type="text"
-            name=" loginDetails"
-            id="userNameLogin"
-          />
+          <div class="password-input">
+            <label class="login-label" for="password">Password</label>
+            <input
+              class="login-input"
+              type="password"
+              name="loginDetails"
+              id="passwordLogin"
+            />
+          </div>
 
-          <label class="login-label" for="password">Password</label>
-          <input
-            class="login-input"
-            type="password"
-            name="loginDetails"
-            id="passwordLogin"
-          />
           <button
             class="primary-button-lg"
-            type="button"
+            type="submit"
             id="submitLogin"
             value="Login"
           >
@@ -46,7 +51,9 @@
           <a class="link-button" href="./registration.html">
             Or register here!
           </a>
+
         </form>
+
       </div>
     </main>
   </body>
