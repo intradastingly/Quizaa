@@ -1,9 +1,12 @@
-
 window.addEventListener("load", start);
 
 function start() {
-  gameLogicEventListeners();
-  enterSubmit()
+  if (localStorage.getItem("loggedIn") !== "yes") {
+    location.href = "./login.html";
+  } else {
+    gameLogicEventListeners();
+    enterSubmit();
+  }
 }
 
 // global variables
@@ -33,7 +36,7 @@ function takeInput() {
 function playGame() {
   let inputNumber = Number(takeInput());
 
-  console.log(inputNumber)
+  console.log(inputNumber);
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
@@ -66,43 +69,43 @@ function playGame() {
     presentText.innerHTML = "You Win";
     stopTimer = true;
     win = true;
-    displayWin()
+    displayWin();
   }
-  if(inputNumber === 0){
+  if (inputNumber === 0) {
     stopTimer = true;
     presentText.innerHTML = "please input a number";
   }
- 
+
   displayGuesses(playerGuesses);
 }
 
 // timer countDown.
 function startTimer() {
   //playGame(timer);
-    let timer = 10;
-    let time = setInterval(countDown, 1000);
-    let DOMtimer = document.getElementById("timer");
-    DOMtimer.style.visibility = "visible";
-    function countDown() {
-        timer--;
-        if (timer < 1) {
-            timer = 10; 
-            clearInterval(time);
-        } 
-        if (stopTimer){
-            clearInterval(time);
-            timer = 10;
-            stopTimer = false;
-        }
-        if (win || botWin) {
-            clearInterval(time);
-            DOMtimer.style.visibility = "hidden";
-        }
-        /* if (timer === 10){
+  let timer = 10;
+  let time = setInterval(countDown, 1000);
+  let DOMtimer = document.getElementById("timer");
+  DOMtimer.style.visibility = "visible";
+  function countDown() {
+    timer--;
+    if (timer < 1) {
+      timer = 10;
+      clearInterval(time);
+    }
+    if (stopTimer) {
+      clearInterval(time);
+      timer = 10;
+      stopTimer = false;
+    }
+    if (win || botWin) {
+      clearInterval(time);
+      DOMtimer.style.visibility = "hidden";
+    }
+    /* if (timer === 10){
           DOMtimer.style.visibility = "hidden";
         } */
-        DOMtimer.innerHTML = timer;
-    }
+    DOMtimer.innerHTML = timer;
+  }
 }
 
 function displayInputAndSubmitButton() {
@@ -118,17 +121,15 @@ function displayGuesses(playerGuesses) {
 
 //listens for Enter key press.
 function enterSubmit() {
-    document.addEventListener('keypress', submit);
-    function submit(event) {
-      if(event.code === "Enter"){
-        playGame();
-        setTimeout(startTimer, 1000)
+  document.addEventListener("keypress", submit);
+  function submit(event) {
+    if (event.code === "Enter") {
+      playGame();
+      setTimeout(startTimer, 1000);
     }
   }
 }
 
 //buttons will be hidden on guess so no need to add repress logic
 
-function guessAgain(){
-
-}
+function guessAgain() {}
