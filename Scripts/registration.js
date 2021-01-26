@@ -8,18 +8,26 @@ function registrationEventListeners() {
 }
 
 function submitRegistration() {
-  const userNameInput = document.getElementById("userNameReg").value;
-  const emailInput = document.getElementById("emailReg").value;
-  const passwordInput = document.getElementById("passwordReg").value;
-  const confirmPasswordInput = document.getElementById("confirmPasswordReg")
-    .value;
+  let userNameInput = document.getElementById("userNameReg");
+  let emailInput = document.getElementById("emailReg");
+  let passwordInput = document.getElementById("passwordReg");
+  let confirmPasswordInput = document.getElementById("confirmPasswordReg");
+  if (passwordInput.value !== confirmPasswordInput.value) {
+    userNameInput.value = "";
+    emailInput.value = "";
+    passwordInput.value = "";
+    confirmPasswordInput.value = "";
+    userNameInput.style.color = "red";
+    userNameInput.value = "Passwords doesn't match";
 
-  if (passwordInput !== confirmPasswordInput) {
-    console.log("your passwords isn't matching");
+    userNameInput.addEventListener("focus", function () {
+      userNameInput.style.color = "#fdf9de";
+      userNameInput.value = "";
+    });
   } else {
     const userObject = {
-      username: userNameInput,
-      email: emailInput,
+      username: userNameInput.value,
+      email: emailInput.value,
       password: btoa(passwordInput),
     };
     saveLoginToLS(userObject);
