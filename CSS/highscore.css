@@ -1,4 +1,5 @@
 .highscore-container {
+    flex-grow: 1;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -23,7 +24,7 @@
 .highscore-list {
     list-style: none;
     padding: 0;
-    margin: 2rem 0 0 0;
+    margin: 0;
     font-size: 1.8rem;
     color: #FD7CC5;
 }
@@ -89,5 +90,6 @@
 
     .containerLeft {
         width: 100%;
+       flex-grow: 1;
     }
   }
