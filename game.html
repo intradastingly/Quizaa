@@ -44,7 +44,7 @@
             <div id="go-lower" class="go-lower">
               <div class="game-leader">
                 <div class="game-leader-text">
-                  Close but no cigar, you needs to get lower!
+                  Close but no cigar, you need to get lower!
                 </div>
                 <div>
                   <h2>Try Again</h2>
@@ -52,9 +52,6 @@
                 </div>
               </div>
             </div>
-            <!-- continue button when bots guesses are presented -->
-            <!-- not sure where to link it to keep player guesses and so on -->
-              <button id="continue-game-btn" class="continue-game">Continue</button>
             <!-- you win screen -->
           <div id = "you-won">
             <h2 class="user-item" id="win">You guessed correctly, congratulations!</h2>
@@ -67,24 +64,28 @@
             <button class="primary-button-lg user-item" id="againL">Play again</button>
             <button class="primary-button-lg user-item" id="boredL">I'm bored</button>
           </div>
+
         <div id="sillyBot" class="sillyBotBox padding">
-          <div class="presentSilly">I'm Silly</div>
-          <img id="sillySelfie" src="./Assets/cyborg-robot-2.png" alt="picture of sillybot"> 
-          <h2 id="presentBotText">higher or lower</h2>
+          <h2 id="presentBotText">Guess</h2>
+          <img id="sillySelfie" src="./Assets/dumb.png" alt="picture of sillybot"> 
           <ul id="sillyBotUl">
-            <h2>Bot guess:</h2>
               </ul>
         </div>
 
         <div id="dumbBot" class="dumbBotBox padding">
-          <div class="presentDumb">I'm Dumb</div>
-          <img src="./Assets/cyborg-robot-2.png" alt="picture of sillybot"> 
-          <h2 id="presentDumbText">higher or lower</h2>
+          <h2 id="presentDumbText">Guess</h2>
+          <img src="./Assets/silly.png" alt="picture of sillybot"> 
           <ul id="dumbUl">
-            <h2>Bot guess:</h2>
           </ul>
         </div>
+
+        
       </div>
+      <!-- continue button when bots guesses are presented -->
+      <div class="btn-container-gameplay">
+        <button id="continue-game-btn" class="continue-game primary-button-lg"><span>Continue</span></button>
+      </div>
+
     </main>
   </body>
 </html>
