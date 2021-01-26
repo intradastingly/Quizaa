@@ -12,7 +12,23 @@ function displayWin(){
     score.innerHTML = `Guesses: ${playerGuesses}`;
     again.addEventListener('click', () => {location.reload()} );
     backToMain.addEventListener('click', () => {location.href = "./menu.html";} );
+
+    //hides continue btn
+    let continueBtn = document.getElementById("continue-game-btn");
+    continueBtn.classList.remove("show");
+    continueBtn.classList.add("hide");
+
+    //hides sillybot
+    let sillyBot = document.getElementById("sillyBot");
+    sillyBot.classList.remove("show")
+    sillyBot.classList.add("hide")
+
+    //hides dumbbot
+    let dumbBot = document.getElementById("dumbBot");
+    dumbBot.classList.remove("show");
+    dumbBot.classList.add("hide");
 }
+
 
 function displayLose(){
     let hideGame = document.getElementById('userBox')
@@ -25,4 +41,20 @@ function displayLose(){
     lose.style.display = "flex";
     again.addEventListener('click', () => {location.reload()} );
     backToMain.addEventListener('click', () => {location.href = "./menu.html";} );
+
+
+    //hides continue btn
+    let continueBtn = document.getElementById("continue-game-btn");
+    continueBtn.classList.remove("show");
+    continueBtn.classList.add("hide");
+
+    //hides sillybot
+    let sillyBot = document.getElementById("sillyBot");
+    sillyBot.classList.remove("show")
+    sillyBot.classList.add("hide")
+
+    //hides dumbbot
+    let dumbBot = document.getElementById("dumbBot");
+    dumbBot.classList.remove("show");
+    dumbBot.classList.add("hide");
 }

@@ -4,6 +4,8 @@ window.addEventListener("load", start);
 function start() {
   gameLogicEventListeners();
   enterSubmit()
+  startTimer()
+  displayInputAndSubmitButton()
 }
 
 // global variables
@@ -17,11 +19,12 @@ let win = false;
 function gameLogicEventListeners() {
   const submit = document.getElementById("submitGuess");
   submit.addEventListener("click", playGame);
+  submit.addEventListener("click", hideGame);
   setTimeout(submit.addEventListener("click", startTimer), 1000);
 
-  const start = document.getElementById("start");
-  start.addEventListener("click", startTimer);
-  start.addEventListener("click", displayInputAndSubmitButton);
+  //const start = document.getElementById("start");
+  //start.addEventListener("click", startTimer);
+ // start.addEventListener("click", displayInputAndSubmitButton);
 }
 
 //returns input from user.
@@ -40,6 +43,7 @@ function playGame() {
     presentText.innerHTML = "Lower";
     playerGuesses += 1;
     stopTimer = true;
+    displayLowerScreen();
     // if sillybot is selected present sillys guess
     if (isSillySelected) {
       sillyBotsTurn(randomNumber, inputNumber);
@@ -53,6 +57,7 @@ function playGame() {
     presentText.innerHTML = "higher";
     playerGuesses += 1;
     stopTimer = true;
+    displayHigherScreen();
     // if sillybot is selected present sillys guess
     if (isSillySelected) {
       sillyBotsTurn(randomNumber, inputNumber);
@@ -107,7 +112,7 @@ function startTimer() {
 
 function displayInputAndSubmitButton() {
   // displays bots wich are selected to play against
-  botSelected();
+  //botSelected();
 }
 
 function displayGuesses(playerGuesses) {
@@ -131,4 +136,49 @@ function enterSubmit() {
 
 function guessAgain(){
 
+}
+
+// hides input field when go button is pressed and new screen presents.
+function hideGame() {
+  let userPlayField = document.getElementById("userBox");
+  userPlayField.classList.add("hide");
+}
+
+// displays bot to say you should go higher
+function displayHigherScreen(){
+  let higherScreen = document.getElementById("go-higher");
+  higherScreen.classList.add("show");
+
+  setTimeout(() => {
+    botSelected();
+    nextRound();
+    higherScreen.classList.remove("show")
+    higherScreen.classList.add("hide");
+  }, 2000);
+}
+
+// displays bot to say you should go lower
+function displayLowerScreen() {
+  let lowerScreen = document.getElementById("go-lower");
+  lowerScreen.classList.add("show");
+
+  setTimeout(() => {
+    botSelected();
+    nextRound();
+    lowerScreen.classList.remove("show");
+    lowerScreen.classList.add("hide");
+
+  }, 2000);
+}
+
+// shows button to take you to next round
+function nextRound() {
+  let continueBtn = document.getElementById("continue-game-btn");
+  continueBtn.classList.add("show");
+  continueBtn.addEventListener("click", hideBtn);
+
+  function hideBtn(){
+    continueBtn.classList.remove("show");
+    continueBtn.classList.add("hide");
+  }
 }
