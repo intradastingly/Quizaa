@@ -18,15 +18,7 @@ function displayWin(){
     continueBtn.classList.remove("show");
     continueBtn.classList.add("hide");
 
-    //hides sillybot
-    let sillyBot = document.getElementById("sillyBot");
-    sillyBot.classList.remove("show")
-    sillyBot.classList.add("hide")
-
-    //hides dumbbot
-    let dumbBot = document.getElementById("dumbBot");
-    dumbBot.classList.remove("show");
-    dumbBot.classList.add("hide");
+    hideBots()
 }
 
 
@@ -48,13 +40,5 @@ function displayLose(){
     continueBtn.classList.remove("show");
     continueBtn.classList.add("hide");
 
-    //hides sillybot
-    let sillyBot = document.getElementById("sillyBot");
-    sillyBot.classList.remove("show")
-    sillyBot.classList.add("hide")
-
-    //hides dumbbot
-    let dumbBot = document.getElementById("dumbBot");
-    dumbBot.classList.remove("show");
-    dumbBot.classList.add("hide");
+    hideBots()
 }

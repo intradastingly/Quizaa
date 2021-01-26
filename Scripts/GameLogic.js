@@ -181,12 +181,30 @@ function displayLowerScreen() {
 function nextRound() {
   let continueBtn = document.getElementById("continue-game-btn");
   continueBtn.classList.add("show");
-  continueBtn.addEventListener("click", hideBtn);
+  continueBtn.addEventListener("click", resumeGame);
 
-  function hideBtn(){
+  function resumeGame(){
     continueBtn.classList.remove("show");
     continueBtn.classList.add("hide");
+
+    let userPlayField = document.getElementById("userBox");
+    userPlayField.classList.remove("hide");
+    userPlayField.classList.remove("show");
+
+    hideBots()
   }
 }
 
 function guessAgain() {}
+
+function hideBots(){
+  //hides sillybot
+  let sillyBot = document.getElementById("sillyBot");
+  sillyBot.classList.remove("show")
+  sillyBot.classList.add("hide")
+
+  //hides dumbbot
+  let dumbBot = document.getElementById("dumbBot");
+  dumbBot.classList.remove("show");
+  dumbBot.classList.add("hide");
+}
