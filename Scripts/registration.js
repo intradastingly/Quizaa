@@ -28,7 +28,7 @@ function submitRegistration() {
     const userObject = {
       username: userNameInput.value,
       email: emailInput.value,
-      password: btoa(passwordInput),
+      password: btoa(passwordInput.value),
     };
     saveLoginToLS(userObject);
     location.href = "./login.html";
@@ -36,5 +36,10 @@ function submitRegistration() {
 }
 
 function saveLoginToLS(userObject) {
+  const highScoreObject = {
+    guesses: [],
+  };
+  localStorage.setItem("highscore", JSON.stringify(highScoreObject));
+
   localStorage.setItem("user", JSON.stringify(userObject));
 }
