@@ -1,12 +1,4 @@
-// global variables
-let sillyBotArray = [];
-let dumbBotArray = [];
-let botWin = false;
 
-// boolean to change in menu when how many bots u want to
-// turn to true on wich bot u want to play against
-let isSillySelected = true;
-let isDumbSelected = true;
 
 // SILLY BOT CODE BELOW /  / / / / / / / / /
 
@@ -14,10 +6,11 @@ let isDumbSelected = true;
 function sillyBotsTurn(randomNumber, inputNumber){
     
     let sillyBotAnswer = Math.floor(1 + Math.random() * 10);
+    //  let sillyBotAnswer = randomNumber;
     sillyBotArray.push(sillyBotAnswer);
     
-    setTimeout(presentSillyGuess, 1000);
-    setTimeout(checkIfSillyWinOrLoose,1000 , sillyBotAnswer, randomNumber, inputNumber);
+    setTimeout(presentSillyGuess, 3000);
+    setTimeout(checkIfSillyWinOrLoose,3000 , sillyBotAnswer, randomNumber, inputNumber);
 }
 
 // function that checks bots answer and clears the list if bot win
@@ -71,8 +64,8 @@ function dumbBotsTurn(randomNumber, inputNumber){
 
     dumbBotArray.push(dumbBotAnswer);
     
-    setTimeout(presentDumbGuess, 2000);
-    setTimeout(checkIfDumbWinOrLoose, 2000, dumbBotAnswer, randomNumber);
+    setTimeout(presentDumbGuess, 4000);
+    setTimeout(checkIfDumbWinOrLoose, 4000, dumbBotAnswer, randomNumber);
 }
 // function that checks bots answer and clears the list if bot win
 function checkIfDumbWinOrLoose(dumbBotAnswer, randomNumber){
@@ -88,7 +81,10 @@ function checkIfDumbWinOrLoose(dumbBotAnswer, randomNumber){
         presentDumbText.innerHTML = "Dumb Bot Wins"
         document.getElementById("dumbUl").innerText = "Dumb guessed " + randomNumber;
         botWin = true;
-        displayLose()
+        setTimeout(() => {
+            displayLose()
+        }, 2000);
+        
     }
 }
 

@@ -12,7 +12,15 @@ function displayWin(){
     score.innerHTML = `Guesses: ${playerGuesses}`;
     again.addEventListener('click', () => {location.reload()} );
     backToMain.addEventListener('click', () => {location.href = "./menu.html";} );
+
+    //hides continue btn
+    let continueBtn = document.getElementById("continue-game-btn");
+    continueBtn.classList.remove("show");
+    continueBtn.classList.add("hide");
+
+    hideBots()
 }
+
 
 function displayLose(){
     let hideGame = document.getElementById('userBox')
@@ -25,4 +33,12 @@ function displayLose(){
     lose.style.display = "flex";
     again.addEventListener('click', () => {location.reload()} );
     backToMain.addEventListener('click', () => {location.href = "./menu.html";} );
+
+
+    //hides continue btn
+    let continueBtn = document.getElementById("continue-game-btn");
+    continueBtn.classList.remove("show");
+    continueBtn.classList.add("hide");
+
+    hideBots()
 }

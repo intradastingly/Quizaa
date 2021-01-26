@@ -22,10 +22,34 @@
               <!-- input validation -->
               <input onfocus=this.value='' class=" user-item" id="guess" autofocus></input>
               <button class="primary-button-lg user-item" id="submitGuess">Go</button>
-              <div class="start">
+              <!-- <div class="start">
                 <button id="start">start</button>
-              </div>
+              </div> -->
           </div>
+          <!-- Go higher screen -->
+          <div id="go-higher"  class="go-higher">
+            <div class="higher-text">
+              Close but no cigar, you needs to get higher!
+            </div>
+            <div>
+              <h2>Try Again</h2>
+              <img src="" alt="">
+            </div>
+          </div>
+          <!-- go lower screen -->
+            <div id="go-lower" class="go-lower">
+              <div class="lower-text">
+                Close but no cigar, you needs to get lower!
+              </div>
+              <div>
+                <h2>Try Again</h2>
+                <img src="" alt="">
+              </div>
+            </div>
+            <!-- continue button when bots guesses are presented -->
+            <!-- not sure where to link it to keep player guesses and so on -->
+              <button id="continue-game-btn" class="continue-game">Continue</button>
+            <!-- you win screen -->
           <div id = "you-won">
             <h2 class="user-item" id="win">You guessed correctly, congratulations!</h2>
             <h2 class="user-item" id="score"><!-- code injected with js --></h2>
