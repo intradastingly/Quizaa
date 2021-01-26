@@ -15,7 +15,7 @@ function hideGame() {
       nextRound();
       higherScreen.classList.remove("show")
       higherScreen.classList.add("hide");
-    }, 2000);
+    }, 4000);
   }
   
   // displays bot to say you should go lower
@@ -29,7 +29,7 @@ function hideGame() {
       lowerScreen.classList.remove("show");
       lowerScreen.classList.add("hide");
   
-    }, 2000);
+    }, 4000);
   }
   
   // shows button to take you to next round
