@@ -67,7 +67,6 @@ body {
 /* Silly bot below */
 .sillyBotBox {
     display: none;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -110,7 +109,6 @@ body {
 
 .dumbBotBox {
     display: none;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -149,6 +147,21 @@ body {
 
 /* HardCore bot above */
 
+/* gameplay below */
+
+.go-higher {
+    display: none;
+}
+
+.go-lower {
+    display: none;
+}
+.continue-game {
+    display: none;
+}
+
+
+/* gameplay above */
 
 /* Reusable classes */
 .hide {
