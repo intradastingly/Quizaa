@@ -169,5 +169,14 @@ body {
 }
 
 @media (max-width: 480px) {
-
+    #presentText {
+        font-size: 1.5rem;
+        width: 15rem;
+    }
+    #submitGuess {
+        width: 15rem;
+    }
+    #guess {
+        width: 15rem;
+    }
 }
