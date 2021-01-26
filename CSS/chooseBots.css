@@ -12,6 +12,7 @@
 .bots-container {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   margin-top: 5rem;
   width: 100%;
 }
@@ -25,6 +26,7 @@
   width: 20rem;
   height: 20rem;
   border-radius: 25px;
+  margin: .7rem;
   cursor: pointer;
 }
 
@@ -34,7 +36,7 @@
 
 .bot-box-selected {
   border: 2px solid;
-  border-radius: 7px;
+  border-radius: 25px;
   outline: none;
   box-shadow: 0 0 10px #50fa7b;
 }
@@ -45,8 +47,19 @@
 }
 
 .button-container {
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
+
+/*--------- TABLET LARGE ---------*/
+@media (max-width: 1024px) {
+  .button-container{
+    width: 100%;
+  } 
+}
+
+
+
+
