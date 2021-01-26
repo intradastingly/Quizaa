@@ -8,16 +8,24 @@ function loginEventListeners() {
 }
 
 function loginForm() {
-  const userNameInput = document.getElementById("userNameLogin").value;
-  const passwordInput = document.getElementById("passwordLogin").value;
+  let userNameInput = document.getElementById("userNameLogin");
+  const passwordInput = document.getElementById("passwordLogin");
   const registeredUser = JSON.parse(localStorage.getItem("user"));
 
   if (
-    userNameInput === registeredUser.username &&
-    passwordInput === atob(registeredUser.password)
+    userNameInput.value === registeredUser.username &&
+    passwordInput.value === atob(registeredUser.password)
   ) {
     location.href = "./menu.html";
+    localStorage.setItem("loggedIn", "yes");
   } else {
-    console.log("wrong username or password");
+    passwordInput.value = "";
+    userNameInput.style.color = "red";
+    userNameInput.value = "Wrong username or password";
+
+    userNameInput.addEventListener("focus", function () {
+      userNameInput.style.color = "#fdf9de";
+      userNameInput.value = "";
+    });
   }
 }
