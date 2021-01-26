@@ -2,7 +2,8 @@
   font-weight: bold;
   font-size: 2.5rem;
   width: 50%;
-  margin: auto;
+  max-width: 30rem;
+  margin: 0 auto 0 auto;
   
   display: flex;
   flex-direction: column;
@@ -12,6 +13,7 @@
 
 .login-form {
   width: 100%;
+  max-width: 30rem;
 }
 
 .username-input,
@@ -37,6 +39,10 @@
   font-size: 1.5rem;
   color: #fdf9de;
   height: 3rem;
+}
+
+.link-button {
+  float: left;
 }
 
 /*--------- TABLET LARGE ---------*/
