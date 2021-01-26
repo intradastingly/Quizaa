@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizaa</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/highscore.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="./Scripts/main.js"></script>
+    <script src="./Scripts/highscore.js"></script>
+  </head>
+  <body>
+    <header class="header">QUIZAA</header>
+    <main class="main">
+      <div class="highscore-container">
+        
+        <div class="containerLeft">
+            <h1 class="title">Highscore</h1>
+            <ul class="highscore-list" id="highscore-list">
+                <!-- Code inserted bu highscore.js -->
+            </ul>
+            <a href="./menu.html">
+                <button class="primary-button-lg">Go back</button>
+            </a>
+        </div>
+
+        <div class="containerRight">
+          <div class="highscoreChatBubble">
+            <span>These are the champions!</span>
+          </div>
+          <div class="highscoreImg"><img src="./Assets/game-leader.png" /></div>
+        </div>
+
+      </div>
+    </main>
+  </body>
+</html>

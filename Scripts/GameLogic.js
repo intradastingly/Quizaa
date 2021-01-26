@@ -2,21 +2,21 @@ window.addEventListener("load", start);
 
 function start() {
   
-  if (localStorage.getItem("loggedIn") !== "yes") {
+  /* if (localStorage.getItem("loggedIn") !== "yes") {
     location.href = "./login.html";
-  } else {
+  } else { */
     startTimer()
     displayInputAndSubmitButton()
     gameLogicEventListeners();
     enterSubmit();
-  }
+/*   } */
 
 }
 
 // global variables
 let randomNumber = Math.floor(1 + Math.random(1) * 10);
 console.log(randomNumber);
-let playerGuesses = 0;
+let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
 
