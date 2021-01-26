@@ -10,15 +10,12 @@ function userEventListeners() {
 
     const startGameButton = document.getElementById("startGame");
 
-    const startGameButton = document.getElementById("startGame");
-
     startGameButton.addEventListener("click", () => {
       location.href = "./chooseBots.html";
     });
-
-    const logOutButton = document.getElementById("logOutLink");
-    logOutButton.addEventListener("click", logOut);
   }
+  const logOutButton = document.getElementById("logOutLink");
+  logOutButton.addEventListener("click", logOut);
 }
 
 function logOut() {
