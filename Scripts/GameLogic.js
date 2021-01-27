@@ -1,22 +1,20 @@
 window.addEventListener("load", start);
 
 function start() {
-  
   if (localStorage.getItem("loggedIn") !== "yes") {
     location.href = "./login.html";
   } else {
-    startTimer()
-    displayInputAndSubmitButton()
+    startTimer();
+    displayInputAndSubmitButton();
     gameLogicEventListeners();
     enterSubmit();
   }
-
 }
 
 // global variables
 let randomNumber = Math.floor(1 + Math.random(1) * 10);
 console.log(randomNumber);
-let playerGuesses = 0;
+let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
 
@@ -29,7 +27,7 @@ function gameLogicEventListeners() {
 
   //const start = document.getElementById("start");
   //start.addEventListener("click", startTimer);
- // start.addEventListener("click", displayInputAndSubmitButton);
+  // start.addEventListener("click", displayInputAndSubmitButton);
 }
 
 //returns input from user.
@@ -53,9 +51,13 @@ function playGame() {
     if (isSillySelected) {
       sillyBotsTurn(randomNumber, inputNumber);
     }
-    // if hardcorebot is selected present hardcores guess
+    // if dumbbot is selected present dumbbot guess
     if (isDumbSelected) {
-      dumbBotsTurn(randomNumber, inputNumber)
+      dumbBotsTurn(randomNumber, inputNumber);
+    }
+    // if hardcorebot is selected present hardcores guess
+    if (isHardcoreSelected) {
+      hardcoreBotsTurn(randomNumber, inputNumber);
     }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
@@ -66,10 +68,14 @@ function playGame() {
     // if sillybot is selected present sillys guess
     if (isSillySelected) {
       sillyBotsTurn(randomNumber, inputNumber);
-    } 
-    // if hardcorebot is selected present hardcores guess
+    }
+    // if dumbbot is selected present dumbbot guess
     if (isDumbSelected) {
-      dumbBotsTurn(randomNumber, inputNumber)
+      dumbBotsTurn(randomNumber, inputNumber);
+    }
+    // if hardcorebot is selected present hardcores guess
+    if (isHardcoreSelected) {
+      hardcoreBotsTurn(randomNumber, inputNumber);
     }
   }
   if (inputNumber === randomNumber) {
@@ -139,8 +145,4 @@ function enterSubmit() {
 
 //buttons will be hidden on guess so no need to add repress logic
 
-
-function guessAgain(){
-
-}
-
+function guessAgain() {}

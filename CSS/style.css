@@ -1,10 +1,20 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%!important;
+  margin: 0;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-
-  margin: 0;
   background-color: #242254;
   color: #fdf9de;
-  height: 100vh;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+  "header"
+  "main";
 }
 
 body * {
@@ -13,6 +23,7 @@ body * {
 
 a {
   width: 100%;
+  max-width: 30rem;
   color: inherit;
 }
 
@@ -46,12 +57,14 @@ a {
 .primary-button-lg {
   padding: 0.8rem 0;
   width: 100%;
+  max-width: 30rem;
   background-color: #fd7cc5;
   color: inherit;
   border: none;
   border-radius: 0.5rem;
   font-weight: 600;
   font-size: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 .primary-button-lg:hover {
@@ -62,12 +75,14 @@ a {
 .secondary-button-lg {
   padding: 0.8rem 0;
   width: 100%;
+  max-width: 30rem;
   background-color: transparent;
   color: #fd7cc5;
   border: 0.2rem #fd7cc5 solid;
   border-radius: 0.5rem;
   font-weight: 600;
   font-size: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 .secondary-button-lg:hover {
@@ -78,31 +93,14 @@ a {
 
 .link-button {
   display: inline-block;
+  max-width: 30rem;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5rem;
-  margin-top: 1.2rem;
 }
 
 .link-button:hover {
   color: #fc42ab;
-}
-
-.primary-button-lg:first-of-type,
-.secondary-button-lg:first-of-type {
-  margin-bottom: 1rem;
-}
-
-.primary-button-lg:last-of-type,
-.secondary-button-lg:last-of-type {
-  margin-bottom: 0;
-}
-
-.primary-button-lg+.primary-button-lg,
-.primary-button-lg+.secondary-button-lg,
-.secondary-button-lg+.primary-button-lg,
-.secondary-button-lg+.secondary-button-lg {
-  margin-bottom: 1rem;
 }
 
 /* END BUTTONS */
@@ -116,6 +114,7 @@ a {
   display: flex;
   align-items: center;
   padding: 0 5rem;
+  grid-area: header;
 }
 
 /* END HEADER */
@@ -123,19 +122,20 @@ a {
 /* MAIN */
 
 .title {
+  width: 100%;
   font-size: 2.8rem;
   margin: 0 0 3rem 0;
   line-height: 1.5rem;
-  align-self: flex-start;
 }
 
 .main {
   display: flex;
   width: 100%;
-  max-width: 120rem;
-  margin: auto;
+  max-width: 80rem;
+  margin: 0 auto 0 auto;
   padding: 3rem 8rem;
   flex-direction: column;
+  grid-area: main;
 }
 
 /* END MAIN */
@@ -143,7 +143,7 @@ a {
 /* MEDIA QUERIES */
 
 /*--------- TABLET LARGE ---------*/
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .main {
     padding: 3rem 5rem;
   }

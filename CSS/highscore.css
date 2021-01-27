@@ -1,5 +1,5 @@
-
-.menu-container {
+.highscore-container {
+    flex-grow: 1;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -7,43 +7,38 @@
     margin: 0 auto 0 auto;
 }
 
-.menuLeft {
+.containerLeft {
+    position: relative;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    width: 50%;
 }
 
-.menuRight {
+.containerRight {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-between;
     width: 50%;
 }
 
-.menuWelcome {
-  display: flex;
-  align-items: center;
-
-  font-weight: bold;
-  color: #fdf9de;
-  font-size: 1.5rem;
-  line-height: 6rem;
+.highscore-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+    color: #FD7CC5;
 }
 
-.menuInfo {
-    display: flex;
-    max-width: 30rem;
-    align-items: center;
+.highscore-list-item {
+    margin-bottom: 1rem;
 }
 
-.menuInfo p {
-    margin: 0 0 2rem 0;
-    font-weight: bold;
-    font-size: 1.2rem;
+.highscore-container .primary-button-lg {
+    position: absolute;
+    bottom: 0;
 }
 
-.menuChatBubble {
+.highscoreChatBubble {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,12 +52,11 @@
     font-size: 1.5rem;
 }
 
-.menuChatBubble span {
-    white-space: nowrap;
+.highscoreChatBubble span {
     padding: 2rem 3rem;
 }
 
-.menuChatBubble:after {
+.highscoreChatBubble:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -77,29 +71,25 @@
     margin-bottom: -30px;
 }
 
-.menuImg {
+.highscoreImg {
     justify-self: flex-end;
 }
 
-.menuImg > img {
+.highscoreImg > img {
     height: 17rem;
     transform: scaleX(-1);
     align-self: flex-end;
 }
 
-.link-button {
-    text-align: center;
-}
-
 /*--------- TABLET LARGE ---------*/
 @media (max-width: 1024px) {
 
-    .menuRight {
+    .containerRight {
         display: none;
     }
 
-    .menuLeft {
-        align-items: center;
+    .containerLeft {
         width: 100%;
+       flex-grow: 1;
     }
   }
