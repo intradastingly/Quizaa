@@ -90,6 +90,7 @@ function playGame() {
   }
 
   displayGuesses(playerGuesses);
+  savePlayerAnswers(inputNumber);
 }
 
 // timer countDown.

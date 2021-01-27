@@ -9,6 +9,8 @@ function sillyBotsTurn(randomNumber, inputNumber){
     
     setTimeout(presentSillyGuess, 5000);
     setTimeout(checkIfSillyWinOrLoose,5000 , sillyBotAnswer, randomNumber, inputNumber);
+    saveSillyBotAnswers(sillyBotAnswer);
+    sillyBotGuesses++;
 }
 
 // function that checks bots answer and clears the list if bot win
@@ -33,6 +35,7 @@ function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
         setTimeout(() => {
             displayLose()
         }, 3000);
+        saveSillyBotGuesses();
     }
 }
 //presents list item of sillybot guess
@@ -65,6 +68,8 @@ function dumbBotsTurn(randomNumber, inputNumber){
     
     setTimeout(presentDumbGuess, 6000);
     setTimeout(checkIfDumbWinOrLoose, 6000, dumbBotAnswer, randomNumber);
+    saveDumbBotAnswers(dumbBotAnswer);
+    dumbBotGuesses++;
 }
 // function that checks bots answer and clears the list if bot win
 function checkIfDumbWinOrLoose(dumbBotAnswer, randomNumber){
@@ -83,7 +88,7 @@ function checkIfDumbWinOrLoose(dumbBotAnswer, randomNumber){
         setTimeout(() => {
             displayLose()
         }, 3000);
-        
+        saveDumbBotGuesses();
     }
 }
 
@@ -117,6 +122,8 @@ function hardcoreBotsTurn(randomNumber, inputNumber) {
 
   setTimeout(presentHardcoreGuess, 7000);
   setTimeout(checkIfHardcoreWinOrLoose, 7000, hardcoreBotAnswer, randomNumber);
+  saveHardcoreBotAnswers(hardcoreBotAnswer);
+  hardcoreBotGuesses++;
 }
 
 // function that checks bots answer and clears the list if bot win
@@ -137,6 +144,7 @@ function checkIfHardcoreWinOrLoose(hardcoreBotAnswer, randomNumber) {
     setTimeout(() => {
       displayLose();
     }, 2000);
+    saveHardcoreBotGuesses();
   }
 }
 //presents list item of hardcorebot guess
