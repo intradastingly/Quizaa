@@ -46,9 +46,11 @@ function nextRound() {
     userPlayField.classList.remove("hide");
     userPlayField.classList.add("show");
 
-    hideBots()
-  }
+    document.getElementById("guess").value = "";
 
+    hideBots();
+    focusInput();
+  }
 }
 
 function hideBots() {
