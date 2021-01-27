@@ -32,9 +32,7 @@ function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
         presentBotText.innerHTML = "Sillybot Wins"
         document.getElementById("sillyBotUl").innerText = "Silly guessed " + randomNumber;
         botWin = true;
-        setTimeout(() => {
-            displayLose()
-        }, 3000);
+        displayLose()
         saveSillyBotGuesses();
     }
 }
@@ -85,9 +83,7 @@ function checkIfDumbWinOrLoose(dumbBotAnswer, randomNumber){
         presentDumbText.innerHTML = "Dumb Bot Wins"
         document.getElementById("dumbUl").innerText = "Dumb guessed " + randomNumber;
         botWin = true;
-        setTimeout(() => {
-            displayLose()
-        }, 3000);
+        displayLose()
         saveDumbBotGuesses();
     }
 }
@@ -141,9 +137,7 @@ function checkIfHardcoreWinOrLoose(hardcoreBotAnswer, randomNumber) {
     document.getElementById("hardcoreBotUl").innerText =
       "Hardcore guessed " + randomNumber;
     botWin = true;
-    setTimeout(() => {
-      displayLose();
-    }, 2000);
+    displayLose();
     saveHardcoreBotGuesses();
   }
 }
