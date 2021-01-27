@@ -33,6 +33,7 @@
 
 .menuInfo {
     display: flex;
+    flex-direction: column;
     max-width: 30rem;
     align-items: center;
 }
