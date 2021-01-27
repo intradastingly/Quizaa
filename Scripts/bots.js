@@ -115,8 +115,8 @@ function hardcoreBotsTurn(randomNumber, inputNumber) {
   }
   hardcoreBotArray.push(hardcoreBotAnswer);
 
-  setTimeout(presentHardcoreGuess, 5000);
-  setTimeout(checkIfHardcoreWinOrLoose, 5000, hardcoreBotAnswer, randomNumber);
+  setTimeout(presentHardcoreGuess, 7000);
+  setTimeout(checkIfHardcoreWinOrLoose, 7000, hardcoreBotAnswer, randomNumber);
 }
 
 // function that checks bots answer and clears the list if bot win

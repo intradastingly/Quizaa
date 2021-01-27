@@ -1,6 +1,8 @@
 // hides input field when go button is pressed and new screen presents.
 function hideGame() {
   let userPlayField = document.getElementById("userBox");
+
+  userPlayField.classList.remove("show");
   userPlayField.classList.add("hide");
 }
 
@@ -14,7 +16,7 @@ function displayHigherScreen() {
     nextRound();
     higherScreen.classList.remove("show");
     higherScreen.classList.add("hide");
-  }, 2000);
+  }, 3500);
 }
 
 // displays bot to say you should go lower
@@ -27,7 +29,7 @@ function displayLowerScreen() {
     nextRound();
     lowerScreen.classList.remove("show");
     lowerScreen.classList.add("hide");
-  }, 2000);
+  }, 3500);
 }
 
 // shows button to take you to next round
@@ -41,53 +43,12 @@ function nextRound() {
     continueBtn.classList.add("hide");
 
     let userPlayField = document.getElementById("userBox");
-    userPlayField.classList.add("hide");
+    userPlayField.classList.remove("hide");
+    userPlayField.classList.add("show");
+
+    hideBots()
   }
-  
-  // displays bot to say you should go higher
-  function displayHigherScreen(){
-    let higherScreen = document.getElementById("go-higher");
-    higherScreen.classList.add("show");
-  
-    setTimeout(() => {
-      botSelected();
-      nextRound();
-      higherScreen.classList.remove("show")
-      higherScreen.classList.add("hide");
-    }, 4000);
-  }
-  
-  // displays bot to say you should go lower
-  function displayLowerScreen() {
-    let lowerScreen = document.getElementById("go-lower");
-    lowerScreen.classList.add("show");
-  
-    setTimeout(() => {
-      botSelected();
-      nextRound();
-      lowerScreen.classList.remove("show");
-      lowerScreen.classList.add("hide");
-  
-    }, 4000);
-  }
-  
-  // shows button to take you to next round
-  function nextRound() {
-    let continueBtn = document.getElementById("continue-game-btn");
-    continueBtn.classList.add("show");
-    continueBtn.addEventListener("click", resumeGame);
-  
-    function resumeGame(){
-      continueBtn.classList.remove("show");
-      continueBtn.classList.add("hide");
-  
-      let userPlayField = document.getElementById("userBox");
-      userPlayField.classList.remove("hide");
-      userPlayField.classList.remove("show");
-  
-      hideBots()
-    }
-  }
+
 }
 
 function hideBots() {

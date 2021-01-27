@@ -65,7 +65,7 @@ body {
 
 
 /* Silly bot below */
-.sillyBotBox {
+.botBox {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -74,15 +74,16 @@ body {
     background-color: #514E7C;
     border-radius: 1rem;
     margin: 1rem;
+    height: 30rem;
 }
 
-.sillyBotBox h2 {
+.botBox h2 {
     /* padding: 1rem; */
     font-size: 2rem;
     margin: 1rem;
 }
 
-.sillyBotBox li{
+.botBox li{
     text-align: center;
     list-style-type: none;
     margin: 0;
@@ -91,13 +92,13 @@ body {
     margin: 1rem;
 }
 
-.sillyBotBox ul{
+.botBox ul{
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
 }
 
-.sillyBotBox img{
+.botBox img{
     width: 10rem;
     height: 10rem;
     padding: 1rem;
@@ -130,7 +131,6 @@ body {
     margin: 0;
     padding: 0;
     font-size: 2rem;
-    margin: 1rem;
 }
 
 .dumbBotBox ul{
@@ -174,9 +174,12 @@ body {
         width: 15rem;
     }
     #submitGuess {
-        width: 15rem;
+       width: 20rem;
     }
     #guess {
-        width: 15rem;
+        width: 20rem;
+    }
+    .gameContainer{
+        flex-direction: column;
     }
 }
