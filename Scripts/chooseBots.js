@@ -23,6 +23,9 @@ function start() {
     bot3Button.addEventListener("click", () => {
       selectedBot(bot3Button, bot3);
     });
+
+    const continueButton = document.getElementById("startGameContinue");
+    continueButton.addEventListener("click", saveArrayToLS);
   }
 }
 
@@ -31,8 +34,20 @@ function selectedBot(botButton, bot) {
     botButton.classList.remove("bot-box-selected");
     const objectToRemove = playersArray.indexOf(bot);
     playersArray.splice(objectToRemove, 1);
+    console.log(playersArray);
   } else {
     botButton.classList.add("bot-box-selected");
     playersArray.push(bot);
+    console.log(playersArray);
+  }
+}
+
+function saveArrayToLS() {
+  if (playersArray.length > 1) {
+    localStorage.setItem("chosenPlayers", JSON.stringify(playersArray));
+    location.href = "./game.html";
+  } else {
+    const errorText = document.getElementById("pickBot");
+    errorText.style.visibility = "visible";
   }
 }

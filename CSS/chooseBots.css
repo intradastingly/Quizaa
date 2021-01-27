@@ -12,7 +12,6 @@
 .bots-container {
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   margin-top: 5rem;
   width: 100%;
 }
@@ -26,7 +25,7 @@
   width: 20rem;
   height: 20rem;
   border-radius: 25px;
-  margin: .7rem;
+  margin: 0.7rem;
   cursor: pointer;
 }
 
@@ -49,17 +48,23 @@
 .button-container {
   width: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 2rem;
 }
 
-/*--------- TABLET LARGE ---------*/
-@media (max-width: 1024px) {
-  .button-container{
-    width: 100%;
-  } 
+.pick-bot {
+  visibility: hidden;
+  color: red;
 }
 
-
-
-
+/*--------- TABLET LARGE ---------*/
+@media (max-width: 1240px) {
+  .button-container {
+    width: 100%;
+  }
+  .bots-container {
+    flex-wrap: wrap;
+  }
+}
