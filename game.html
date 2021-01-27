@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game</title>
     <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/gameplay.css">
     <link rel="stylesheet" href="./css/game.css">
     <link rel="stylesheet" href="./css/win-lose.css">
     <script src="./Scripts/main.js"></script>
@@ -21,35 +22,38 @@
               <h3 class="user-item" id="timer" ><!-- code injected with js --></h3>
               <h2 class="user-item" id="presentText">Choose a number between 1-10</h2>         
               <!-- input validation -->
-              <input onfocus=this.value='' class=" user-item" id="guess" autofocus></input>
-              <button class="primary-button-lg user-item" id="submitGuess">Go</button>
+              <input onfocus=this.value='' class="user-item" id="guess" autofocus></input>
+              <div class="mobile-btn">
+                <button class="primary-button-lg user-item" id="submitGuess">Go</button>
+              </div>
               <!-- <div class="start">
                 <button id="start">start</button>
               </div> -->
           </div>
           <!-- Go higher screen -->
           <div id="go-higher"  class="go-higher">
-            <div class="higher-text">
-              Close but no cigar, you needs to get higher!
-            </div>
-            <div>
-              <h2>Try Again</h2>
-              <img src="" alt="">
+            <div class="game-leader">
+              <div class="game-leader-text">
+                Close but no cigar, you need to get higher!
+              </div>
+              <div>
+                <h2>Try Again</h2>
+                <img src="./Assets/game-leader.png" alt="Game Leader">
+              </div>
             </div>
           </div>
           <!-- go lower screen -->
             <div id="go-lower" class="go-lower">
-              <div class="lower-text">
-                Close but no cigar, you needs to get lower!
-              </div>
-              <div>
-                <h2>Try Again</h2>
-                <img src="" alt="">
+              <div class="game-leader">
+                <div class="game-leader-text">
+                  Close but no cigar, you need to get lower!
+                </div>
+                <div>
+                  <h2>Try Again</h2>
+                  <img src="./Assets/game-leader.png" alt="Game Leader">
+                </div>
               </div>
             </div>
-            <!-- continue button when bots guesses are presented -->
-            <!-- not sure where to link it to keep player guesses and so on -->
-              <button id="continue-game-btn" class="continue-game">Continue</button>
             <!-- you win screen -->
           <div id = "you-won">
             <h2 class="user-item" id="win">You guessed correctly, congratulations!</h2>
@@ -62,30 +66,32 @@
             <button class="primary-button-lg user-item" id="againL">Play again</button>
             <button class="primary-button-lg user-item" id="boredL">I'm bored</button>
           </div>
-        <div id="sillyBot" class="sillyBotBox padding">
-          <div class="presentSilly">I'm Silly</div>
-          <img id="sillySelfie" src="./Assets/cyborg-robot-2.png" alt="picture of sillybot"> 
-          <h2 id="presentBotText">higher or lower</h2>
+
+        <div id="sillyBot" class="botBox padding">
+          <h2 id="presentBotText">Guess</h2>
+          <img id="sillySelfie" src="./Assets/silly.png" alt="picture of sillybot"> 
           <ul id="sillyBotUl">
-            <h2>Bot guess:</h2>
               </ul>
         </div>
-        <div id="dumbBot" class="dumbBotBox padding">
-          <div class="presentDumb">I'm Dumb</div>
-          <img src="./Assets/cyborg-robot-2.png" alt="picture of dumbbot"> 
-          <h2 id="presentDumbText">higher or lower</h2>
+        <div id="dumbBot" class="botBox padding">
+          <h2 id="presentDumbText">Guess</h2>
+          <img src="./Assets/dumb.png" alt="picture of dumbbot"> 
           <ul id="dumbUl">
-            <h2>Bot guess:</h2>
           </ul>
         </div>
-        <div id="hardcoreBot" class="dumbBotBox padding">
-          <div class="presentDumb">I'm Hardcore</div>
-          <img src="./Assets/cyborg-robot-3.png" alt="picture of hardcorebot"> 
-          <h2 id="presentHardcoreText">higher or lower</h2>
+        <div id="hardcoreBot" class="botBox padding">
+          <h2 id="presentHardcoreText">Guess</h2>
+          <img src="./Assets/hardcore.png" alt="picture of hardcorebot"> 
           <ul id="hardcoreBotUl">
-            <h2>Bot guess:</h2>
           </ul>
         </div>
+        
+      </div>
+      <!-- continue button when bots guesses are presented -->
+      <div class="btn-container-gameplay">
+        <button id="continue-game-btn" class="continue-game primary-button-lg"><span>Continue</span></button>
+      </div>
+
     </main>
   </body>
 </html>

@@ -1,44 +1,39 @@
 // SILLY BOT CODE BELOW /  / / / / / / / / /
 
 // runs after player have pressed submit so the turn passes over to silly bot
-function sillyBotsTurn(randomNumber, inputNumber) {
-  let sillyBotAnswer = Math.floor(1 + Math.random() * 10);
-  //  let sillyBotAnswer = randomNumber;
-  sillyBotArray.push(sillyBotAnswer);
-
-  setTimeout(presentSillyGuess, 3000);
-  setTimeout(
-    checkIfSillyWinOrLoose,
-    3000,
-    sillyBotAnswer,
-    randomNumber,
-    inputNumber
-  );
+function sillyBotsTurn(randomNumber, inputNumber){
+    
+    let sillyBotAnswer = Math.floor(1 + Math.random() * 10);
+    //  let sillyBotAnswer = randomNumber;
+    sillyBotArray.push(sillyBotAnswer);
+    
+    setTimeout(presentSillyGuess, 5000);
+    setTimeout(checkIfSillyWinOrLoose,5000 , sillyBotAnswer, randomNumber, inputNumber);
 }
 
 // function that checks bots answer and clears the list if bot win
-function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber) {
-  let presentBotText = document.getElementById("presentBotText");
+function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
+    let presentBotText = document.getElementById("presentBotText");
+    
+    if(randomNumber === inputNumber){
+        // this doesnt work sadly....
+        console.log("heh")
+        presentBotText.innerHTML = "Silly Lost"
+        ul.innerText = "";
+    } if(sillyBotAnswer > randomNumber) {
+        presentBotText.innerHTML = "Lower";
 
-  if (randomNumber === inputNumber) {
-    // this doesnt work sadly....
-    console.log("heh");
-    presentBotText.innerHTML = "Silly Lost";
-    ul.innerText = "";
-  }
-  if (sillyBotAnswer > randomNumber) {
-    presentBotText.innerHTML = "Lower";
-  }
-  if (sillyBotAnswer < randomNumber) {
-    presentBotText.innerHTML = "higher";
-  }
-  if (sillyBotAnswer === randomNumber) {
-    presentBotText.innerHTML = "Sillybot Wins";
-    document.getElementById("sillyBotUl").innerText =
-      "Silly guessed " + randomNumber;
-    botWin = true;
-    displayLose();
-  }
+    } if(sillyBotAnswer < randomNumber){
+        presentBotText.innerHTML = "higher";
+
+    } if(sillyBotAnswer === randomNumber){
+        presentBotText.innerHTML = "Sillybot Wins"
+        document.getElementById("sillyBotUl").innerText = "Silly guessed " + randomNumber;
+        botWin = true;
+        setTimeout(() => {
+            displayLose()
+        }, 3000);
+    }
 }
 //presents list item of sillybot guess
 function presentSillyGuess() {
@@ -58,39 +53,38 @@ function presentSillyGuess() {
 
 // DUMB BOT CODE BELOW / / / / / /
 
-function dumbBotsTurn(randomNumber, inputNumber) {
-  let dumbBotAnswer;
-  if (inputNumber < randomNumber) {
-    dumbBotAnswer = inputNumber + 1;
-  }
-  if (inputNumber > randomNumber) {
-    dumbBotAnswer = inputNumber - 1;
-  }
+function dumbBotsTurn(randomNumber, inputNumber){
+    let dumbBotAnswer;
+    if(inputNumber < randomNumber) {
+        dumbBotAnswer = inputNumber + 1;
+    } if (inputNumber > randomNumber) {
+        dumbBotAnswer = inputNumber -1;
+    }
 
-  dumbBotArray.push(dumbBotAnswer);
-
-  setTimeout(presentDumbGuess, 4000);
-  setTimeout(checkIfDumbWinOrLoose, 4000, dumbBotAnswer, randomNumber);
+    dumbBotArray.push(dumbBotAnswer);
+    
+    setTimeout(presentDumbGuess, 6000);
+    setTimeout(checkIfDumbWinOrLoose, 6000, dumbBotAnswer, randomNumber);
 }
 // function that checks bots answer and clears the list if bot win
-function checkIfDumbWinOrLoose(dumbBotAnswer, randomNumber) {
-  let presentDumbText = document.getElementById("presentDumbText");
+function checkIfDumbWinOrLoose(dumbBotAnswer, randomNumber){
+    let presentDumbText = document.getElementById("presentDumbText");
+    
+    if(dumbBotAnswer > randomNumber) {
+        presentDumbText.innerHTML = "Lower";
 
-  if (dumbBotAnswer > randomNumber) {
-    presentDumbText.innerHTML = "Lower";
-  }
-  if (dumbBotAnswer < randomNumber) {
-    presentDumbText.innerHTML = "higher";
-  }
-  if (dumbBotAnswer === randomNumber) {
-    presentDumbText.innerHTML = "Dumb Bot Wins";
-    document.getElementById("dumbUl").innerText =
-      "Dumb guessed " + randomNumber;
-    botWin = true;
-    setTimeout(() => {
-      displayLose();
-    }, 2000);
-  }
+    } if(dumbBotAnswer < randomNumber){
+        presentDumbText.innerHTML = "Higher";
+
+    } if(dumbBotAnswer === randomNumber){
+        presentDumbText.innerHTML = "Dumb Bot Wins"
+        document.getElementById("dumbUl").innerText = "Dumb guessed " + randomNumber;
+        botWin = true;
+        setTimeout(() => {
+            displayLose()
+        }, 3000);
+        
+    }
 }
 
 //presents list item of dumbbot guess
@@ -121,8 +115,8 @@ function hardcoreBotsTurn(randomNumber, inputNumber) {
   }
   hardcoreBotArray.push(hardcoreBotAnswer);
 
-  setTimeout(presentHardcoreGuess, 5000);
-  setTimeout(checkIfHardcoreWinOrLoose, 5000, hardcoreBotAnswer, randomNumber);
+  setTimeout(presentHardcoreGuess, 7000);
+  setTimeout(checkIfHardcoreWinOrLoose, 7000, hardcoreBotAnswer, randomNumber);
 }
 
 // function that checks bots answer and clears the list if bot win
