@@ -6,8 +6,8 @@
     padding: 1rem;
     font-size: 1.5rem;
     color: #fdf9de;
-    width: 23rem;
-    height: 1rem;
+    width: 25rem;
+    height: 3rem;
 }
 
 #submitGuess {
@@ -20,6 +20,40 @@
 body {
     height: 100%;
     width: 100%;
+}
+
+.menuChatBubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 5rem;
+    position: relative;
+    background: #00e6b3;
+    border-radius: 0.4em;
+  
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.menuChatBubble span {
+    white-space: nowrap;
+    padding: 2rem 3rem;
+}
+
+.menuChatBubble:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 0;
+    height: 0;
+    border: 30px solid transparent;
+    border-top-color: #00e6b3;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: 50px;
+    margin-bottom: -30px;
 }
 
 .gameContainer {

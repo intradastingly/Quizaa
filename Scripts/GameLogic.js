@@ -8,6 +8,7 @@ function start() {
     displayInputAndSubmitButton();
     gameLogicEventListeners();
     enterSubmit();
+    focusInput();
   }
 }
 
@@ -21,6 +22,8 @@ let win = false;
 //start and submit buttons.
 function gameLogicEventListeners() {
   const submit = document.getElementById("submitGuess");
+  submit.addEventListener("keypress", enterSubmit);
+    
   submit.addEventListener("click", playGame);
   submit.addEventListener("click", hideGame);
   setTimeout(submit.addEventListener("click", startTimer), 1000);
@@ -34,7 +37,14 @@ function gameLogicEventListeners() {
 function takeInput() {
   const guess = document.getElementById("guess").value;
   return guess;
+
 }
+
+function focusInput() {
+  document.getElementById("guess").focus();
+}
+
+
 
 function playGame() {
   let inputNumber = Number(takeInput());
@@ -96,15 +106,19 @@ function playGame() {
 // timer countDown.
 function startTimer() {
   //playGame(timer);
-  let timer = 10;
+  let timer = 11;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
   DOMtimer.style.visibility = "visible";
   function countDown() {
     timer--;
     if (timer < 1) {
-      timer = 10;
+      timer = "";
+      DOMtimer.style.visibility = "hidden";
       clearInterval(time);
+    }
+    if (timer <= 3){
+      DOMtimer.style.background = "red";
     }
     if (stopTimer) {
       clearInterval(time);
@@ -134,12 +148,15 @@ function displayGuesses(playerGuesses) {
 //get timer to restart on start click
 
 //listens for Enter key press.
+
 function enterSubmit() {
   document.addEventListener("keypress", submit);
   function submit(event) {
     if (event.code === "Enter") {
       playGame();
       setTimeout(startTimer, 1000);
+      document.getElementById("userBox").classList.add("hide");
+      document.getElementById("continue-game-btn").classList.add("hide");
     }
   }
 }

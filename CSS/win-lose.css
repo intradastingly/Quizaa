@@ -18,11 +18,11 @@
     font-size: 2rem;
 }
 
-#boredL, #boredW {
+/* #boredL, #boredW {
     background: none;
     border: solid 0.1rem;
     color: #FD7CC5;
-}
+} */
 
 #win {
     font-size: 3rem;
