@@ -11,8 +11,8 @@ function start() {
     const bot3Button = document.getElementById("bot3");
 
     const bot1 = "silly-bot";
-    const bot2 = "hardcore-bot";
-    const bot3 = "dumb-bot";
+    const bot2 = "dumb-bot";
+    const bot3 = "hardcore-bot";
 
     bot1Button.addEventListener("click", () => {
       selectedBot(bot1Button, bot1);
