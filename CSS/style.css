@@ -1,7 +1,8 @@
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
-  min-height: 100%!important;
+  min-height: 100% !important;
   margin: 0;
 }
 
@@ -11,10 +12,11 @@ body {
   color: #fdf9de;
 
   display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: 
-  "header"
-  "main";
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
 }
 
 body * {
@@ -140,6 +142,22 @@ a {
 
 /* END MAIN */
 
+/* FOOTER */
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 1.5rem;
+  color: #bab6f5;
+  padding: 2rem 3rem;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  grid-area: footer;
+}
+
+/* END FOOTER */
+
 /* MEDIA QUERIES */
 
 /*--------- TABLET LARGE ---------*/
@@ -157,7 +175,6 @@ a {
 
 /*--------- TABLET SMALL ---------*/
 @media (max-width: 768px) {
-
   .title {
     font-size: 2.4rem;
   }
