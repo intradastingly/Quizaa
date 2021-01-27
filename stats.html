@@ -19,8 +19,36 @@
   <body>
     <header class="header">QUIZAA</header>
     <main class="main">
-      <div class="chart-container" id="chartContainer"></div>
+      <div class="stats-container">
+        <h1 class="title">Stats</h1>
+        <h2>Last 10 won rounds</h2>
+        <div class="diagram-container">
+          <div class="chart-container" id="chartContainer"></div>
+        </div>
+        <h2>Data table</h2>
+        <div class="table-container">
+          <table class="stats-table" id="stats-table">
+            <tr class="table-header">
+              <th id="player">Player</th>
+              <th>Average nr of guesses</th>
+              <th>Average guessed number</th>
+            </tr>
+            <tr id="silly-row">
+              <td>Silly bot</td>
+            </tr>
+            <tr id="dumb-row">
+              <td>Dumb bot</td>
+            </tr>
+            <tr id="hardcore-row">
+              <td>Hardcore bot</td>
+            </tr>
+            <tr id="player-row"></tr>
+          </table>
+        </div>
+        <a href="./menu.html">
+          <button class="primary-button-lg">Go back</button>
+        </a>
+      </div>
     </main>
-    <footer class="footer"><a href="https://icons8.com/">icons8.com</a></footer>
   </body>
 </html>
