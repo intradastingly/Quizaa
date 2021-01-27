@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizaa</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/stats2.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="./Scripts/main.js"></script>
+    <script src="./Scripts/stats2.js"></script>
+  </head>
+  <body>
+    <header class="header">QUIZAA</header>
+    <main class="main">
+      <div class="stats-container">
+        
+            <h1 class="title">Stats</h1>
+            <h2>Diagram</h2>
+            <div class="diagram-container">
+
+            </div>
+            <h2>Data table</h2>
+            <div class="table-container">
+                <table class="stats-table" id="stats-table">
+                    <tr class="table-header">
+                        <th id="player">Player</th>
+                        <th>Average nr of guesses</th>
+                        <th>Average guessed number</th>
+                    </tr>
+                    <tr id="silly-row">
+                        <td>Silly bot</td>
+                    </tr>
+                    <tr id="dumb-row">
+                        <td>Dumb bot</td>
+                    </tr>
+                    <tr id="hardcore-row">
+                        <td>Hardcore bot</td>
+                    </tr>
+                    <tr id="player-row">
+                    </tr>
+                </table>
+            </div>
+            <a href="./menu.html">
+                <button class="primary-button-lg">Go back</button>
+            </a>
+      </div>
+    </main>
+  </body>
+</html>
