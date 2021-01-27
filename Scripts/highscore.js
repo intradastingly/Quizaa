@@ -13,14 +13,12 @@ function presentHighscore() {
     });
 
     if (highscore.length > 3) {
-        // Removes the first integer until list has length of 3
+        // Removes the last integer until list has length of 3
         while (highscore.length > 3) {
           highscore.pop();
         }
     }
-
-    // Beacuse the list is sorted with the largest integer last,
-    // the list has to be looped through in reverse order
+    
     for (score of highscore) {
         const li = document.createElement("li")
         li.innerHTML = JSON.parse(localStorage.getItem("user")).username + " " + score + " guesses"
