@@ -40,12 +40,10 @@ function focusInput() {
   document.getElementById("guess").focus();
 }
 
-
-
 function playGame() {
   let inputNumber = Number(takeInput());  
-  console.log(inputNumber);
   let presentText = document.getElementById("presentText");
+  
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Lower";
@@ -91,35 +89,52 @@ function playGame() {
   }
   if (inputNumber === 0) {
     stopTimer = true;
-    presentText.innerHTML = "please input a number";
+    playerGuesses += 1;
+    timeRanOut();
+    hideGame();
+    if (isSillySelected) {
+      sillyBotsTurn(randomNumber, inputNumber);
+    }
+    // if dumbbot is selected present dumbbot guess
+    if (isDumbSelected) {
+      dumbBotsTurn(randomNumber, inputNumber);
+    }
+    // if hardcorebot is selected present hardcores guess
+    if (isHardcoreSelected) {
+      hardcoreBotsTurn(randomNumber, inputNumber);
+    }
   }
   savePlayerAnswers(inputNumber);
 }
 
 // timer countDown.
 function startTimer() {
-  //playGame(timer);
-  let timer = 11;
+  let timer = 6;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
+  DOMtimer.style.background = "#514E7C"; 
   DOMtimer.style.visibility = "visible";
   function countDown() {
     timer--;
-    console.log(timer)
-    if (timer < 1) {
-      timer = "";
+    if (timer < 1 || timer >=6) {
+      timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
     }
-    if (timer <= 3){
-      DOMtimer.style.background = "red";  
+    if(timer <= 0){
+      DOMtimer.style.background = "#514E7C"; 
+      playGame();
+      //connect to flow. 
     }
     if(timer > 3){
         DOMtimer.style.background = "#514E7C"; 
     }
+    if (timer <= 3){
+      DOMtimer.style.background = "red";  
+    }
     if (stopTimer) {
       clearInterval(time);
-      timer = 10;
+      timer = 5;
       //stopTimer = false;
     }
     if (win || botWin) {
@@ -127,12 +142,7 @@ function startTimer() {
       DOMtimer.style.visibility = "hidden";
     }
     DOMtimer.innerHTML = timer;
-    if(timer <= 0){
-      let presentText = document.getElementById("presentText");
-      presentText.innerHTML = "Too slow!";
-      playerGuesses += 1;
-      //connect to flow. 
-    }
+    
   }
 }
 
@@ -149,11 +159,7 @@ function enterSubmit() {
   }
 }
 
-
-
-
-//input has to be numbers validation
-//continue game if no guess. 
+//number still red on restart
 
 
 

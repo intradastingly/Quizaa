@@ -19,6 +19,17 @@ function displayHigherScreen() {
   }, 3500);
 }
 
+function timeRanOut(){
+  let timeout = document.getElementById("timeout");
+  timeout.classList.add('show')
+  setTimeout(() => {
+    botSelected();
+    nextRound();
+    timeout.classList.remove("show");
+    timeout.classList.add("hide");
+  }, 3500);
+
+}
 // displays bot to say you should go lower
 function displayLowerScreen() {
   let lowerScreen = document.getElementById("go-lower");
@@ -47,7 +58,7 @@ function nextRound() {
     userPlayField.classList.add("show");
 
     document.getElementById("guess").value = "";
-    
+
     stopTimer = false;
     startTimer()
     
