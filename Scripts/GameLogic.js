@@ -26,7 +26,7 @@ function gameLogicEventListeners() {
     
   submit.addEventListener("click", playGame);
   submit.addEventListener("click", hideGame);
-  submit.addEventListener("click", startTimer);
+  setTimeout(submit.addEventListener("click", startTimer), 1000);
 }
 
 //returns input from user.
@@ -116,7 +116,7 @@ function startTimer() {
   DOMtimer.style.visibility = "visible";
   function countDown() {
     timer--;
-    if (timer < 1) {
+    if (timer < 1 || timer >=6) {
       timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
@@ -152,7 +152,7 @@ function enterSubmit() {
   function submit(event) {
     if (event.code === "Enter") {
       playGame();
-      startTimer();
+      setTimeout(startTimer, 1000);
       document.getElementById("userBox").classList.add("hide");
       document.getElementById("continue-game-btn").classList.add("hide");
     }
