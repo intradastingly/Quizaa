@@ -4,10 +4,12 @@ function start() {
   if (localStorage.getItem("loggedIn") !== "yes") {
     location.href = "./login.html";
   } else {
-    startTimer();
-    gameLogicEventListeners();
-    enterSubmit();
-    focusInput();
+    countDownGame();
+    setTimeout(startTimer, 3000);
+    setTimeout(gameLogicEventListeners, 3000);
+    setTimeout(enterSubmit, 3000);
+    setTimeout(focusInput, 3000);
+    setTimeout(showUserBox, 3000);
   }
 }
 
@@ -18,12 +20,33 @@ let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
 
+// start countDownGame
+function countDownGame() {
+  let countDownStartNumber = 3;
+  setInterval(countDownStart, 1000);
+  let DOMcountDown = document.getElementById("countDownGame");
+  function countDownStart() {
+    countDownStartNumber--;
+    DOMcountDown.innerHTML = countDownStartNumber;
+    if (countDownStartNumber === 0) {
+      countDownStartNumber = "";
+      DOMcountDown.classList.add("hide");
+      clearInterval(countDownStart);
+    }
+  }
+}
+
+// show userBox
+function showUserBox() {
+  document.getElementById("userBox").classList.remove("hide");
+  document.getElementById("userBox").classList.add("show");
+}
 
 //start and submit buttons.
 function gameLogicEventListeners() {
   const submit = document.getElementById("submitGuess");
   submit.addEventListener("keypress", enterSubmit);
-    
+
   submit.addEventListener("click", playGame);
   submit.addEventListener("click", hideGame);
   setTimeout(submit.addEventListener("click", startTimer), 1000);
@@ -33,7 +56,6 @@ function gameLogicEventListeners() {
 function takeInput() {
   const guess = document.getElementById("guess").value;
   return guess;
-
 }
 
 function focusInput() {
@@ -41,9 +63,9 @@ function focusInput() {
 }
 
 function playGame() {
-  let inputNumber = Number(takeInput());  
+  let inputNumber = Number(takeInput());
   let presentText = document.getElementById("presentText");
-  
+
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Lower";
@@ -109,28 +131,28 @@ function playGame() {
 
 // timer countDown.
 function startTimer() {
-  let timer = 6;
+  let timer = 5;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
-  DOMtimer.style.background = "#514E7C"; 
+  DOMtimer.style.background = "#514E7C";
   DOMtimer.style.visibility = "visible";
   function countDown() {
     timer--;
-    if (timer < 1 || timer >=6) {
+    if (timer < 1 || timer >= 5) {
       timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
     }
-    if(timer <= 0){
-      DOMtimer.style.background = "#514E7C"; 
+    if (timer <= 0) {
+      DOMtimer.style.background = "#514E7C";
       playGame();
-      //connect to flow. 
+      //connect to flow.
     }
-    if(timer > 3){
-        DOMtimer.style.background = "#514E7C"; 
+    if (timer > 3) {
+      DOMtimer.style.background = "#514E7C";
     }
-    if (timer <= 3){
-      DOMtimer.style.background = "red";  
+    if (timer <= 3) {
+      DOMtimer.style.background = "red";
     }
     if (stopTimer) {
       clearInterval(time);
@@ -142,7 +164,6 @@ function startTimer() {
       DOMtimer.style.visibility = "hidden";
     }
     DOMtimer.innerHTML = timer;
-    
   }
 }
 
@@ -160,6 +181,3 @@ function enterSubmit() {
 }
 
 //number still red on restart
-
-
-

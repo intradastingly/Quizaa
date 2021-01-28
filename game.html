@@ -19,8 +19,9 @@
     <header class="header">QUIZAA</header>
     <main class = "main">
         <div class="gameContainer flex padding">
-          <div class="userBox" id="userBox">
-              <h3 class="user-item" id="timer" ><!-- code injected with js --></h3>
+          <span class="countDownGame center" id="countDownGame">3</span>
+          <div class="userBox hide" id="userBox">
+              <h3 class="user-item" id="timer" >5<!-- code injected with js --></h3>
               <h2 class="user-item" id="presentText">Choose a number between 1-10</h2>         
               <!-- input validation -->
               <input onfocus="focusInput(this)" class="user-item" id="guess" ></input>
