@@ -102,7 +102,7 @@ function calculateAverage(array) {
     const average = Math.round(value / array.length);
     return average;
   } else {
-    return "undefined";
+    return "No data";
   }
 }
 

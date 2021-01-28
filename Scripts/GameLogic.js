@@ -68,7 +68,7 @@ function playGame() {
 
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
-    presentText.innerHTML = "Lower";
+    presentText.innerHTML = "Go lower!";
     playerGuesses += 1;
     stopTimer = true;
     displayLowerScreen();
@@ -86,7 +86,7 @@ function playGame() {
     }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
-    presentText.innerHTML = "higher";
+    presentText.innerHTML = "Go higher!";
     playerGuesses += 1;
     stopTimer = true;
     displayHigherScreen();
@@ -104,7 +104,7 @@ function playGame() {
     }
   }
   if (inputNumber === randomNumber) {
-    presentText.innerHTML = "You Win";
+    presentText.innerHTML = "You Win!";
     stopTimer = true;
     win = true;
     displayWin();

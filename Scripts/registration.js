@@ -18,7 +18,7 @@ function submitRegistration() {
     passwordInput.value = "";
     confirmPasswordInput.value = "";
     userNameInput.style.color = "red";
-    userNameInput.value = "Passwords doesn't match";
+    userNameInput.value = "Passwords don't match";
 
     userNameInput.addEventListener("focus", function () {
       userNameInput.style.color = "#fdf9de";
