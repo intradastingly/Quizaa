@@ -151,8 +151,9 @@ function enterSubmit() {
 
 
 
-// bnumber still visible.
-// color still red. 
 
-//input not numbers 
+//input has to be numbers validation
+//continue game if no guess. 
+
+
 
