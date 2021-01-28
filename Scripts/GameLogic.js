@@ -43,9 +43,10 @@ function focusInput() {
 function playGame() {
   let inputNumber = Number(takeInput());  
   let presentText = document.getElementById("presentText");
+  let DOMtimer = document.getElementById("timer");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
-    presentText.innerHTML = "Lower";
+    //presentText.innerHTML = "Lower";
     playerGuesses += 1;
     stopTimer = true;
     displayLowerScreen();
@@ -63,7 +64,7 @@ function playGame() {
     }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
-    presentText.innerHTML = "higher";
+    //presentText.innerHTML = "higher";
     playerGuesses += 1;
     stopTimer = true;
     displayHigherScreen();
@@ -87,6 +88,7 @@ function playGame() {
     displayWin();
   }
   if (inputNumber === 0) {
+    DOMtimer.style.background = "#514E7C"; 
     stopTimer = true;
     playerGuesses += 1;
     timeRanOut();
@@ -119,15 +121,19 @@ function startTimer() {
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
     }
-    if (timer <= 3){
-      DOMtimer.style.background = "red";  
+    if(timer <= 0){
+      playGame();
+      //connect to flow. 
     }
     if(timer > 3){
         DOMtimer.style.background = "#514E7C"; 
     }
+    if (timer <= 3){
+      DOMtimer.style.background = "red";  
+    }
     if (stopTimer) {
       clearInterval(time);
-      timer = 10;
+      timer = 6;
       //stopTimer = false;
     }
     if (win || botWin) {
@@ -135,10 +141,7 @@ function startTimer() {
       DOMtimer.style.visibility = "hidden";
     }
     DOMtimer.innerHTML = timer;
-    if(timer <= 0){
-      playGame();
-      //connect to flow. 
-    }
+    
   }
 }
 
@@ -156,10 +159,6 @@ function enterSubmit() {
 }
 
 
-
-
-//input has to be numbers validation
-//continue game if no guess. 
 
 
 
