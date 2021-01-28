@@ -20,7 +20,7 @@ function displayHigherScreen() {
 }
 
 function timeRanOut(){
-  let timeout = document.getElementById("timeout");
+  DOMtimer.style.background = "#514E7C"; 
   timeout.classList.add('show')
   setTimeout(() => {
     botSelected();

@@ -26,7 +26,7 @@ function gameLogicEventListeners() {
     
   submit.addEventListener("click", playGame);
   submit.addEventListener("click", hideGame);
-  setTimeout(submit.addEventListener("click", startTimer), 1000);
+  submit.addEventListener("click", startTimer);
 }
 
 //returns input from user.
@@ -43,10 +43,10 @@ function focusInput() {
 function playGame() {
   let inputNumber = Number(takeInput());  
   let presentText = document.getElementById("presentText");
-  let DOMtimer = document.getElementById("timer");
+  
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
-    //presentText.innerHTML = "Lower";
+    presentText.innerHTML = "Lower";
     playerGuesses += 1;
     stopTimer = true;
     displayLowerScreen();
@@ -64,7 +64,7 @@ function playGame() {
     }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
-    //presentText.innerHTML = "higher";
+    presentText.innerHTML = "higher";
     playerGuesses += 1;
     stopTimer = true;
     displayHigherScreen();
@@ -88,7 +88,6 @@ function playGame() {
     displayWin();
   }
   if (inputNumber === 0) {
-    DOMtimer.style.background = "#514E7C"; 
     stopTimer = true;
     playerGuesses += 1;
     timeRanOut();
@@ -113,15 +112,17 @@ function startTimer() {
   let timer = 6;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
+  DOMtimer.style.background = "#514E7C"; 
   DOMtimer.style.visibility = "visible";
   function countDown() {
     timer--;
     if (timer < 1) {
-      timer = "";
+      timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
     }
     if(timer <= 0){
+      DOMtimer.style.background = "#514E7C"; 
       playGame();
       //connect to flow. 
     }
@@ -133,7 +134,7 @@ function startTimer() {
     }
     if (stopTimer) {
       clearInterval(time);
-      timer = 6;
+      timer = 5;
       //stopTimer = false;
     }
     if (win || botWin) {
@@ -151,14 +152,14 @@ function enterSubmit() {
   function submit(event) {
     if (event.code === "Enter") {
       playGame();
-      setTimeout(startTimer, 1000);
+      startTimer();
       document.getElementById("userBox").classList.add("hide");
       document.getElementById("continue-game-btn").classList.add("hide");
     }
   }
 }
 
-
+//number still red on restart
 
 
 
