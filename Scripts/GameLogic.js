@@ -40,11 +40,8 @@ function focusInput() {
   document.getElementById("guess").focus();
 }
 
-
-
 function playGame() {
   let inputNumber = Number(takeInput());  
-  console.log(inputNumber);
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
   if (inputNumber > randomNumber) {
@@ -91,21 +88,32 @@ function playGame() {
   }
   if (inputNumber === 0) {
     stopTimer = true;
-    presentText.innerHTML = "please input a number";
+    playerGuesses += 1;
+    timeRanOut();
+    hideGame();
+    if (isSillySelected) {
+      sillyBotsTurn(randomNumber, inputNumber);
+    }
+    // if dumbbot is selected present dumbbot guess
+    if (isDumbSelected) {
+      dumbBotsTurn(randomNumber, inputNumber);
+    }
+    // if hardcorebot is selected present hardcores guess
+    if (isHardcoreSelected) {
+      hardcoreBotsTurn(randomNumber, inputNumber);
+    }
   }
   savePlayerAnswers(inputNumber);
 }
 
 // timer countDown.
 function startTimer() {
-  //playGame(timer);
-  let timer = 11;
+  let timer = 6;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
   DOMtimer.style.visibility = "visible";
   function countDown() {
     timer--;
-    console.log(timer)
     if (timer < 1) {
       timer = "";
       DOMtimer.style.visibility = "hidden";
@@ -128,9 +136,7 @@ function startTimer() {
     }
     DOMtimer.innerHTML = timer;
     if(timer <= 0){
-      let presentText = document.getElementById("presentText");
-      presentText.innerHTML = "Too slow!";
-      playerGuesses += 1;
+      playGame();
       //connect to flow. 
     }
   }

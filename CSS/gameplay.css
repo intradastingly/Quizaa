@@ -7,6 +7,10 @@
 .go-lower {
     display: none;
 }
+
+.timeout {
+    display: none;
+}
 .continue-game {
     display: none;
 }
