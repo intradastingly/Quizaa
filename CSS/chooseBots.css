@@ -12,12 +12,12 @@
 .bots-container {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5rem;
   width: 100%;
 }
 
 .bot-box {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -41,7 +41,9 @@
 }
 
 .bot-img {
-  height: 10rem;
+  margin-top: 3rem;
+  max-height: 10rem;
+  max-width: 10rem;
   transform: scaleX(-1);
 }
 
@@ -57,6 +59,12 @@
 .pick-bot {
   visibility: hidden;
   color: red;
+}
+
+.bot-name {
+  position: absolute;
+  top: 2rem;
+  margin: 0;
 }
 
 /*--------- TABLET LARGE ---------*/

@@ -36,9 +36,9 @@
           <div id="go-higher"  class="go-higher">
             <div class="game-leader">
               <div class="game-leader-text">
-                Close but no cigar, you need to get higher!
+                Close but no cigar,<br>you need to get higher!
               </div>
-              <div>
+              <div class="game-leader-img">
                 <div class="menuChatBubble">
                   <span>Try again</span>
                 </div>
@@ -50,9 +50,9 @@
             <div id="go-lower" class="go-lower">
               <div class="game-leader">
                 <div class="game-leader-text">
-                  Close but no cigar, you need to get lower!
+                  Close but no cigar,<br>you need to get lower!
                 </div>
-                <div>
+                <div class="game-leader-img">
                   <div class="menuChatBubble">
                     <span>Try again</span>
                   </div>
@@ -64,9 +64,9 @@
             <div id="timeout" class="timeout">
               <div class="game-leader">
                 <div class="game-leader-text">
-                  Time ran out!
+                  You ran out of time!
                 </div>
-                <div>
+                <div class="game-leader-img">
                   <div class="menuChatBubble">
                     <span>Try again</span>
                   </div>
@@ -76,32 +76,42 @@
             </div>
             <!-- you win screen -->
           <div id = "you-won">
-            <h2 class="user-item" id="win">You guessed correctly, congratulations!</h2>
+            <h2 class="user-item" id="win">You guessed correctly,<br>congratulations!</h2>
             <h2 class="user-item" id="score"><!-- code injected with js --></h2>
-            <button class="primary-button-lg user-item" id="againW">One more time!</button>
-            <button class="secondary-button-lg user-item" id="boredW">I'm bored</button>
+            <div class="button-container">
+              <button class="primary-button-lg user-item" id="againW">One more time!</button>
+              <button class="secondary-button-lg user-item" id="boredW">I'm bored</button>
+            </div>
           </div>
           <div id = "you-lose">
-            <h2 class="user-item" id="lose">the bot ate you alive, Game over!</h2>
-            <button class="primary-button-lg user-item" id="againL">Play again</button>
-            <button class="secondary-button-lg user-item" id="boredL">I'm bored</button>
+            <h2 class="user-item" id="lose">The bot ate you alive, Game over!</h2>
+            <div class="button-container">
+              <button class="primary-button-lg user-item" id="againL">Try again</button>
+              <button class="secondary-button-lg user-item" id="boredL">I'm bored</button>
+            </div>
           </div>
 
         <div id="sillyBot" class="botBox padding">
-          <h2 id="presentBotText">Guess</h2>
-          <img id="sillySelfie" src="./Assets/silly.png" alt="picture of sillybot"> 
+          <h2 id="presentBotText">...</h2>
+          <div class="bot-img-container">
+            <img id="sillySelfie" src="./Assets/silly.png" alt="picture of sillybot"> 
+          </div>
           <ul id="sillyBotUl">
               </ul>
         </div>
         <div id="dumbBot" class="botBox padding">
-          <h2 id="presentDumbText">Guess</h2>
-          <img src="./Assets/dumb.png" alt="picture of dumbbot"> 
-          <ul id="dumbUl">
+          <h2 id="presentDumbText">...</h2>
+          <div class="bot-img-container">
+            <img src="./Assets/dumb.png" alt="picture of dumbbot"> 
+          </div>
+            <ul id="dumbUl">
           </ul>
         </div>
         <div id="hardcoreBot" class="botBox padding">
-          <h2 id="presentHardcoreText">Guess</h2>
-          <img src="./Assets/hardcore.png" alt="picture of hardcorebot"> 
+          <h2 id="presentHardcoreText">...</h2>
+          <div class="bot-img-container">
+            <img src="./Assets/hardcore.png" alt="picture of hardcorebot"> 
+          </div>
           <ul id="hardcoreBotUl">
           </ul>
         </div>

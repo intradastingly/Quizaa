@@ -55,9 +55,6 @@
   font-size: 1.5rem;
 }
 
-.highscoreChatBubble span {
-}
-
 .highscoreChatBubble:after {
   content: "";
   position: absolute;

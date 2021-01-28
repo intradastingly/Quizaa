@@ -13,22 +13,19 @@
 }
 
 #guess {
-  background-color: #514e7c;
-  border-radius: 0.5rem;
-  border: none;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #fdf9de;
-  width: 25rem;
-  height: 3rem;
+    background-color: #514E7C;
+    border-radius: .5rem;
+    border: none;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #fdf9de;
+    width: 30rem;
+    height: 3rem;
 }
 
-#submitGuess {
-  width: 25rem;
-}
 .padding {
-  padding: 0rem 4rem 0rem 4rem;
+    padding: 1rem 2rem 1rem 2rem;
 }
 
 body {
@@ -71,21 +68,24 @@ body {
 }
 
 .gameContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   height: 100%;
 }
 
-.userBox {
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
+.game-leader-text {
+    font-weight: bold;
 }
 
-.user-item {
-  margin: 1rem;
+.userBox {
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    display:  flex;
+    flex-direction: column;
 }
 
 .start {
@@ -112,17 +112,23 @@ body {
   visibility: hidden;
 }
 
+.mobile-btn {
+    width: 100%;
+}
+
+
 /* Silly bot below */
 .botBox {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: #514e7c;
-  border-radius: 1rem;
-  margin: 1rem;
-  height: 30rem;
+    display: none;
+    margin: 1rem;
+    height: fit-content;
+    min-width: 15rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #514E7C;
+    border-radius: 1rem;
 }
 
 .botBox h2 {
@@ -146,10 +152,18 @@ body {
   font-size: 1.5rem;
 }
 
-.botBox img {
-  width: 10rem;
-  height: 10rem;
-  padding: 1rem;
+.botBox .bot-img-container {
+    display: flex;
+    height: 10rem;
+    width: 10rem;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.botBox img{
+    max-height: 10rem;
+    max-width: 10rem;
 }
 
 /* Silly bot above */
@@ -208,28 +222,46 @@ body {
 }
 
 @media (max-width: 1024px) {
+    .gameContainer {
+        padding: 0 0 2rem 0;
+        flex-wrap: wrap;
+    }
 }
 
-@media (max-width: 768px) {
-  .countDownGame {
-    width: 15rem;
-    height: 15rem;
-    font-size: 10rem;
-  }
+@media (max-width: 768px){
+    .countDownGame {
+        width: 15rem;
+        height: 15rem;
+        font-size: 10rem;
+    }
+
+    #guess {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
-  #presentText {
-    font-size: 1.5rem;
-    width: 15rem;
-  }
-  #submitGuess {
-    width: 20rem;
-  }
-  #guess {
-    width: 20rem;
-  }
-  .gameContainer {
-    flex-direction: column;
-  }
+    #presentText {
+        font-size: 1.8rem;
+        width: 15rem;
+    }
+
+    .gameContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botBox {
+        min-width: 14rem;
+    }
+
+    .botBox .bot-img-container {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .botBox img {
+        max-width: 8rem;
+        max-height: 8rem;
+    }
 }

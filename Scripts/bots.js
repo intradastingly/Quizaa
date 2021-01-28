@@ -20,17 +20,17 @@ function checkIfSillyWinOrLoose(sillyBotAnswer, randomNumber, inputNumber){
     if(randomNumber === inputNumber){
         // this doesnt work sadly....
         console.log("heh")
-        presentBotText.innerHTML = "Silly Lost"
+        presentBotText.innerHTML = "Silly bot Lost"
         ul.innerText = "";
     } if(sillyBotAnswer > randomNumber) {
         presentBotText.innerHTML = "Lower";
 
     } if(sillyBotAnswer < randomNumber){
-        presentBotText.innerHTML = "higher";
+        presentBotText.innerHTML = "Higher";
 
     } if(sillyBotAnswer === randomNumber){
-        presentBotText.innerHTML = "Sillybot Wins"
-        document.getElementById("sillyBotUl").innerText = "Silly guessed " + randomNumber;
+        presentBotText.innerHTML = "Silly bot wins"
+        document.getElementById("sillyBotUl").innerText = "Silly bot guessed " + randomNumber;
         botWin = true;
         displayLose()
         saveSillyBotGuesses();
@@ -80,8 +80,8 @@ function checkIfDumbWinOrLoose(dumbBotAnswer, randomNumber){
         presentDumbText.innerHTML = "Higher";
 
     } if(dumbBotAnswer === randomNumber){
-        presentDumbText.innerHTML = "Dumb Bot Wins"
-        document.getElementById("dumbUl").innerText = "Dumb guessed " + randomNumber;
+        presentDumbText.innerHTML = "Dumb bot wins"
+        document.getElementById("dumbUl").innerText = "Dumb bot guessed " + randomNumber;
         botWin = true;
         displayLose()
         saveDumbBotGuesses();
@@ -130,12 +130,12 @@ function checkIfHardcoreWinOrLoose(hardcoreBotAnswer, randomNumber) {
     presentHardcoreText.innerHTML = "Lower";
   }
   if (hardcoreBotAnswer < randomNumber) {
-    presentHardcoreText.innerHTML = "higher";
+    presentHardcoreText.innerHTML = "Higher";
   }
   if (hardcoreBotAnswer === randomNumber) {
-    presentHardcoreText.innerHTML = "Hardcore bot Wins";
+    presentHardcoreText.innerHTML = "Hardcore bot wins";
     document.getElementById("hardcoreBotUl").innerText =
-      "Hardcore guessed " + randomNumber;
+      "Hardcore bot guessed " + randomNumber;
     botWin = true;
     displayLose();
     saveHardcoreBotGuesses();
