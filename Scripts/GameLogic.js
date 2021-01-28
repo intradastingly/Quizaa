@@ -44,7 +44,6 @@ function focusInput() {
 
 function playGame() {
   let inputNumber = Number(takeInput());  
-  console.log(timer)
   console.log(inputNumber);
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
@@ -113,7 +112,10 @@ function startTimer() {
       clearInterval(time);
     }
     if (timer <= 3){
-      DOMtimer.style.background = "red";
+      DOMtimer.style.background = "red";  
+    }
+    if(timer > 3){
+        DOMtimer.style.background = "#514E7C"; 
     }
     if (stopTimer) {
       clearInterval(time);
@@ -125,6 +127,12 @@ function startTimer() {
       DOMtimer.style.visibility = "hidden";
     }
     DOMtimer.innerHTML = timer;
+    if(timer <= 1){
+      let presentText = document.getElementById("presentText");
+      presentText.innerHTML = "Too slow!";
+      playerGuesses += 1;
+      //connect to flow. 
+    }
   }
 }
 
