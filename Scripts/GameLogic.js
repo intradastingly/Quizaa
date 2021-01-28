@@ -5,7 +5,6 @@ function start() {
     location.href = "./login.html";
   } else {
     startTimer();
-    displayInputAndSubmitButton();
     gameLogicEventListeners();
     enterSubmit();
     focusInput();
@@ -19,6 +18,7 @@ let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
 
+
 //start and submit buttons.
 function gameLogicEventListeners() {
   const submit = document.getElementById("submitGuess");
@@ -27,10 +27,6 @@ function gameLogicEventListeners() {
   submit.addEventListener("click", playGame);
   submit.addEventListener("click", hideGame);
   setTimeout(submit.addEventListener("click", startTimer), 1000);
-
-  //const start = document.getElementById("start");
-  //start.addEventListener("click", startTimer);
-  // start.addEventListener("click", displayInputAndSubmitButton);
 }
 
 //returns input from user.
@@ -47,8 +43,8 @@ function focusInput() {
 
 
 function playGame() {
-  let inputNumber = Number(takeInput());
-
+  let inputNumber = Number(takeInput());  
+  console.log(timer)
   console.log(inputNumber);
   let presentText = document.getElementById("presentText");
   // checks if inputnumber is lower or higher then randomnumber
@@ -98,8 +94,6 @@ function playGame() {
     stopTimer = true;
     presentText.innerHTML = "please input a number";
   }
-
-  displayGuesses(playerGuesses);
   savePlayerAnswers(inputNumber);
 }
 
@@ -112,6 +106,7 @@ function startTimer() {
   DOMtimer.style.visibility = "visible";
   function countDown() {
     timer--;
+    console.log(timer)
     if (timer < 1) {
       timer = "";
       DOMtimer.style.visibility = "hidden";
@@ -123,32 +118,23 @@ function startTimer() {
     if (stopTimer) {
       clearInterval(time);
       timer = 10;
-      stopTimer = false;
+      //stopTimer = false;
     }
     if (win || botWin) {
       clearInterval(time);
       DOMtimer.style.visibility = "hidden";
     }
-    /* if (timer === 10){
-          DOMtimer.style.visibility = "hidden";
-        } */
     DOMtimer.innerHTML = timer;
   }
 }
 
-function displayInputAndSubmitButton() {
-  // displays bots wich are selected to play against
-  //botSelected();
-}
 
-function displayGuesses(playerGuesses) {
+
+/* function displayGuesses(playerGuesses) {
   //console.log(playerGuesses);
-}
-
-//get timer to restart on start click
+} */
 
 //listens for Enter key press.
-
 function enterSubmit() {
   document.addEventListener("keypress", submit);
   function submit(event) {
@@ -161,6 +147,8 @@ function enterSubmit() {
   }
 }
 
-//buttons will be hidden on guess so no need to add repress logic
 
-function guessAgain() {}
+
+// bnumber still visible.
+// color still red. 
+
