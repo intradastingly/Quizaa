@@ -1,24 +1,23 @@
-
 .menu-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto 0 auto;
 }
 
 .menuLeft {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 .menuRight {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 50%;
 }
 
 .menuWelcome {
@@ -32,75 +31,76 @@
 }
 
 .menuInfo {
-    display: flex;
-    flex-direction: column;
-    max-width: 30rem;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+  align-items: center;
 }
 
 .menuInfo p {
-    margin: 0 0 2rem 0;
-    font-weight: bold;
-    font-size: 1.2rem;
+  margin: 0 0 2rem 0;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .menuChatBubble {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    margin-bottom: 5rem;
-    position: relative;
-    background: #00e6b3;
-    border-radius: 0.4em;
-  
-    font-weight: bold;
-    font-size: 1.5rem;
+  width: 18rem;
+  height: 6rem;
+
+  margin-bottom: 5rem;
+  position: relative;
+  background: #00e6b3;
+  border-radius: 0.4em;
+
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .menuChatBubble span {
-    white-space: nowrap;
-    padding: 2rem 3rem;
+  white-space: nowrap;
 }
 
 .menuChatBubble:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 20%;
-    width: 0;
-    height: 0;
-    border: 30px solid transparent;
-    border-top-color: #00e6b3;
-    border-bottom: 0;
-    border-right: 0;
-    margin-left: 50px;
-    margin-bottom: -30px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 0;
+  height: 0;
+  border: 30px solid transparent;
+  border-top-color: #00e6b3;
+  border-bottom: 0;
+  border-right: 0;
+  margin-left: 50px;
+  margin-bottom: -30px;
 }
 
 .menuImg {
-    justify-self: flex-end;
+  justify-self: flex-end;
 }
 
 .menuImg > img {
-    height: 17rem;
-    transform: scaleX(-1);
-    align-self: flex-end;
+  height: 17rem;
+  transform: scaleX(-1);
+  align-self: flex-end;
 }
 
 .link-button {
-    text-align: center;
+  text-align: center;
 }
 
 /*--------- TABLET LARGE ---------*/
 @media (max-width: 1024px) {
-
-    .menuRight {
-        display: none;
-    }
-
-    .menuLeft {
-        align-items: center;
-        width: 100%;
-    }
+  .menuRight {
+    display: none;
   }
+
+  .menuLeft {
+    align-items: center;
+    width: 100%;
+  }
+}

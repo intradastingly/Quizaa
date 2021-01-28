@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./CSS/menu.css" />
     <script src="./Scripts/main.js"></script>
     <script src="./Scripts/menu.js"></script>
+    <script src="./Scripts/typeWriter.js"></script>
   </head>
   <body>
     <header class="header">QUIZAA</header>
@@ -43,7 +44,13 @@
 
         <div class="menuRight">
           <div class="menuChatBubble">
-            <span>Are you ready?</span>
+            <span id="readySentence">
+              <!-- SENTENCE TO TYPEWRITE -->
+            </span>
+            <span class="cursor" id="cursor" class="blink">
+              <!-- CURSOR BLINK WITH JAVASCRIPT FUNCTION -->
+              _</span
+            >
           </div>
           <div class="menuImg"><img src="./Assets/game-leader.png" /></div>
         </div>

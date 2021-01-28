@@ -1,95 +1,96 @@
 .highscore-container {
-    flex-grow: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto 0 auto;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto 0 auto;
 }
 
 .containerLeft {
-    position: relative;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 .containerRight {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50%;
 }
 
 .highscore-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.8rem;
-    color: #FD7CC5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem;
+  color: #fd7cc5;
 }
 
 .highscore-list-item {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .highscore-container .primary-button-lg {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
 }
 
 .highscoreChatBubble {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    margin-bottom: 5rem;
-    position: relative;
-    background: #00e6b3;
-    border-radius: 0.4em;
-  
-    font-weight: bold;
-    font-size: 1.5rem;
+  width: 22rem;
+  height: 6rem;
+
+  margin-bottom: 5rem;
+  position: relative;
+  background: #00e6b3;
+  border-radius: 0.4em;
+
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .highscoreChatBubble span {
-    padding: 2rem 3rem;
 }
 
 .highscoreChatBubble:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 20%;
-    width: 0;
-    height: 0;
-    border: 30px solid transparent;
-    border-top-color: #00e6b3;
-    border-bottom: 0;
-    border-right: 0;
-    margin-left: 50px;
-    margin-bottom: -30px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 0;
+  height: 0;
+  border: 30px solid transparent;
+  border-top-color: #00e6b3;
+  border-bottom: 0;
+  border-right: 0;
+  margin-left: 50px;
+  margin-bottom: -30px;
 }
 
 .highscoreImg {
-    justify-self: flex-end;
+  justify-self: flex-end;
 }
 
 .highscoreImg > img {
-    height: 17rem;
-    transform: scaleX(-1);
-    align-self: flex-end;
+  height: 17rem;
+  transform: scaleX(-1);
+  align-self: flex-end;
 }
 
 /*--------- TABLET LARGE ---------*/
 @media (max-width: 1024px) {
-
-    .containerRight {
-        display: none;
-    }
-
-    .containerLeft {
-        width: 100%;
-       flex-grow: 1;
-    }
+  .containerRight {
+    display: none;
   }
+
+  .containerLeft {
+    width: 100%;
+    flex-grow: 1;
+  }
+}

@@ -15,6 +15,7 @@
 
     <script src="./Scripts/main.js"></script>
     <script src="./Scripts/highscore.js"></script>
+    <script src="./Scripts/typeWriter.js"></script>
   </head>
   <body>
     <header class="header">QUIZAA</header>
@@ -32,7 +33,13 @@
 
         <div class="containerRight">
           <div class="highscoreChatBubble">
-            <span>These are the champions!</span>
+            <span id="readySentence">
+              <!-- SENTENCE TO TYPEWRITE -->
+            </span>
+            <span class="cursor" id="cursor" class="blink">
+              <!-- CURSOR BLINK WITH JAVASCRIPT FUNCTION -->
+              _</span
+            >
           </div>
           <div class="highscoreImg"><img src="./Assets/game-leader.png" /></div>
         </div>
