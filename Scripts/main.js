@@ -37,8 +37,8 @@ function indexEventListeners() {
 /** Toggle underscore in signature from visible to hidden when used in an interval */
 function blinkCursor() {
   const cursor = document.getElementById("cursor");
-  let visibility = cursor.style.visibility || "visible";
-  cursor.style.visibility = visibility === "hidden" ? "visible" : "hidden";
+  //let visibility = cursor.style.visibility || "visible";
+  //cursor.style.visibility = visibility === "hidden" ? "visible" : "hidden";
 }
 
 /**
@@ -48,7 +48,7 @@ function blinkCursor() {
  */
 function typeSignature(i, sentence) {
   if (i < sentence.length) {
-    document.getElementById("readySentence").innerHTML += sentence.charAt(i);
+    //document.getElementById("readySentence").innerHTML += sentence.charAt(i);
     i++;
     setTimeout(function () {
       typeSignature(i, sentence);

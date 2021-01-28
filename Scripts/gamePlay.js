@@ -47,7 +47,10 @@ function nextRound() {
     userPlayField.classList.add("show");
 
     document.getElementById("guess").value = "";
-
+    
+    stopTimer = false;
+    startTimer()
+    
     hideBots();
     focusInput();
   }
