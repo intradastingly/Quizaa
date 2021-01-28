@@ -127,7 +127,7 @@ function startTimer() {
       DOMtimer.style.visibility = "hidden";
     }
     DOMtimer.innerHTML = timer;
-    if(timer <= 1){
+    if(timer <= 0){
       let presentText = document.getElementById("presentText");
       presentText.innerHTML = "Too slow!";
       playerGuesses += 1;
@@ -135,12 +135,6 @@ function startTimer() {
     }
   }
 }
-
-
-
-/* function displayGuesses(playerGuesses) {
-  //console.log(playerGuesses);
-} */
 
 //listens for Enter key press.
 function enterSubmit() {
@@ -159,4 +153,6 @@ function enterSubmit() {
 
 // bnumber still visible.
 // color still red. 
+
+//input not numbers 
 
