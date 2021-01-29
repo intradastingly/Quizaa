@@ -19,6 +19,7 @@ console.log(randomNumber);
 let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
+let timerActive = false;
 
 //takes time from DOM html and sends to play Game. 
 setInterval(checkTime, 1000);
@@ -144,6 +145,7 @@ function playGame() {
 
 // timer countDown.
 function startTimer() {
+  timerActive = true;
   let timer = 5;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
@@ -155,10 +157,13 @@ function startTimer() {
       timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
+      timerActive = false;
     }
     if (timer <= 0) {
       DOMtimer.style.background = "#514E7C";
       playGame();
+      clearInterval(time);
+      timerActive = false;
       //connect to flow.
     }
     if (timer > 3) {
@@ -170,21 +175,24 @@ function startTimer() {
     if (stopTimer) {
       clearInterval(time);
       timer = 5;
+      timerActive = false;
       //stopTimer = false;
     }
     if (win || botWin) {
       clearInterval(time);
       DOMtimer.style.visibility = "hidden";
+      timerActive = false;
     }
     DOMtimer.innerHTML = timer;
   }
 }
+setInterval(()=>{console.log(timerActive)}, 1000)
 
 //listens for Enter key press.
 function enterSubmit() {
   document.addEventListener("keypress", submit);
   function submit(event) {
-    if (event.code === "Enter") {
+    if (event.code === "Enter" && !timerActive) {
       playGame();
       setTimeout(startTimer, 1000);
       document.getElementById("userBox").classList.add("hide");
