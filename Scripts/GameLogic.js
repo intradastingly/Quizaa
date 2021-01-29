@@ -55,8 +55,6 @@ function gameLogicEventListeners() {
   submit.addEventListener("keypress", enterSubmit);
 
   submit.addEventListener("click", playGame);
-  //submit.addEventListener("click", hideGame);
-  setTimeout(submit.addEventListener("click", startTimer), 1000);
 }
 
 //returns input from user.
@@ -193,9 +191,8 @@ setInterval(()=>{console.log(timerActive)}, 1000)
 function enterSubmit() {
   document.addEventListener("keypress", submit);
   function submit(event) {
-    if (event.code === "Enter" && !timerActive) {
+    if (event.code === "Enter" && timerActive) {
       playGame();
-      setTimeout(startTimer, 1000);
       document.getElementById("userBox").classList.add("hide");
       document.getElementById("continue-game-btn").classList.add("hide");
     }
