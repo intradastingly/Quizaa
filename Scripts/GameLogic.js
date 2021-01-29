@@ -20,6 +20,12 @@ let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
 
+//takes time from DOM html and sends to play Game. 
+setInterval(checkTime, 1000);
+  function checkTime() {
+    return timer.innerHTML;
+  }
+
 // start countDownGame
 function countDownGame() {
   let countDownStartNumber = 3;
@@ -65,8 +71,12 @@ function focusInput() {
 function playGame() {
   let inputNumber = Number(takeInput());
   let presentText = document.getElementById("presentText");
-
+  let time = Number(checkTime());
   // checks if inputnumber is lower or higher then randomnumber
+  if(!/^[0-9]+$/.test(inputNumber)){
+    //console.log('test')
+    //presentText.innerHTML = "Please input a number"; 
+  }
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Go lower!";
     playerGuesses += 1;
@@ -109,7 +119,7 @@ function playGame() {
     win = true;
     displayWin();
   }
-  if (inputNumber === 0) {
+  if (time === 1) {
     stopTimer = true;
     playerGuesses += 1;
     timeRanOut();
@@ -127,6 +137,7 @@ function playGame() {
     }
   }
   savePlayerAnswers(inputNumber);
+  
 }
 
 // timer countDown.
