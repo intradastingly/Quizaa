@@ -1,5 +1,6 @@
 // hides input field when go button is pressed and new screen presents.
 function hideGame() {
+  console.log('test')
   let userPlayField = document.getElementById("userBox");
 
   userPlayField.classList.remove("show");

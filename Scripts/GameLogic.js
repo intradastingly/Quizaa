@@ -54,7 +54,7 @@ function gameLogicEventListeners() {
   submit.addEventListener("keypress", enterSubmit);
 
   submit.addEventListener("click", playGame);
-  submit.addEventListener("click", hideGame);
+  //submit.addEventListener("click", hideGame);
   setTimeout(submit.addEventListener("click", startTimer), 1000);
 }
 
@@ -71,16 +71,17 @@ function focusInput() {
 function playGame() {
   let inputNumber = Number(takeInput());
   let presentText = document.getElementById("presentText");
+  let inputField = document.getElementById('guess');
   let time = Number(checkTime());
   // checks if inputnumber is lower or higher then randomnumber
   if(!/^[0-9]+$/.test(inputNumber)){
-    //console.log('test')
-    //presentText.innerHTML = "Please input a number"; 
+    inputField.placeholder = "Please Input a Number"; 
   }
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Go lower!";
     playerGuesses += 1;
     stopTimer = true;
+    hideGame();
     displayLowerScreen();
     // if sillybot is selected present sillys guess
     if (isSillySelected) {
@@ -99,6 +100,7 @@ function playGame() {
     presentText.innerHTML = "Go higher!";
     playerGuesses += 1;
     stopTimer = true;
+    hideGame();
     displayHigherScreen();
     // if sillybot is selected present sillys guess
     if (isSillySelected) {
@@ -117,6 +119,7 @@ function playGame() {
     presentText.innerHTML = "You Win!";
     stopTimer = true;
     win = true;
+    hideGame();
     displayWin();
   }
   if (time === 1) {
@@ -137,7 +140,6 @@ function playGame() {
     }
   }
   savePlayerAnswers(inputNumber);
-  
 }
 
 // timer countDown.
@@ -192,3 +194,5 @@ function enterSubmit() {
 }
 
 //number still red on restart
+// enter still works to click. make boolean for bot guessing 
+// empty input restarts the clock on click. 
