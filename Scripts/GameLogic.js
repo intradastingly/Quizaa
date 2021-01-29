@@ -70,12 +70,13 @@ function focusInput() {
 }
 
 function playGame() {
-  let inputNumber = Number(takeInput());
+  let inputNumber = Number(takeInput());2
   let presentText = document.getElementById("presentText");
   let inputField = document.getElementById('guess');
   let time = Number(checkTime());
   // checks if inputnumber is lower or higher then randomnumber
   if(!/^[0-9]+$/.test(inputNumber)){
+    console.log('test')
     inputField.placeholder = "Please Input a Number"; 
   }
   if (inputNumber > randomNumber) {
