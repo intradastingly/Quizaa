@@ -19,7 +19,6 @@ console.log(randomNumber);
 let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
-let timerActive = false;
 
 //takes time from DOM html and sends to play Game. 
 setInterval(checkTime, 1000);
@@ -70,12 +69,11 @@ function focusInput() {
 function playGame() {
   let inputNumber = Number(takeInput());2
   let presentText = document.getElementById("presentText");
-  let inputField = document.getElementById('guess');
+  let validationText = document.getElementById('validation');
   let time = Number(checkTime());
   // checks if inputnumber is lower or higher then randomnumber
   if(!/^[0-9]+$/.test(inputNumber)){
-    console.log('test')
-    inputField.placeholder = "Please Input a Number"; 
+    validationText.style.visibility = "visible"; 
   }
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Go lower!";
@@ -97,6 +95,7 @@ function playGame() {
     }
   }
   if (inputNumber !== 0 && inputNumber < randomNumber) {
+    validationText.style.visibility = "hidden"; 
     presentText.innerHTML = "Go higher!";
     playerGuesses += 1;
     stopTimer = true;
@@ -116,6 +115,7 @@ function playGame() {
     }
   }
   if (inputNumber === randomNumber) {
+    validationText.style.visibility = "hidden"; 
     presentText.innerHTML = "You Win!";
     stopTimer = true;
     win = true;
@@ -123,6 +123,7 @@ function playGame() {
     displayWin();
   }
   if (time === 1) {
+    validationText.style.visibility = "hidden"; 
     stopTimer = true;
     playerGuesses += 1;
     timeRanOut();
@@ -144,7 +145,6 @@ function playGame() {
 
 // timer countDown.
 function startTimer() {
-  timerActive = true;
   let timer = 5;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
@@ -156,13 +156,11 @@ function startTimer() {
       timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
-      timerActive = false;
     }
     if (timer <= 0) {
       DOMtimer.style.background = "#514E7C";
       playGame();
       clearInterval(time);
-      timerActive = false;
       //connect to flow.
     }
     if (timer > 3) {
@@ -174,24 +172,21 @@ function startTimer() {
     if (stopTimer) {
       clearInterval(time);
       timer = 5;
-      timerActive = false;
       //stopTimer = false;
     }
     if (win || botWin) {
       clearInterval(time);
       DOMtimer.style.visibility = "hidden";
-      timerActive = false;
     }
     DOMtimer.innerHTML = timer;
   }
 }
-setInterval(()=>{console.log(timerActive)}, 1000)
 
 //listens for Enter key press.
 function enterSubmit() {
   document.addEventListener("keypress", submit);
   function submit(event) {
-    if (event.code === "Enter" && timerActive) {
+    if (event.code === "Enter") {
       playGame();
       document.getElementById("userBox").classList.add("hide");
       document.getElementById("continue-game-btn").classList.add("hide");
