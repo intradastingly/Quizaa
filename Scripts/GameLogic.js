@@ -23,7 +23,9 @@ let win = false;
 //takes time from DOM html and sends to play Game. 
 setInterval(checkTime, 1000);
   function checkTime() {
-    return timer.innerHTML;
+    let time = Number(timer.innerHTML);
+    if(time===1){time = -1;}
+    return time;
   }
 
 // start countDownGame
@@ -70,8 +72,8 @@ function playGame() {
   let inputNumber = Number(takeInput());2
   let presentText = document.getElementById("presentText");
   let validationText = document.getElementById('validation');
-  let time = Number(checkTime());
-  // checks if inputnumber is lower or higher then randomnumber
+  let time = checkTime();
+  console.log(time)
   if(!/^[0-9]+$/.test(inputNumber)){
     validationText.style.visibility = "visible"; 
   }
@@ -122,7 +124,7 @@ function playGame() {
     hideGame();
     displayWin();
   }
-  if (time === 1) {
+  if (time < 0) {
     validationText.style.visibility = "hidden"; 
     stopTimer = true;
     playerGuesses += 1;
@@ -153,7 +155,7 @@ function startTimer() {
   function countDown() {
     timer--;
     if (timer < 1 || timer >= 5) {
-      timer = " ";
+      //timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
     }
@@ -194,6 +196,4 @@ function enterSubmit() {
   }
 }
 
-//number still red on restart
-// enter still works to click. make boolean for bot guessing 
-// empty input restarts the clock on click. 
+//fix 1 bug. 
