@@ -80,7 +80,7 @@ function playGame() {
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Go lower!";
     playerGuesses += 1;
-    stopTimer = true;
+    stopTimer = true;;;;;
     hideGame();
     displayLowerScreen();
     // if sillybot is selected present sillys guess
@@ -96,7 +96,7 @@ function playGame() {
       hardcoreBotsTurn(randomNumber, inputNumber);
     }
   }
-  if (inputNumber !== 0 && inputNumber < randomNumber) {
+  else if (inputNumber !== 0 && inputNumber < randomNumber) {
     validationText.style.visibility = "hidden"; 
     presentText.innerHTML = "Go higher!";
     playerGuesses += 1;
@@ -115,8 +115,7 @@ function playGame() {
     if (isHardcoreSelected) {
       hardcoreBotsTurn(randomNumber, inputNumber);
     }
-  }
-  if (inputNumber === randomNumber) {
+  } else if (inputNumber === randomNumber) {
     validationText.style.visibility = "hidden"; 
     presentText.innerHTML = "You Win!";
     stopTimer = true;
@@ -124,7 +123,8 @@ function playGame() {
     hideGame();
     displayWin();
   }
-  if (time < 0) {
+  else if (time < 0) {
+    //make number string
     validationText.style.visibility = "hidden"; 
     stopTimer = true;
     playerGuesses += 1;
