@@ -23,7 +23,9 @@ let win = false;
 //takes time from DOM html and sends to play Game. 
 setInterval(checkTime, 1000);
   function checkTime() {
-    return timer.innerHTML;
+    let time = Number(timer.innerHTML);
+    if(time===1){time = -1;}
+    return time;
   }
 
 // start countDownGame
@@ -70,15 +72,15 @@ function playGame() {
   let inputNumber = Number(takeInput());2
   let presentText = document.getElementById("presentText");
   let validationText = document.getElementById('validation');
-  let time = Number(checkTime());
-  // checks if inputnumber is lower or higher then randomnumber
+  let time = checkTime();
+  console.log(time)
   if(!/^[0-9]+$/.test(inputNumber)){
     validationText.style.visibility = "visible"; 
   }
   if (inputNumber > randomNumber) {
     presentText.innerHTML = "Go lower!";
     playerGuesses += 1;
-    stopTimer = true;
+    stopTimer = true;;;;;
     hideGame();
     displayLowerScreen();
     // if sillybot is selected present sillys guess
@@ -94,7 +96,7 @@ function playGame() {
       hardcoreBotsTurn(randomNumber, inputNumber);
     }
   }
-  if (inputNumber !== 0 && inputNumber < randomNumber) {
+  else if (inputNumber !== 0 && inputNumber < randomNumber) {
     validationText.style.visibility = "hidden"; 
     presentText.innerHTML = "Go higher!";
     playerGuesses += 1;
@@ -113,8 +115,7 @@ function playGame() {
     if (isHardcoreSelected) {
       hardcoreBotsTurn(randomNumber, inputNumber);
     }
-  }
-  if (inputNumber === randomNumber) {
+  } else if (inputNumber === randomNumber) {
     validationText.style.visibility = "hidden"; 
     presentText.innerHTML = "You Win!";
     stopTimer = true;
@@ -122,7 +123,8 @@ function playGame() {
     hideGame();
     displayWin();
   }
-  if (time === 1) {
+  else if (time < 0) {
+    //make number string
     validationText.style.visibility = "hidden"; 
     stopTimer = true;
     playerGuesses += 1;
@@ -153,7 +155,7 @@ function startTimer() {
   function countDown() {
     timer--;
     if (timer < 1 || timer >= 5) {
-      timer = " ";
+      //timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
     }
@@ -194,6 +196,4 @@ function enterSubmit() {
   }
 }
 
-//number still red on restart
-// enter still works to click. make boolean for bot guessing 
-// empty input restarts the clock on click. 
+//fix 1 bug. 
