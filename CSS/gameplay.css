@@ -12,6 +12,12 @@
     height: 100%;
     display: none;
 }
+
+.inputValidation {
+    height: 100%;
+    display: none;
+}
+
 .continue-game {
     display: none;
 }

@@ -1,8 +1,11 @@
 // hides input field when go button is pressed and new screen presents.
 function hideGame() {
+  
   let userPlayField = document.getElementById("userBox");
 
   userPlayField.classList.remove("show");
+  
+  
   userPlayField.classList.add("hide");
 }
 
@@ -28,8 +31,8 @@ function timeRanOut(){
     timeout.classList.remove("show");
     timeout.classList.add("hide");
   }, 3500);
-
 }
+
 // displays bot to say you should go lower
 function displayLowerScreen() {
   let lowerScreen = document.getElementById("go-lower");

@@ -12,6 +12,10 @@
   margin-bottom: auto;
 }
 
+#validation {
+  color: red;
+  visibility: hidden;
+}
 #guess {
     background-color: #514E7C;
     border-radius: .5rem;
