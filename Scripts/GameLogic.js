@@ -24,6 +24,7 @@ let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
 let timerActive = false;
+let gameActive = false;
 
 //takes time from DOM html and sends to play Game. 
 setInterval(checkTime, 1000);
@@ -74,6 +75,7 @@ function focusInput() {
 }
 
 function playGame() {
+  gameActive = true;
   let inputNumber = Number(takeInput());2
   let presentText = document.getElementById("presentText");
   let validationText = document.getElementById('validation');
@@ -88,6 +90,7 @@ function playGame() {
     stopTimer = true;;;;;
     hideGame();
     displayLowerScreen();
+    
     // if sillybot is selected present sillys guess
     if (isSillySelected) {
       sillyBotsTurn(randomNumber, inputNumber);
@@ -100,6 +103,7 @@ function playGame() {
     if (isHardcoreSelected) {
       hardcoreBotsTurn(randomNumber, inputNumber);
     }
+    gameActive = false;
   }
   else if (inputNumber !== 0 && inputNumber < randomNumber) {
     validationText.style.visibility = "hidden"; 
@@ -120,6 +124,7 @@ function playGame() {
     if (isHardcoreSelected) {
       hardcoreBotsTurn(randomNumber, inputNumber);
     }
+    gameActive = false;
   } else if (inputNumber === randomNumber) {
     validationText.style.visibility = "hidden"; 
     presentText.innerHTML = "You Win!";
@@ -166,11 +171,11 @@ function startTimer() {
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
     }
-    if (timer <= 0) {
+    if (timer <= 0 && gameActive) {
       DOMtimer.style.background = "#514E7C";
-      playGame();
       clearInterval(time);
       timerActive = false;
+      playGame();
       //connect to flow.
     }
     if (timer > 3) {
