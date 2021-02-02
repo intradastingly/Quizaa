@@ -63,6 +63,7 @@ function nextRound() {
     document.getElementById("guess").value = "";
 
     stopTimer = false;
+    gameActive = true;
     startTimer()
     
     hideBots();
