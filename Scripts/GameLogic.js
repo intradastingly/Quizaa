@@ -13,12 +13,18 @@ function start() {
   }
 }
 
+setInterval(() => {
+  focusInput()
+}, 100);
+
 // global variables
 let randomNumber = Math.floor(1 + Math.random(1) * 10);
 console.log(randomNumber);
 let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
+let timerActive = false;
+let gameActive = false;
 
 //takes time from DOM html and sends to play Game. 
 setInterval(checkTime, 1000);
@@ -69,11 +75,12 @@ function focusInput() {
 }
 
 function playGame() {
+  gameActive = true;
   let inputNumber = Number(takeInput());2
   let presentText = document.getElementById("presentText");
   let validationText = document.getElementById('validation');
   let time = checkTime();
-  console.log(time)
+  
   if(!/^[0-9]+$/.test(inputNumber)){
     validationText.style.visibility = "visible"; 
   }
@@ -83,6 +90,7 @@ function playGame() {
     stopTimer = true;;;;;
     hideGame();
     displayLowerScreen();
+    
     // if sillybot is selected present sillys guess
     if (isSillySelected) {
       sillyBotsTurn(randomNumber, inputNumber);
@@ -95,6 +103,7 @@ function playGame() {
     if (isHardcoreSelected) {
       hardcoreBotsTurn(randomNumber, inputNumber);
     }
+    gameActive = false;
   }
   else if (inputNumber !== 0 && inputNumber < randomNumber) {
     validationText.style.visibility = "hidden"; 
@@ -115,6 +124,7 @@ function playGame() {
     if (isHardcoreSelected) {
       hardcoreBotsTurn(randomNumber, inputNumber);
     }
+    gameActive = false;
   } else if (inputNumber === randomNumber) {
     validationText.style.visibility = "hidden"; 
     presentText.innerHTML = "You Win!";
@@ -147,6 +157,7 @@ function playGame() {
 
 // timer countDown.
 function startTimer() {
+  timerActive = true;
   let timer = 5;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
@@ -155,14 +166,16 @@ function startTimer() {
   function countDown() {
     timer--;
     if (timer < 1 || timer >= 5) {
+      timerActive = false;
       //timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
     }
-    if (timer <= 0) {
+    if (timer <= 0 && gameActive) {
       DOMtimer.style.background = "#514E7C";
-      playGame();
       clearInterval(time);
+      timerActive = false;
+      playGame();
       //connect to flow.
     }
     if (timer > 3) {
@@ -172,11 +185,13 @@ function startTimer() {
       DOMtimer.style.background = "red";
     }
     if (stopTimer) {
+      timerActive = false;
       clearInterval(time);
       timer = 5;
       //stopTimer = false;
     }
     if (win || botWin) {
+      timerActive = false;
       clearInterval(time);
       DOMtimer.style.visibility = "hidden";
     }
@@ -188,12 +203,10 @@ function startTimer() {
 function enterSubmit() {
   document.addEventListener("keypress", submit);
   function submit(event) {
-    if (event.code === "Enter") {
+    if (event.code === "Enter" && timerActive) {
       playGame();
       document.getElementById("userBox").classList.add("hide");
       document.getElementById("continue-game-btn").classList.add("hide");
     }
   }
 }
-
-//fix 1 bug. 
