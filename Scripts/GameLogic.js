@@ -13,12 +13,17 @@ function start() {
   }
 }
 
+setInterval(() => {
+  focusInput()
+}, 100);
+
 // global variables
 let randomNumber = Math.floor(1 + Math.random(1) * 10);
 console.log(randomNumber);
 let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
+let timerActive = false;
 
 //takes time from DOM html and sends to play Game. 
 setInterval(checkTime, 1000);
@@ -147,6 +152,7 @@ function playGame() {
 
 // timer countDown.
 function startTimer() {
+  timerActive = true;
   let timer = 5;
   let time = setInterval(countDown, 1000);
   let DOMtimer = document.getElementById("timer");
@@ -155,6 +161,7 @@ function startTimer() {
   function countDown() {
     timer--;
     if (timer < 1 || timer >= 5) {
+      timerActive = false;
       //timer = " ";
       DOMtimer.style.visibility = "hidden";
       clearInterval(time);
@@ -163,6 +170,7 @@ function startTimer() {
       DOMtimer.style.background = "#514E7C";
       playGame();
       clearInterval(time);
+      timerActive = false;
       //connect to flow.
     }
     if (timer > 3) {
@@ -172,11 +180,13 @@ function startTimer() {
       DOMtimer.style.background = "red";
     }
     if (stopTimer) {
+      timerActive = false;
       clearInterval(time);
       timer = 5;
       //stopTimer = false;
     }
     if (win || botWin) {
+      timerActive = false;
       clearInterval(time);
       DOMtimer.style.visibility = "hidden";
     }
@@ -188,7 +198,7 @@ function startTimer() {
 function enterSubmit() {
   document.addEventListener("keypress", submit);
   function submit(event) {
-    if (event.code === "Enter") {
+    if (event.code === "Enter" && timerActive) {
       playGame();
       document.getElementById("userBox").classList.add("hide");
       document.getElementById("continue-game-btn").classList.add("hide");
@@ -196,4 +206,5 @@ function enterSubmit() {
   }
 }
 
-//fix 1 bug. 
+//enter pressed stacks guesses. use boolean. 
+//
