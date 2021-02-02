@@ -24,7 +24,7 @@ let playerGuesses = 1;
 let stopTimer = false;
 let win = false;
 let timerActive = false;
-let gameActive = false;
+let gameActive = true;
 
 //takes time from DOM html and sends to play Game. 
 setInterval(checkTime, 1000);
@@ -176,6 +176,7 @@ function startTimer() {
       clearInterval(time);
       timerActive = false;
       playGame();
+      gameActive = true;
       //connect to flow.
     }
     if (timer > 3) {
