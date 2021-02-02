@@ -120,6 +120,10 @@ a {
   grid-area: header;
 }
 
+.header > a {
+  text-decoration: none;
+}
+
 /* END HEADER */
 
 /* MAIN */
