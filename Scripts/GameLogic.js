@@ -78,7 +78,7 @@ function playGame() {
   let presentText = document.getElementById("presentText");
   let validationText = document.getElementById('validation');
   let time = checkTime();
-  console.log(time)
+  
   if(!/^[0-9]+$/.test(inputNumber)){
     validationText.style.visibility = "visible"; 
   }
@@ -205,6 +205,3 @@ function enterSubmit() {
     }
   }
 }
-
-//enter pressed stacks guesses. use boolean. 
-//
