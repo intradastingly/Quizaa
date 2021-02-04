@@ -14,7 +14,6 @@ function presentTableStats() {
       presentHardcoreBotStats();
       presentPlayerStats();
       const lastTenList = sortLastTenRounds();
-      console.log(lastTenList);
       renderChart(lastTenList);
     }
   }
@@ -75,17 +74,17 @@ function presentPlayerStats() {
   const playerRow = document.getElementById("player-row");
 
   const playerUsername = JSON.parse(localStorage.getItem("user")).username;
-  const playerGuesses = JSON.parse(localStorage.getItem("highscore"));
+  const playerGuesses = JSON.parse(localStorage.getItem("highscore")).guesses;
   const playerAnswers = JSON.parse(localStorage.getItem("playerAnswers"));
 
-  playerAverageGuesses = calculateAverage(playerGuesses);
-  playerAverageAnswers = calculateAverage(playerAnswers);
+  const playerAverageGuesses = calculateAverage(playerGuesses);
+  const playerAverageAnswers = calculateAverage(playerAnswers);
 
   const playerUsernameTd = document.createElement("td");
   playerUsernameTd.innerHTML = playerUsername;
 
   const playerGuessesTd = document.createElement("td");
-  playerGuessesTd.innerHTML = hardcoreAverageGuesses;
+  playerGuessesTd.innerHTML = playerAverageGuesses;
 
   const playerAnswersTd = document.createElement("td");
   playerAnswersTd.innerHTML = playerAverageAnswers;
